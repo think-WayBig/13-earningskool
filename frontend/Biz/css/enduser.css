@@ -1,0 +1,28 @@
+section.disc-section {
+    padding: 50px 0;
+    box-sizing: border-box;
+}
+
+section.disc-section p {
+    font-size: 18px;
+    color: #000;
+}
+
+section.disc-section a {
+    color: #ff783d;
+}
+
+section.gold-banner-section {
+    background: #ff783d;
+    color: #fff;
+    padding: 20px 0 30px;
+    text-align: center;
+}
+
+ul {
+    font-size: large;
+}
+
+ol.ol_list {
+    font-size: 20px;
+}

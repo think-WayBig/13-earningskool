@@ -1,0 +1,499 @@
+.heading-orange {
+    font-weight: 500;
+    font-size: 37px;
+}
+
+section.gold-banner-section {
+    background-image: url('../img/about-banner.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 250px 0;
+    box-sizing: border-box;
+}
+
+.gold-banner-txt {
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+
+.gold-banner-txt h2 {
+    color: #FFBF9E;
+    font-size: 60px;
+    margin-top: 10px;
+    font-weight: 700;
+}
+
+.why-section {
+    position: relative;
+    top: -50px;
+}
+
+.why-number-div {
+    float: left;
+    width: 100%;
+    box-shadow: 0px 15px 12px #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.we-logo-div {
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+
+.we-logo-div img {
+    width: 180px;
+}
+
+.we-logo-div {
+    /*width: 180px;
+    float: right;*/
+    padding-top: 22px;
+    box-sizing: border-box;
+}
+
+.we-logo-div h2 {
+    color: #00b2bd;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.heading-div {
+    float: left;
+    width: 100%;
+    border-left: 1px solid #bbbbbd;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.heading-div h2 {
+    margin-top: 0;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.heading-div h2 span {
+    color: #00b2bd;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+section.we-here-section {
+    padding: 0px 0 0;
+    box-sizing: border-box;
+}
+
+.we-here-text {
+    float: left;
+    width: 100%;
+    text-align: left;
+    padding: 0 80px;
+    box-sizing: border-box;
+}
+
+.we-here-text p {
+    font-size: 22px;
+    color: #6e6b6b;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.we-here-text p:last-child {
+    padding-top: 30px;
+}
+
+section.arise-section {
+    padding: 50px 0 0px;
+    box-sizing: border-box;
+}
+
+.our-belief-text {
+    float: left;
+    width: 100%;
+    text-align: center;
+    font-size: 28px;
+    color: #000;
+    font-weight: 500;
+}
+
+.our-belief-text span {
+    color: #ff783d;
+    text-transform: uppercase;
+}
+
+.arise-div {
+    float: left;
+    width: 100%;
+}
+
+.arise-txt {
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+
+.arise-txt h1 {
+    color: #FFBF9E;
+    font-size: 170px;
+    font-weight: 700;
+}
+
+.arise-txt h3 {
+    color: #000;
+    font-size: 28px;
+}
+
+.arise-txt p {
+    font-size: 18px;
+    color: #6f6968;
+}
+
+section.enjoying-section {
+    padding: 50px 0 70px;
+    box-sizing: border-box;
+}
+
+.enjoy-heading {
+    float: left;
+    width: 100%;
+}
+
+.enjoy-heading h2 {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 42px;
+}
+
+.enjoy-heading h4 {
+    color: #989391;
+    font-weight: 600;
+}
+
+.inegrated-div {
+    float: left;
+    width: 100%;
+    text-align: right;
+}
+
+.inegrated-div h3 span {
+    color: #ff783d;
+}
+
+.inegrated-div a {
+    color: #989391;
+    text-decoration: underline;
+}
+
+.our-team {
+    float: left;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.our-team-heading {
+    text-align: center;
+    float: left;
+    width: 100%;
+}
+
+.our-team-heading h2 {
+    font-size: 42px;
+    margin: 0 0 5rem;
+    display: inline-block;
+    color: #333;
+    font-weight: 600;
+    position: relative;
+}
+
+.our-team-heading h2::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    background-color: #ff783d;
+    height: 2px;
+    width: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.team-member {
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+
+.team-img {
+    float: left;
+    width: 100%;
+}
+
+.team-img .team__memberimg {
+    position: relative;
+}
+
+.team-img .team__memberimg .team__overlay {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / span 1;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1 / span 1;
+    height: 100%;
+    padding: 0rem;
+    -webkit-transition: ease 0.3s;
+    transition: ease 0.3s;
+}
+
+.team-img .team__memberimg .team__overlay {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / span 1;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1 / span 1;
+    height: 100%;
+    padding: 0rem;
+    -webkit-transition: ease 0.3s;
+    transition: ease 0.3s;
+}
+
+.team-img .team__memberimg .team__overlayShow {
+    -webkit-transition: all 0.7s ease;
+    transition: all 0.7s ease;
+    -webkit-animation: fadeIn2 1s ease;
+    animation: fadeIn2 1s ease;
+    background-color: #74747485;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+
+.team-img .team__memberimg:hover .team__overlayShow {
+    display: block;
+}
+
+@keyframes fadeIn2 {
+    0% {
+        opacity: 0.9;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.team-img .team__memberimg .team__overlay ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    -webkit-animation: slideD-100px2S 1s;
+    animation: slideD-100px2S 1s;
+}
+
+.team-img .team__memberimg .team__overlay ul li a {
+    background-color: #ff783d85;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    color: #fff;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    margin-bottom: 0px;
+}
+
+.team-img .team__memberimg .team__overlay ul li a:hover {
+    text-decoration: none;
+    background-color: #ff783d;
+}
+
+@-webkit-keyframes slideD-100px2S {
+    0% {
+        -webkit-transform: translateY(-200px);
+        transform: translateY(-200px);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideD-100px2S {
+    0% {
+        -webkit-transform: translateY(-200px);
+        transform: translateY(-200px);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.team-img img {
+    width: 100%;
+    /*border-radius: 100%;*/
+}
+
+.team-txt {
+    float: left;
+    width: 100%;
+    /*display:none;*/
+}
+
+.team-img:hover .team-txt {
+    /*display:block;*/
+}
+
+.team-txt h3 {
+    color: #333;
+    font-size: 22px;
+    margin: 15px 0 0;
+}
+
+.team-txt h4 {
+    color: #00b2bd;
+    font-size: 15px;
+    margin: 15px 0 10px;
+    height: 35px;
+}
+
+.team-txt ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.team-txt ul li {
+    display: inline-block;
+    padding-right: 5px;
+    box-sizing: border-box;
+}
+
+.team-txt ul li i {
+    font-size: 20px;
+    color: #ff783d;
+}
+
+.team-member {
+    float: left;
+    width: 18%;
+    text-align: center;
+    margin: 0 10px;
+    /* border: 2px solid #ff783d; */
+    border-radius: 10px;
+    /* padding: 10px; */
+    box-sizing: border-box;
+    box-shadow: 0 0 10px #00000026;
+    overflow: hidden;
+}
+
+/*main {
+   background-image: url('../img/About-us-line.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center left;
+}*/
+
+/*----responsive----*/
+
+@media(max-width:480px) {
+    section.gold-banner-section {
+        padding: 60px 0;
+    }
+    .heading-div h2 {
+        margin-top: 0;
+        font-size: 26px;
+        text-align: center;
+    }
+    .we-here-text p {
+        font-size: 16px;
+    }
+    .enjoy-heading h2 {
+        font-size: 26px;
+    }
+    .our-team {
+        margin-top: 0;
+    }
+    .team-member {
+        width: 100%;
+        margin: 0 0px 20px;
+    }
+    .team-img img {
+        width: 100%;
+    }
+}
+
+@media(min-width:481px) and (max-width:767px) {
+    .we-here-text p {
+        font-size: 18px;
+    }
+    section.gold-banner-section {
+        padding: 80px 0;
+    }
+    .team-member {
+        width: 45%;
+        margin: 10px;
+    }
+}
+
+@media(max-width:767px) {
+    .arise-txt {
+        width: 100%;
+    }
+    .team-txt {
+        display: block;
+    }
+    .we-here-text {
+        padding: 0;
+    }
+    .we-logo-div {
+        width: 100%;
+        padding-bottom: 20px;
+    }
+    .heading-div {
+        border-top: 1px solid #bbbbbd;
+        padding-left: 0;
+        padding-top: 20px;
+        border-left: unset;
+    }
+    .heading-div h2 {
+        text-align: center;
+    }
+}
+
+@media(min-width:768px) and (max-width:991px) {
+    section.gold-banner-section {
+        padding: 150px 0;
+    }
+    .team-member {
+        margin: 0 6px;
+    }
+}
+
+@media(min-width:992px) and (max-width:1200px) {
+    .team-member {
+        margin: 0px 8px;
+    }
+}
+
+/*----responsive----*/

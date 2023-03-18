@@ -1,0 +1,353 @@
+.panel,
+.panel-body {
+    box-shadow: none;
+    padding: 0px;
+}
+
+.panel-group {
+    margin-bottom: 0px;
+}
+
+.panel-group .panel-heading {
+    padding: 0;
+    background-color: #fff;
+    border: none;
+}
+
+.panel-group .panel-heading a {
+    display: flex;
+    text-decoration: none;
+    position: relative;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 10px 15px;
+    margin: 0px;
+    text-transform: uppercase;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.panel-group .panel-heading a:focus {
+    outline: none;
+    color: #2c3e50;
+}
+
+.panel-group .panel-heading a:after {
+    content: '-';
+    float: right;
+    font-size: 22px;
+}
+
+.panel-group .panel-heading a.collapsed:after {
+    content: '+';
+}
+
+.total__affiliateList__table {
+    overflow-y: hidden;
+    width: 100%;
+}
+
+.total__affiliateList__table .dataTables_length label {
+    font-size: 14px;
+    color: #333;
+    margin: 15px 0 0;
+}
+
+.total__affiliateList__table .dataTables_filter label {
+    font-size: 14px;
+    color: #333;
+    margin: 15px 0 0;
+}
+
+.total__affiliateList__table .dataTables_info {
+    font-size: 14px;
+    color: #333;
+}
+
+.total__affiliateList__table .ellipsis::after {
+    display: none;
+}
+
+.total__affiliateList__table .table {
+    border: none;
+    border-collapse: separate !important;
+    border-spacing: 0 2em;
+}
+
+.total__affiliateList__table .table tr {
+    background: #F5F5FF;
+    border-radius: 0px;
+    transition: .3s;
+    margin-bottom: 15px;
+}
+
+.total__affiliateList__table .table tr:hover {
+    background-color: #F5FDFF;
+}
+
+.total__affiliateList__table .table tr th {
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    background-color: #f5f5ff;
+}
+
+.total__affiliateList__table .table tr td {
+    vertical-align: middle;
+    font-size: 14px;
+    border: none;
+    font-weight: 400;
+}
+
+.total__affiliateList__table .table tr td .btn {
+    border: 1px solid #ff783d;
+    border-radius: 3px;
+    width: 100px;
+    padding: 10px 0;
+    color: #fff;
+    font-weight: 500;
+    background-color: #ff783d;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.total__affiliateList__table .table tr td .btn:hover {
+    background-color: transparent;
+    color: #ff783d;
+}
+
+/*  @media screen and (max-width:1600px) {
+        .total__affiliateList__table {
+            width: 1120px;
+        }
+    }
+@media screen and (max-width:1440px) {
+    .total__affiliateList__table {
+        width: 1050px;
+    }
+}
+@media screen and (max-width:1367px) {
+    .total__affiliateList__table {
+        width: 980px;
+    }
+}
+@media screen and (max-width:1025px) {
+    .total__affiliateList__table {
+        width: 653px;
+    }
+}*/
+
+.modal-dialog {
+    max-width: 55%;
+    overflow: auto;
+}
+
+@media(max-width:441px) {
+    .modal-dialog {
+        max-width: 100%;
+    }
+}
+
+/*.view__listPop {
+    overflow: scroll;
+    width: 100%;
+    height: 400px;
+}*/
+
+.view__listPop .table {
+    border: none;
+    border-collapse: separate !important;
+    border-spacing: 0 2em;
+}
+
+.view__listPop .table tr {
+    background: #F5F5FF;
+    border-radius: 0px;
+    transition: .3s;
+    margin-bottom: 15px;
+}
+
+.view__listPop .table tr:hover {
+    background-color: #F5FDFF;
+}
+
+.view__listPop .table tr th {
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    background-color: #f5f5ff;
+}
+
+.view__listPop .table tr td {
+    vertical-align: middle;
+    font-size: 14px;
+    border: none;
+    font-weight: 400;
+}
+
+.sub-title.affiliate-list-title {
+    padding-left: 0 !important;
+}
+
+.affiliate-list-date {
+    margin: 10px 0px;
+}
+
+.affiliate-list-date input {
+    font-size: 15px;
+    padding: 4px;
+    margin-right: 20px;
+}
+
+.affiliate-list-date span {
+    font-size: 18px;
+    margin-right: 20px;
+}
+
+.affiliate-list-date select {
+    font-size: 15px;
+    padding: 4px;
+    margin-right: 20px;
+}
+
+.affiliate-list-date input.affiliate-btn {
+    background: #ff783d;
+    border: 1px solid #ff783d;
+    color: #fff;
+    font-size: 15px;
+    padding: 5px 35px;
+    border-radius: 4px;
+}
+
+.affiliate-total span {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.affiliate-total {
+    width: fit-content;
+    float: right;
+    margin-top: 8px;
+}
+
+@media (max-width:575px) {
+    .affiliate-list-date input,
+    .affiliate-list-date span {
+        margin-right: 5px;
+    }
+    .affiliate-list-date input {
+        width: 95px;
+    }
+    .affiliate-list-date input.affiliate-btn {
+        padding: 5px;
+    }
+    .total__affiliateList__table {
+        width: 100%;
+    }
+    .main-body .page-wrapper,
+    .card-block {
+        padding: 0;
+    }
+}
+
+@media (max-width:479px) {
+    .affiliate-list-date input.affiliate-btn {
+        margin-top: 10px;
+    }
+    .affiliate-list-date input {
+        width: 86px;
+    }
+    .affiliate-total {
+        margin-bottom: 20px;
+        float: inherit;
+    }
+    .affiliate-total span {
+        font-size: 14px;
+        font-weight: 500;
+    }
+}
+
+.biz_coupon_list .table {
+    border: none;
+    border-collapse: separate !important;
+    border-spacing: 0 1em;
+    margin-bottom: 0;
+}
+
+.biz_coupon_list .table tr {
+    background: #F5F5FF;
+    border-radius: 0px;
+    transition: .3s;
+    margin-bottom: 10px;
+}
+
+.biz_coupon_list .table tr td {
+    vertical-align: middle;
+    font-size: 14px;
+    border: none;
+    font-weight: 400;
+    color: Green;
+}
+
+.biz_coupon_list .table tr th {
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    background-color: #f5f5ff;
+}
+
+.biz_coupon_list .table tr th,
+.biz_coupon_list .table tr td {
+    border: none;
+}
+
+.biz_coupon_list .table tr td:first-child {
+    font-weight: 600;
+}
+
+.enter__detailModal table {
+    margin-bottom: 0;
+}
+
+.enter__detailModal table thead th {
+    font-size: 14px;
+    text-align: center;
+}
+
+.enter__detailModal table tbody tr td {
+    width: 25%;
+}
+
+.enter__detailModal table tbody tr td:first-child {
+    width: 50%;
+}
+
+.enter__detailModal .modal-dialog .modal-content .modal-body {
+    padding-bottom: 0;
+}
+
+.enter__detailModal table tbody tr td input {
+    font-size: 15px;
+}
+
+div#ContentPlaceHolder1_NestedContentPlaceHolder_dv_coupon {
+    overflow-y: hidden;
+}
+
+@media(max-width:767px) {
+    .enter__detailModal .modal-dialog {
+        width: 100%;
+        left: 0;
+        right: 0;
+        margin-left: 0px;
+        margin: 20px auto;
+        max-width: 100%;
+    }
+    .enter__detailModal .modal-dialog .modal-title {
+        font-size: 16px;
+    }
+}

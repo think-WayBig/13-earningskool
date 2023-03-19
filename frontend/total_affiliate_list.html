@@ -1974,70 +1974,6 @@
         <!-- scroll to top button -->
 
         <script>
-            // $(document).ready(function () {
-            //    if( $("#hdnstory").val() == 1)
-            //    {                       
-            //     $("#stories").addClass("isview_story");
-            // }
-            // getstory();
-
-
-            // function getstory() {
-            //     $.ajax({
-            //         type: "POST",
-            //         url: "/../default.aspx/getStoryForUser",
-            //         contentType: "application/json",
-            //         data: {},
-            //         dataType: "json",
-            //         success: function (data) {
-
-
-            //             var currentSkin = getCurrentSkin();
-
-            //             for (var i = 0; i < data.d.length; i++) {
-
-
-            //                 var stories = new Zuck('stories', {
-            //                     backNative: true,
-            //                     previousTap: true,
-            //                     skin: currentSkin['name'],
-            //                     autoFullScreen: currentSkin['params']['autoFullScreen'],
-            //                     avatars: currentSkin['params']['avatars'],
-            //                     paginationArrows: currentSkin['params']['paginationArrows'],
-            //                     list: currentSkin['params']['list'],
-            //                     cubeEffect: currentSkin['params']['cubeEffect'],
-            //                     localStorage: true,
-
-            //                     stories: [
-            //                         Zuck.buildTimelineItem(
-            //                             "ramon",
-            //                             "/biz/img/bb.jpg",
-            //                             "Earningskool",
-            //                             "",
-            //                             timestamp(),
-            //                             [
-            //                                 data.d[i]
-
-            //                             ]
-            //                         )
-            //                     ]
-            //                 });
-            //             }
-            //         },
-            //         error: function (xhr, ajaxOptions, thrownError) {
-
-            //             //var obj = jQuery.parseJSON(xhr.responseText);
-            //             //alert(obj.Message);
-            //         },
-            //         complete: function () {
-
-            //         }
-            //     });
-            // }
-
-
-            var $navbar = $("#mNavbar");
-
             AdjustHeader(); // Incase the user loads the page from halfway down (or something);
             $(window).scroll(function () {
                 AdjustHeader();
@@ -2084,42 +2020,6 @@
             })
         </script>
 
-
-        <!-- <script>
-                // Set the date we're counting down to
-                var offerTime = $("#hdn_offertime").val();
-                var countDownDate = new Date(offerTime).getTime();
-
-                // Update the count down every 1 second
-                var x = setInterval(function () {
-
-                    // Get today's date and time
-                    var now = new Date().getTime();
-
-                    // Find the distance between now and the count down date
-                    var distance = countDownDate - now;
-
-                    // Time calculations for days, hours, minutes and seconds
-                    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                    // Output the result in an element with id="spn_time"
-                    document.getElementById("spn_time").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-
-                    // If the count down is over, write some text 
-                    if (distance < 0) {
-                        clearInterval(x);
-                        document.getElementById("spn_time").innerHTML = "EXPIRED";
-
-                        $("#div_update_plan").hide();
-                    }
-                }, 1000);
-            </script> -->
-
-
-
         <script type="text/javascript">
             //<![CDATA[
             Sys.Application.add_init(function () {
@@ -2136,13 +2036,6 @@
         </script>
         </form>
 
-        <!-- Google Tag Manager (noscript) -->
-        <noscript>
-            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5W6X6V8" height="0" width="0"
-                style="display: none; visibility: hidden"></iframe>
-        </noscript>
-        <!-- End Google Tag Manager (noscript) -->
-
         <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
         <script>
             window.OneSignal = window.OneSignal || [];
@@ -2154,8 +2047,6 @@
         </script>
 
         <script src="./Biz/js/custome_js/afterlogin.js"></script>
-        <!-- <script src="/biz/js/custome_js/cart.js?v=1.2"></script> -->
-        <!-- Ionic Icons -->
 </body>
 
 </html>

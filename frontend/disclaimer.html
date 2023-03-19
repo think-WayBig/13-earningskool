@@ -1219,116 +1219,11 @@
 
             })
         </script>
-
-
-
-
         </form>
-
-        <!-- Google Tag Manager (noscript) -->
-        <noscript>
-            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5W6X6V8" height="0" width="0"
-                style="display: none; visibility: hidden"></iframe>
-        </noscript>
-        <!-- End Google Tag Manager (noscript) -->
-
-        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-        <script>
-            window.OneSignal = window.OneSignal || [];
-            OneSignal.push(function () {
-                OneSignal.init({
-                    appId: "f7398055-1f34-4727-833a-4c5268b79f6a",
-                });
-            });
-        </script>
 
         <script src="./Biz/js/custome_js/afterlogin.js"></script>
         <script src="./Biz/js/custome_js/cart.js?v=1.2"></script>
         <!-- Ionic Icons -->
-
-
-        <script>
-            $(document).ready(function () {
-                getRealTimeNotification();
-                $(".slider").click(function () {
-                    var val = $(".on").text();
-                    if (val == "Off") {
-
-                        window.location = "/";
-
-                    }
-
-                });
-
-
-
-                $("#li_notification").click(function () {
-
-                    getNotification();
-                    $("#not_dot").hide();
-                    $(".bell_shake").removeClass('bell_shake_notification');
-
-                });
-
-                //setInterval(function () {
-                //    getRealTimeNotification();
-
-                //}, 1000);
-
-                function getRealTimeNotification() {
-
-
-                    $.ajax({
-                        type: "POST",
-                        url: "/Biz/members/dashboard.aspx/getRealTimeNotification",
-                        contentType: "application/json; charset=utf-8",
-                        dataType: "json",
-                        data: {},
-                        success: function (data) {
-                            if (data.d != "") {
-                                $("#not_dot").show();
-                                $(".bell_shake").addClass('bell_shake_notification');
-
-                            }
-
-
-                        },
-                        error: function (xhr, ajaxOptions, thrownError) {
-
-                            var obj = jQuery.parseJSON(xhr.responseText);
-                            alert(obj.Message);
-                        }
-                    });
-
-
-                }
-
-                function getNotification() {
-                    $.ajax({
-                        type: "POST",
-                        url: "/Biz/members/dashboard.aspx/getNotification",
-                        contentType: "application/json; charset=utf-8",
-                        dataType: "json",
-                        data: {},
-                        beforeSend: function () {
-                            $("#notification").html("<li>Getting latest notification(s).....</li>");
-                        },
-                        success: function (data) {
-                            //var obj = jQuery.parseJSON(data.d);
-
-                            $("#notification").html(data.d);
-                        },
-                        error: function (xhr, ajaxOptions, thrownError) {
-
-                            var obj = jQuery.parseJSON(xhr.responseText);
-                            alert(obj.Message);
-                        }
-                    });
-
-
-                }
-            })
-        </script>
 </body>
 
 </html>

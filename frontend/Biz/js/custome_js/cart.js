@@ -4,7 +4,7 @@ function commonCalculation() {
 
     var total = 0;
     var arrConCatId = new Array();
-    $('#tbl_cart tr').each(function() {
+    $('#tbl_cart tr').each(function () {
         var currentRow = $(this).closest("tr");
         var id = currentRow.find(".cls_remove").attr('data');
         $("#btn_" + id + "").text("Added To Cart")
@@ -35,16 +35,15 @@ function commonCalculation() {
             arrConCatId: arrConCatId
         }),
         dataType: "json",
-        success: function(data) {
+        success: function (data) {
 
         },
-        error: function(xhr, ajaxOptions, thrownError) {
+        error: function (xhr, ajaxOptions, thrownError) {
 
             var obj = jQuery.parseJSON(xhr.responseText);
-            alert(obj.Message);
         },
 
-        complete: function() {}
+        complete: function () { }
 
 
     });
@@ -61,7 +60,7 @@ function commonCalculation() {
 
 
 }
-$(document).ready(function() {
+$(document).ready(function () {
 
     getCart();
 
@@ -74,7 +73,7 @@ $(document).ready(function() {
             data: '{}',
             dataType: "json",
 
-            success: function(data) {
+            success: function (data) {
                 if (data.d != "") {
                     $("#tbl_cart").html(data.d)
                     commonCalculation();
@@ -83,12 +82,11 @@ $(document).ready(function() {
 
             },
 
-            error: function(xhr, ajaxOptions, thrownError) {
+            error: function (xhr, ajaxOptions, thrownError) {
 
                 var obj = jQuery.parseJSON(xhr.responseText);
-                alert(obj.Message);
             },
-            complete: function() {
+            complete: function () {
 
 
 
@@ -97,9 +95,9 @@ $(document).ready(function() {
 
     }
 
-    $(".btn_submit_cart").click(function() {
+    $(".btn_submit_cart").click(function () {
         var arrConCatId = new Array();
-        $('#tbl_cart tr').each(function() {
+        $('#tbl_cart tr').each(function () {
             var currentRow = $(this).closest("tr");
             var id = currentRow.find(".cls_remove").attr('data');
             arrConCatId.push(id);
@@ -119,7 +117,7 @@ $(document).ready(function() {
                 isRef: isRef
             }),
             dataType: "json",
-            success: function(data) {
+            success: function (data) {
                 if (data.d == "0") {
                     window.location = "/biz/subscription/BuyPlan?ref_id=" + refId + "";
                 } else if (data.d == "1") {
@@ -127,25 +125,24 @@ $(document).ready(function() {
                 }
 
             },
-            error: function(xhr, ajaxOptions, thrownError) {
+            error: function (xhr, ajaxOptions, thrownError) {
 
                 var obj = jQuery.parseJSON(xhr.responseText);
-                alert(obj.Message);
             },
-            complete: function() {
+            complete: function () {
 
             }
         });
 
     })
-    $(document.body).on('click', '.cls_remove', function(e) {
+    $(document.body).on('click', '.cls_remove', function (e) {
         var currentRow = $(this).closest("tr");
         var id = $(this).attr('data');
         currentRow.closest('tr').remove();
         commonCalculation();
     });
 
-    $("#btn_cart").click(function() {
+    $("#btn_cart").click(function () {
         getCart();
         $("#DetModal").modal({
             backdrop: 'static',
@@ -155,7 +152,7 @@ $(document).ready(function() {
     })
 
 
-    $(document.body).on('click', '.add_to_cart', function(e) {
+    $(document.body).on('click', '.add_to_cart', function (e) {
 
         var id = $(this).attr('data');
         var amount = $(this).attr('cost');

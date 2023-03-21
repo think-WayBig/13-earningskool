@@ -33,6 +33,7 @@
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    
     <link rel="stylesheet" href="./Biz/css/header.css?v=4.2" />
     <link rel="stylesheet" href="./Biz/css/footer.css" />
     <link rel="stylesheet" href="./Biz/css/carousel.css" />
@@ -130,6 +131,44 @@
 </head>
 
 <body>
+    <!-- Pre-loader start -->
+    <div class="theme-loader">
+        <div class="ball-scale">
+            <div class='contain'>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Pre-loader end -->
     <!-- Google Tag Manager (noscript) -->
     <noscript>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MM8HM8V"
@@ -577,7 +616,7 @@
 
 
                                         <li><a href="my_course.html" id="tab_mycourse">My Courses</a></li>
-                                        <li><a href="/Biz/members/dashboard" id="tab_affiliate">Affiliate Panel</a></li>
+                                        <li><a href="dashboard.html" id="tab_affiliate">Affiliate Panel</a></li>
                                         <li>
                                             <div class="dropdown header__dropdown header__dropdownTwo">
                                                 <button class="dropdown-toggle" type="button" data-toggle="dropdown">
@@ -677,7 +716,7 @@
             <link rel="stylesheet" type="text/css" href="../../Content/assets/icon/icofont/css/icofont.css"></link>
             <!-- Style.css -->
             <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
-            <link rel="stylesheet" type="text/css" href="/Content/assets/css/style.css?v=2.4"></link>
+            <link rel="stylesheet" type="text/css" href="./Biz/assets/css/style.css?v=2.4"></link>
             <link rel="stylesheet" type="text/css" href="../../Content/assets/css/jquery.mCustomScrollbar.css"></link>
             <!-- Data Table Css -->
             <link rel="stylesheet" type="text/css" href="../../Content/bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css"></link>
@@ -688,6 +727,7 @@
             <link rel="stylesheet" type="text/css" href="../../Content/assets/pages/advance-elements/css/bootstrap-datetimepicker.css" />
             <!-- Date-time picker css -->
             <link rel="stylesheet" type="text/css" href="../../Content/assets/pages/advance-elements/css/bootstrap-datetimepicker.css" />
+            
             <link href="./Biz/css/membermasternew.css" rel="stylesheet" />
             <link href="./Biz/css/memberpanel.css?v=1.0" rel="stylesheet" />
 
@@ -966,6 +1006,7 @@
                     <script src="https://code.highcharts.com/modules/exporting.js"></script>
                     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
                     <script src="./Biz/js/custome_js/dashboard.js"></script>
+                    <script src="./Biz/assets/js/common-pages.js"></script>
 
 
                     <link rel="stylesheet" href="https://unpkg.com/webtour@1.1.0/dist/webtour.min.css">
@@ -1300,7 +1341,7 @@
                                                                             </div>
                                                                             <div class="user__nameDate">
                                                                                 <p id="name"></p>
-                                                                                <span style="display: block;"id="email"></span>
+                                                                                <span style="display: block;font-size: 14px;"id="email"></span>
                                                                             </div>
 
                                                                             <div class="leader__boardView userDetail__boardView" style="display:none;">
@@ -2402,7 +2443,7 @@
                                     <h4>Useful Links</h4>
                                     <ul>
                                         <li><a href="aboutus.html">About Us</a></li>
-                                        <li><a href="BecomeAnAffiliate.html">Become An Affiliate</a></li>
+                                        <li><a href="BecomeAnAffiliate.html" class="userlog">Become An Affiliate</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -2889,8 +2930,11 @@
         });
     </script>
 
-<script src="./Biz/js/custome_js/afterlogin.js"></script>
-    <script src="./Biz/js/custome_js/cart.js?v=1.2"></script>
+    <script src= "./Biz/js/custome_js/checkLogin.js"></script>
+    <script src="./Biz/js/custome_js/afterlogin.js"></script>
+    
+
+    <!-- <script src="./Biz/js/custome_js/cart.js?v=1.2"></script> -->
     <!-- Ionic Icons -->
 
 

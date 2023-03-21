@@ -9713,13 +9713,13 @@ ul {
 }
 
 a {
-    font-size: 13px;
+    font-size: inherit ;
     color: Blue
 }
 
 @media only screen and (min-width: 1400px) {
     a {
-        font-size: 14px
+        font-size: inherit;
     }
 }
 

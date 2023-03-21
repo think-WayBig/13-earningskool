@@ -379,7 +379,7 @@ a.forget-pass {
 }
 
 .form-div .form-group {
-    margin-bottom: 2rem;
+    margin-bottom: 0;
 }
 
 .form-div .form-group input {

@@ -2181,7 +2181,7 @@ h2.blogTitle {
 
 #customers-testimonials.owl-carousel .owl-dots .owl-dot.active span,
 #customers-testimonials.owl-carousel .owl-dots .owl-dot:hover span {
-    background: #ff783d;
+    background: #ff783d !important;
     transform: translate3d(0px, -50%, 0px) scale(0.7);
 }
 
@@ -2196,7 +2196,7 @@ h2.blogTitle {
 }
 
 #customers-testimonials.owl-carousel .owl-dots .owl-dot span {
-    background: #ff783d;
+    background: #ff783d !important;
     display: inline-block;
     height: 20px;
     margin: 0 2px 5px;
@@ -2946,7 +2946,7 @@ h2.blogTitle {
 }
 
 .courseflix-section .owl-dot.active span {
-    background-color: #ff783d;
+    background-color: #ff783d !important;
 }
 
 .courseflix-section #customers-testimonials-course {
@@ -3939,7 +3939,7 @@ span.underline__img::before {
 }
 
 .master_program_slider .owl-dot.active span {
-    background-color: #ff783d;
+    background-color: #ff783d !important;
 }
 
 .master_program_slider .owl-dot span {
@@ -5207,7 +5207,7 @@ span.underline__img::before {
 }
 
 .our_media_presence .owl-dot.active span {
-    background-color: #ff783d;
+    background-color: #ff783d !important;
 }
 
 .our_media_presence .owl-dot span {

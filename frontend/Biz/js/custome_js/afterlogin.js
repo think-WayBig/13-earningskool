@@ -1,3 +1,6 @@
+
+
+
 var email = localStorage.getItem('User');
 var listItem = document.querySelectorAll(".afterlogin");
 var userlog_signup = document.querySelectorAll(".userlog");
@@ -22,4 +25,6 @@ else if(email === null){
 function logout(){
     localStorage.removeItem('User');
     localStorage.removeItem('rcode');
+    localStorage.removeItem('isLoggedIn');
 }
+

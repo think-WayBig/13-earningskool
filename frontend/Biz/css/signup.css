@@ -166,6 +166,7 @@ section.form-section {
     float: left;
     width: 100%;
     padding: 0 50px;
+    box-shadow: none !important;
 }
 
 .bundle-section {
@@ -282,7 +283,7 @@ section.form-section {
     font-size: 15px;
     color: #000;
     padding: 0px 12px;
-    border: 1px solid transparent;
+    border: 1px solid transparent !important;
     margin-bottom: 0px !important;
     box-shadow: 0px 0px 3px #0000004d;
     -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;

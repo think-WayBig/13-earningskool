@@ -34,6 +34,7 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="./Biz/css/header.css" />
+    <link rel="stylesheet" href="./Biz/assets/css/style.css">
     <link rel="stylesheet" href="./Biz/css/footer.css" />
     <link rel="stylesheet" href="./Biz/css/carousel.css" />
     <link rel="stylesheet" href="./Biz/css/carouseller.css" />
@@ -57,6 +58,44 @@
 </head>
 
 <body>
+    <!-- Pre-loader start -->
+    <div class="theme-loader">
+        <div class="ball-scale">
+            <div class='contain'>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Pre-loader end -->
     <div>
         <header>
 
@@ -416,8 +455,7 @@
                                                     <div class="col-md-3 col-sm-3 xol-xs-12">
                                                         <ul class="dropdown__colum dropdown__columTwoB">
                                                             <!-- <li><a href="/Biz/BecomeAnInst">Become An Instructor</a></li> -->
-                                                            <li id="li_becminstr"><a
-                                                                    href="BecomeAnAffiliate.html">Become An
+                                                            <li id="li_becminstr"><a href="BecomeAnAffiliate.html" class="userlog">Become An
                                                                     Affiliate</a></li>
                                                         </ul>
                                                     </div>
@@ -481,7 +519,7 @@
                                         <span class="caret"></span>
                                     </button>
                                     <ul id="profile_option" class="dropdown-menu">
-                                        <li id="li_myprofile"><a href="/biz/members/member_profile"><i
+                                        <li id="li_myprofile"><a href="member_profile.html"><i
                                                     class="fa fa-user" aria-hidden="true"></i>&nbsp; My Profile</a>
                                         </li>
                                         <li id="li_mycourse"><a href="my_course.html"><i class="fa fa-graduation-cap"
@@ -490,10 +528,10 @@
                                         <li id="li_certificate"><a href="/Biz/members/MCQ"><i class="fa fa-certificate"
                                                     aria-hidden="true"></i>&nbsp;Certificates</a></li>
                                         <li id="li_prime"></li>
-                                        <!-- <li id="li_subtoprime"><a href="/Biz/members/prime/PrimePurchase"
+                                        <li id="li_subtoprime"><a href="/Biz/members/prime/PrimePurchase"
                                                     id="subs_prime"><i class="fa fa-hand-o-right shine"
                                                         aria-hidden="true"></i>&nbsp; Subscribe To Earningskool Prime</a>
-                                            </li> -->
+                                            </li> 
                                         <li id="li1"><a
                                                 href="https://www.facebook.com/groups/Earningskoollearnerscommunity"
                                                 target="_blank"><i class="fa fa-user-circle-o"
@@ -504,7 +542,7 @@
                                         <li>
                                             <hr>
                                         </li>
-                                        <li><a href="/Biz/members/SupportInfo"><i class="fa fa-headphones"
+                                        <li><a href="SupportInfo.html"><i class="fa fa-headphones"
                                                     aria-hidden="true"></i>&nbsp; Support</a></li>
                                         <li><a href="index.html" onclick="logout()"><i class="fa fa-sign-out"
                                                     aria-hidden="true"></i>&nbsp; Logout</a></li>
@@ -672,11 +710,12 @@
                             <iframe src='https://player.vimeo.com/video/711077615?h=1685872b46'
                                 title="How to Earn 1Lakh a Month with Social Media? | Earningskool | Affiliate Marketing"
                                 frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen=""></iframe>
-                            <div class="bundle_overlay getleadPop">
+                                
+                                allowfullscreen=""
+                                ></iframe>
+                            <!-- <div class="bundle_overlay getleadPop">
                                 <img src="./Biz/img/play_btn.png">
-                            </div>
+                            </div> -->
 
                         </div>
                     </div>
@@ -690,9 +729,9 @@
                         </div>
                         <div class="courses_purchase_box buy-now-section addcourse">
                             <!-- <h5>This Course Includes</h5> -->
-                            <a href='javascript: void(0)' class='add_to_cart' id="btn_53" data="53" cost="699"
+                            <!-- <a href='javascript: void(0)' class='add_to_cart' id="btn_53" data="53" cost="699"
                                 title='Complete Course on Blockchain and Cryptocurrency'><i class="fa fa-shopping-cart"
-                                    aria-hidden="true" style="margin-right: 10px;"></i>Add To Cart</a>
+                                    aria-hidden="true" style="margin-right: 10px;"></i>Add To Cart</a> -->
 
 
                             <input type="submit" name="ctl00$ContentPlaceHolder1$btn_buynow" value="Buy Now"
@@ -724,9 +763,9 @@
                                 frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen="" id="defaultVideo"></iframe>
-                            <div class="bundle_overlay getleadPop">
+                            <!-- <div class="bundle_overlay getleadPop">
                                 <img src="./Biz/img/play_btn.png">
-                            </div>
+                            </div> -->
 
                         </div>
                         <div class="you-will-learn-section">
@@ -1128,7 +1167,7 @@
                                 <h4>Useful Links</h4>
                                 <ul>
                                     <li><a href="aboutus.html">About Us</a></li>
-                                    <li><a href="BecomeAnAffiliate.html">Become An Affiliate</a></li>
+                                    <li><a href="BecomeAnAffiliate.html" class="userlog">Become An Affiliate</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -1203,7 +1242,7 @@
             <div class="floating_chatbot_icon">
                 <p class="tooltiptext animated bounceInRight" style="animation-delay: 1s"><span id="botsay">Need
                         Support!</span><i class="fa fa-times close_tooltip" aria-hidden="true"></i></p>
-                <span id="imgbot_icon"><a href="javascript:void(0)">
+                <span id="imgbot_icon"><a href="UserHelp.html">
                         <img src="./Biz/img/bb.jpg" class="float-img"></a></span>
             </div>
         </div>
@@ -1582,6 +1621,7 @@
 
 
         <script src="./Biz/js/custome_js/afterlogin.js"></script>
+        <script src="./Biz/assets/js/common-pages.js"></script>
 
         <script src="./Biz/js/custome_js/courseDetails.js"></script>
         <script src="./Biz/js/custome_js/default_homepage.js"></script>

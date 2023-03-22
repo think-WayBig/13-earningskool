@@ -191,7 +191,7 @@ async function fetchUserDetails() {
     
     // Display the details in total_affilate_list
 
-    document.querySelector("#txtref").value = data.user.referralCode;
+    
 
      // Display the users who have used the referral code in the dashboard
 
@@ -242,7 +242,7 @@ async function fetchUserDetails() {
         tr.append(td1,td2,td3,td4,td5,td6,td7,td8,td9,td10);
         affiliateList.append(tr);
     });
-
+    document.querySelector("#txtref").value = data.user.referralCode;
 
   } catch (error) {
     console.error(error);

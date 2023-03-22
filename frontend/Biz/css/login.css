@@ -20,7 +20,10 @@ section.form-section {
 
 .form-div {
     width: 100%;
-    float: left
+    float: left;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding:0px !important;
 }
 
 .bundle-section {

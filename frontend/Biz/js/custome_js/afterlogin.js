@@ -1,6 +1,3 @@
-
-
-
 var email = localStorage.getItem('User');
 var listItem = document.querySelectorAll(".afterlogin");
 var userlog_signup = document.querySelectorAll(".userlog");

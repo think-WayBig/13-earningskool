@@ -1,7 +1,7 @@
 const express = require("express");
 var cors = require("cors");
 const bodyparser = require("body-parser");
-const port = 4000;
+const port = 3000;
 const users_collection = require("./userDatabase/userData");
 const courseDetails = require("./CourseDatabase/coursesData");
 require("./mongooseConnection");
@@ -25,7 +25,7 @@ app.get("/register", (req, res) => {
 app.get('/:referralCode', async (req, res) => {
   const referral = await users_collection.findOne({ referralCode: req.params.referralCode });
   if (!referral) {
-    return res.status(404).send({message:'Invalid referral code'});
+    return res.status(404).send({ message: 'Invalid referral code' });
   }
   res.send(referral);
 });
@@ -35,11 +35,11 @@ app.post("/register", async (req, res) => {
   try {
     const req_userData = new users_collection(req.body);
 
-    const existingUserEmail = await users_collection.findOne({ email : req.body.email});
+    const existingUserEmail = await users_collection.findOne({ email: req.body.email });
     if (existingUserEmail) {
       return res.status(409).send({ message: 'Email already exists.' });
     };
-    const existingUserPhoneNumber = await users_collection.findOne({ phone : req.body.phone});
+    const existingUserPhoneNumber = await users_collection.findOne({ phone: req.body.phone });
     if (existingUserPhoneNumber) {
       return res.status(409).send({ message: 'Phone number already exists.' });
     };
@@ -47,17 +47,17 @@ app.post("/register", async (req, res) => {
     // if (!referral) {
     //   return res.status(404).send({message:'Invalid referral code'});
     // }
-    
+
     await req_userData.save();
-      res.status(202).send({
-        "message": "success",
-      });
-      
-    
+    res.status(202).send({
+      "message": "success",
+    });
+
+
   } catch (err) {
     res.send({
       "error": err,
-      "message" : "invalid"
+      "message": "invalid"
     });
   }
 });
@@ -67,15 +67,16 @@ app.post("/login", async (req, res) => {
   let userPassword = req.body.pass;
   console.log(userEmail);
   let req_userData = await users_collection.findOne({ email: userEmail });
-  
+
   if (req_userData != null) {
     if (req_userData.pass === userPassword) {
       res.send({
         message: true,
-        referralCode: req_userData.referralCode });
-      
+        referralCode: req_userData.referralCode
+      });
+
     } else {
-      
+
       res.send({
         message: false,
       });
@@ -86,15 +87,15 @@ app.post("/login", async (req, res) => {
     });
   }
   // console.log(req_userData);
-  
+
 });
 
 app.get("/", (req, res) => {
-  courseDetails.find((err,data)=>{
-    if(err) {
+  courseDetails.find((err, data) => {
+    if (err) {
       res.status(500).send(err);
     }
-    else{
+    else {
       res.status(200).send(data);
     }
   })
@@ -119,7 +120,7 @@ app.post("/courses", async (req, res) => {
   } catch (err) {
     res.send({
       "error": err,
-      "message" : "invalid"
+      "message": "invalid"
     });
   }
 });
@@ -127,30 +128,26 @@ app.post("/courses", async (req, res) => {
 app.get('/courseDetail/:course', async (req, res) => {
   const { course } = req.params.course;
 
-  const id = await courseDetails.findById(req.params.course); 
+  const id = await courseDetails.findById(req.params.course);
   res.send(id);
 });
 
-app.get('/mycourses',(req,res)=>{
-  res.sendFile(path.join(__dirname, '../../dashboard/src/Components/MyCoursesPage'));    
-  })
-
-app.post('/affiliate',async (req,res)=>{
+app.post('/affiliate', async (req, res) => {
   const { email, referralCode } = req.body;
-  
+
   // Find the user with the matching email address
   const user = await users_collection.findOne({ email });
-  
+
   if (!user) {
     // Handle user not found
     return res.status(404).send('User not found');
   }
-  
+
   // Find the users who have used the referral code
   const users = await users_collection.find({ referredByCode: referralCode });
-console.log(users);
+  console.log(users);
   // Return the user's details as a response
-  res.send({user,users});
+  res.send({ user, users });
 })
 
 app.listen(port, () => {

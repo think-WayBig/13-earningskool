@@ -1,4 +1,3 @@
-/// <reference path="../../../Biz/bower_components/jquery/js/jquery.min.js" />
 function commonCalculation() {
     $(".add_to_cart").text("Add To Cart");
 

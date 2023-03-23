@@ -1,5 +1,5 @@
       async function getCourseDetails(course) {
-        const response = await fetch(`http://localhost:4000/courseDetail/${course}`);
+        const response = await fetch(`https://api-earningskool.vercel.app/courseDetail/${course}`);
         const data = await response.json();
         return data;
       }

@@ -3,7 +3,7 @@ var userReferralCode = localStorage.getItem("rcode");
 
 async function fetchUserDetails() {
   try {
-    const response = await fetch("http://localhost:4000/affiliate", {
+    const response = await fetch("https://api-earningskool.vercel.app/affiliate", {
       method: "POST",
       body: JSON.stringify({ email: useremail, referralCode: userReferralCode }),
       headers: {

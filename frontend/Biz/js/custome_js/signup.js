@@ -5,7 +5,7 @@ var toast = document.getElementById("snackbar");
             if (!refercode) {
                 return null;
             }
-            const response = await fetch(`http://localhost:4000/${refercode}`);
+            const response = await fetch(`https://api-earningskool.vercel.app/${refercode}`);
             const data = await response.json();
             console.log(data.referralCode)
             console.log(data)
@@ -96,7 +96,7 @@ var toast = document.getElementById("snackbar");
           
          
           
-          const response = await fetch("http://localhost:4000/register", {
+          const response = await fetch("https://api-earningskool.vercel.app/register", {
             method: "POST",
             headers: {
               Accept: "application/json",

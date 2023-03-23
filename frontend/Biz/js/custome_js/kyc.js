@@ -1,5 +1,3 @@
-/// <reference path="../../../content/bower_components/jquery/js/jquery.min.js" />
-
 $(document).ready(function() {
 
 

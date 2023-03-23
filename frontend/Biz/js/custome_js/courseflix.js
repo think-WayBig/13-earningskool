@@ -62,7 +62,7 @@ $(document).ready(function() {
             error: function(xhr, ajaxOptions, thrownError) {
 
                 var obj = jQuery.parseJSON(xhr.responseText);
-                alert(obj.Message);
+                // alert(obj.Message);
             },
             complete: function() {
 

@@ -18,38 +18,38 @@ $(document).ready(function() {
 
         }
         if ($("#dd_doctype").val() == "0") {
-            alert("Select Document Type")
+            // alert("Select Document Type")
             return false;
         }
         if ($("#txtcity").val() == "") {
-            alert("City Required")
+            // alert("City Required")
             return false;
         }
         if ($("#ddlstatee").val() == "Select State") {
-            alert("State Required")
+            // alert("State Required")
             return false;
         }
 
         if ($("#txtaadhaarno").val() == "") {
-            alert("Aadhaar Number Required")
+            // alert("Aadhaar Number Required")
             return false;
         }
 
         if ($("#txtaadhaarname").val() == "") {
-            alert("Aadhaar Name Required")
+            // alert("Aadhaar Name Required")
             return false;
         }
 
 
         if ($('#fupaadharfront')[0].files.length === 0) {
-            alert("Front image of Adhar Card is required");
+            // alert("Front image of Adhar Card is required");
             $('#fupaadharfront').focus();
 
             return false;
         }
         var fileExtension = ['jpeg', 'jpg', 'png'];
         if ($.inArray($('#fupaadharfront').val().split('.').pop().toLowerCase(), fileExtension) == -1) {
-            alert("Only formats are allowed : " + fileExtension.join(', '));
+            // alert("Only formats are allowed : " + fileExtension.join(', '));
             return false;
         }
         if ($('#fupaadharfront')[0].files[0].size / 1024) {
@@ -57,12 +57,12 @@ $(document).ready(function() {
             var sizeLimit = 500;
 
             if (filesize >= sizeLimit) {
-                alert("Max file size 500KB");
+                // alert("Max file size 500KB");
                 return false;
             }
         }
         if ($('#fupaadhaarback')[0].files.length === 0) {
-            alert("Back image of Adhar Card is required");
+            // alert("Back image of Adhar Card is required");
             $('#fupaadhaarback').focus();
 
             return false;
@@ -70,7 +70,7 @@ $(document).ready(function() {
 
         var fileExtension1 = ['jpeg', 'jpg', 'png'];
         if ($.inArray($('#fupaadhaarback').val().split('.').pop().toLowerCase(), fileExtension1) == -1) {
-            alert("Only formats are allowed : " + fileExtension1.join(', '));
+            // alert("Only formats are allowed : " + fileExtension1.join(', '));
             return false;
         }
         if ($('#fupaadhaarback')[0].files[0].size / 1024) {
@@ -78,7 +78,7 @@ $(document).ready(function() {
             var sizeLimit = 500;
 
             if (filesize >= sizeLimit) {
-                alert("Max file size 500KB");
+                // alert("Max file size 500KB");
                 return false;
             }
         }
@@ -107,44 +107,44 @@ $(document).ready(function() {
     //})
     $("#btnacctinfo").click(function() {
         if ($("#txtifsc").val().length != "11") {
-            alert("IFSC code must be 11 characters long.");
+            // alert("IFSC code must be 11 characters long.");
             return false;
         }
 
 
         if ($("#dd_bank").val() == "Other" && $("#txtbank_name").val() == "") {
-            alert("Enter your bank name!");
+            // alert("Enter your bank name!");
             return false;
         }
         if ($("#txtaccount_name").val() == "") {
-            alert("Account Holder Name Required")
+            // alert("Account Holder Name Required")
             return false;
         }
 
         if ($("#txtaccount_number").val() == "") {
-            alert("Account Number Required")
+            // alert("Account Number Required")
             return false;
         }
 
         if ($("#dd_bank").val() == "0") {
-            alert("Bank Name Required")
+            // alert("Bank Name Required")
             return false;
         }
 
         if ($("#txtifsc").val() == "") {
-            alert("IFSC Code Required")
+            // alert("IFSC Code Required")
             return false;
         }
 
         if ($('#fupcancelcheque')[0].files.length === 0) {
-            alert("Cancel cheque is required");
+            // alert("Cancel cheque is required");
             $('#fupcancelcheque').focus();
             return false;
         }
 
         var fileExtension1 = ['jpeg', 'jpg', 'png', 'pdf'];
         if ($.inArray($('#fupcancelcheque').val().split('.').pop().toLowerCase(), fileExtension1) == -1) {
-            alert("Only formats are allowed : " + fileExtension1.join(', '));
+            // alert("Only formats are allowed : " + fileExtension1.join(', '));
             return false;
         }
         if ($('#fupcancelcheque')[0].files[0].size / 1024) {
@@ -152,7 +152,7 @@ $(document).ready(function() {
             var sizeLimit = 500;
 
             if (filesize >= sizeLimit) {
-                alert("Max file size 500KB");
+                // alert("Max file size 500KB");
                 return false;
             }
         }
@@ -184,19 +184,19 @@ $(document).ready(function() {
 
     $("#btn_pancard").click(function() {
         if ($("#txtpanno").val().length != "10") {
-            alert("PAN must be 10 characters long.");
+            // alert("PAN must be 10 characters long.");
             return false;
         }
 
         if ($('#fuppan')[0].files.length === 0) {
-            alert("PAN card  is required");
+            // alert("PAN card  is required");
             $('#fuppan').focus();
             return false;
         }
 
         var fileExtension1 = ['jpeg', 'jpg', 'png'];
         if ($.inArray($('#fuppan').val().split('.').pop().toLowerCase(), fileExtension1) == -1) {
-            alert("Only formats are allowed : " + fileExtension1.join(', '));
+            // alert("Only formats are allowed : " + fileExtension1.join(', '));
             return false;
         }
         if ($('#fuppan')[0].files[0].size / 1024) {
@@ -204,7 +204,7 @@ $(document).ready(function() {
             var sizeLimit = 500;
 
             if (filesize >= sizeLimit) {
-                alert("Max file size 500KB");
+                // alert("Max file size 500KB");
                 return false;
             }
         }
@@ -216,7 +216,7 @@ $(document).ready(function() {
     function genVal() {
         $("#dv_finish").hide();
         var email = $("#txtEmail").val();
-        alert("OTP Has Been Sent To Your Registered Mobile no./Email id")
+        // alert("OTP Has Been Sent To Your Registered Mobile no./Email id")
         $.ajax({
             type: "POST",
             url: "kyc.aspx/genVal",
@@ -231,7 +231,7 @@ $(document).ready(function() {
             error: function(xhr, ajaxOptions, thrownError) {
                 $("#dv_finish").show();
                 var obj = jQuery.parseJSON(xhr.responseText);
-                alert(obj.Message);
+                // alert(obj.Message);
             }
         });
 

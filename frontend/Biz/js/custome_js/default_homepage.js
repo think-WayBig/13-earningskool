@@ -66,7 +66,7 @@ $("#nextBtn").click(function() {
     _mobile = $("#pp_mobile").val();
     _otp = $("#pp_otp").val();
     if (_mobile == "" || _mobile.length < 10) {
-        alert("Invalid Mobile no.!");
+        // alert("Invalid Mobile no.!");
         count = 0;
         return false;
 
@@ -81,7 +81,7 @@ $("#nextBtn").click(function() {
             $(".tab").hide();
             showTab(count);
         } else {
-            alert("Invalid OTP!")
+            // alert("Invalid OTP!")
             count = 1;
             return false;
         }
@@ -89,7 +89,7 @@ $("#nextBtn").click(function() {
     } else if (count < 4 && count != 2) {
         _name = $("#pp_name").val();
         if (_name == "") {
-            alert("Name is required!")
+            // alert("Name is required!")
             count = 2;
             return false;
         }
@@ -109,7 +109,7 @@ $("#nextBtn").click(function() {
             showTab(4);
 
         } else {
-            alert("Please select from the provided option!")
+            // alert("Please select from the provided option!")
             return false;
         }
 
@@ -128,12 +128,12 @@ function genrateOTP(mobileNo) {
         data: '{"mobileNo":"' + mobileNo + '"}',
         dataType: "json",
         success: function(data) {
-            /*  alert("ok");*/
+            // /*  alert("ok");*/
         },
         error: function(xhr, ajaxOptions, thrownError) {
 
             var obj = jQuery.parseJSON(xhr.responseText);
-            alert(obj.Message);
+            // alert(obj.Message);
         },
 
         complete: function() {
@@ -162,7 +162,7 @@ function validateOTP(otp) {
         error: function(xhr, ajaxOptions, thrownError) {
 
             var obj = jQuery.parseJSON(xhr.responseText);
-            alert(obj.Message);
+            // alert(obj.Message);
         },
 
         complete: function() {}
@@ -177,7 +177,7 @@ $("#btn_submit").click(function() {
     var mobile = $("#tb_mobile").val();
     var email = $("#tb_email").val();
     if (mobile.length < 10 || mobile.length > 10) {
-        alert("Invalid Mobile No.!")
+        // alert("Invalid Mobile No.!")
         return false;
     }
     var btnText = $(this).text();
@@ -278,7 +278,7 @@ function insertLeadPopData(name, mobile, email, type, fromWhere, callRegarding, 
         error: function(xhr, ajaxOptions, thrownError) {
 
             var obj = jQuery.parseJSON(xhr.responseText);
-            alert(obj.Message);
+            // alert(obj.Message);
         },
 
         complete: function() {}

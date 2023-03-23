@@ -7,9 +7,9 @@ $(document).ready(function() {
             //$(id).focus(); // set focus to this element first
             //copyToClipboard(document.getElementById(id));
             document.execCommand("copy");
-            alert("Link copied successfully!");
+            // alert("Link copied successfully!");
         } catch (e) {
-            alert('Copy operation failed');
+            // alert('Copy operation failed');
         }
     });
     $("#btnCopy").click(function() {
@@ -19,9 +19,9 @@ $(document).ready(function() {
             //$(id).focus(); // set focus to this element first
             //copyToClipboard(document.getElementById(id));
             document.execCommand("copy");
-            alert("Link copied successfully!");
+            // alert("Link copied successfully!");
         } catch (e) {
-            alert('Copy operation failed');
+            // alert('Copy operation failed');
         }
     });
     $("#btnCopyAce").click(function() {
@@ -31,9 +31,9 @@ $(document).ready(function() {
             //$(id).focus(); // set focus to this element first
             //copyToClipboard(document.getElementById(id));
             document.execCommand("copy");
-            alert("Link copied successfully!");
+            // alert("Link copied successfully!");
         } catch (e) {
-            alert('Copy operation failed');
+            // alert('Copy operation failed');
         }
     });
 
@@ -44,9 +44,9 @@ $(document).ready(function() {
             //$(id).focus(); // set focus to this element first
             //copyToClipboard(document.getElementById(id));
             document.execCommand("copy");
-            alert("Link copied successfully!");
+            // alert("Link copied successfully!");
         } catch (e) {
-            alert('Copy operation failed');
+            // alert('Copy operation failed');
         }
     });
     $("#btnCopyref").click(function() {
@@ -54,9 +54,9 @@ $(document).ready(function() {
         try {
             $(id).select();
             document.execCommand("copy");
-            alert("Refferal code copied successfully!");
+            // alert("Refferal code copied successfully!");
         } catch (e) {
-            alert('Copy operation failed');
+            // alert('Copy operation failed');
         }
     });
 
@@ -65,9 +65,9 @@ $(document).ready(function() {
         try {
             $(id).select();
             document.execCommand("copy");
-            alert("Link copied successfully!");
+            // alert("Link copied successfully!");
         } catch (e) {
-            alert('Copy operation failed');
+            // alert('Copy operation failed');
         }
     });
 
@@ -76,9 +76,9 @@ $(document).ready(function() {
         try {
             $(id).select();
             document.execCommand("copy");
-            alert("Link copied successfully!");
+            // alert("Link copied successfully!");
         } catch (e) {
-            alert('Copy operation failed');
+            // alert('Copy operation failed');
         }
     });
 
@@ -87,9 +87,9 @@ $(document).ready(function() {
 
         try {
             navigator.clipboard.writeText(txt);
-            alert("Coupon copied successfully!");
+            // alert("Coupon copied successfully!");
         } catch (e) {
-            alert('Copy operation failed');
+            // alert('Copy operation failed');
         }
     });
     let coupon_id;
@@ -122,7 +122,7 @@ $(document).ready(function() {
             error: function(xhr, ajaxOptions, thrownError) {
 
                 var obj = jQuery.parseJSON(xhr.responseText);
-                alert(obj.Message);
+                // alert(obj.Message);
             },
 
             complete: function() {}
@@ -157,7 +157,7 @@ $(document).ready(function() {
             error: function(xhr, ajaxOptions, thrownError) {
 
                 var obj = jQuery.parseJSON(xhr.responseText);
-                alert(obj.Message);
+                // alert(obj.Message);
             },
 
             complete: function() {}

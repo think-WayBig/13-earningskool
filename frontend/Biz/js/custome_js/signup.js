@@ -111,7 +111,7 @@ var toast = document.getElementById("snackbar");
   
           if (res.message == "success") {
             toast.innerHTML = "Registration successful";
-            alert(`Your referral code is ${referralCode}`);
+            // alert(`Your referral code is ${referralCode}`);
             setTimeout(function() {window.location.href ="./login.html";},2000)
 
             activeToast();

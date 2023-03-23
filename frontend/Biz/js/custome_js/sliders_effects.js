@@ -130,7 +130,7 @@ $(document).ready(function() {
             error: function(xhr, ajaxOptions, thrownError) {
 
                 var obj = jQuery.parseJSON(xhr.responseText);
-                alert(obj.Message);
+                // alert(obj.Message);
             },
             complete: function() {
 
@@ -159,7 +159,7 @@ $(document).ready(function() {
             error: function(xhr, ajaxOptions, thrownError) {
 
                 var obj = jQuery.parseJSON(xhr.responseText);
-                alert(obj.Message);
+                // alert(obj.Message);
             },
             complete: function() {
 
@@ -258,15 +258,15 @@ $(document).ready(function() {
         var email = $("#tbemail").val();
         var mobile = $("#mobile").val();
         if (email == "") {
-            alert("Email is mendatory!")
+            // alert("Email is mendatory!")
             return false;
         }
         if (!isEmail(email)) {
-            alert("Invalid Email Id")
+            // alert("Invalid Email Id")
             return false;
         }
         //if (mobile=="" || mobile.length< 10) {
-        //    alert("Invalid Mobile no.")
+           alert("Invalid Mobile no.")
         //    return false;
         //}
         insertLead(plan, name, mobile, email);

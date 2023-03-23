@@ -531,14 +531,12 @@
                                     </div> -->
                                 <div id="div_userprofile" class="dropdown user__dropdown">
                                     <button class="btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                                        <img id="img_profile"
-                                            onerror="this.onerror=null;this.src=&#39;/pic/pic.png&#39;;"
-                                            src="./Biz/img/pic.png" />
+                                        <img id="img_profile" src="./Biz/img/pic.png" />
                                         <span class="caret"></span>
                                     </button>
                                     <ul id="profile_option" class="dropdown-menu">
-                                        <li id="li_myprofile"><a href="member_profile.html"><i
-                                                    class="fa fa-user" aria-hidden="true"></i>&nbsp; My Profile</a>
+                                        <li id="li_myprofile"><a href="member_profile.html"><i class="fa fa-user"
+                                                    aria-hidden="true"></i>&nbsp; My Profile</a>
                                         </li>
                                         <li id="li_mycourse"><a href="my_course.html"><i class="fa fa-graduation-cap"
                                                     aria-hidden="true"></i>&nbsp;My
@@ -737,7 +735,7 @@
                             subitem-icon='style1' runat='server' id='li1'><a href='/Biz/members/upgradeplan'
                                 class='dropdown-toggle cls_category List__title courses__list' type='button'><i
                                     class='fa fa-certificate' aria-hidden='true'></i>&nbsp;Bundle<i
-                                    class='fa fa-plus-square'  aria-hidden='true'></i></a>
+                                    class='fa fa-plus-square' aria-hidden='true'></i></a>
                             <ul class='dropdown-menu' id='ul30' style='display:block;'>
                                 <li><a href=/Biz/members/course/course_landing?id=4> <span class='pcoded-micon'><i
                                             class='fa fa-graduation-cap' aria-hidden='true'></i></span><span
@@ -1098,7 +1096,6 @@
                                                                                 <div class="col-sm-2">
                                                                                     <select
                                                                                         name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$dd_ornvdo"
-                                                                                        onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$dd_ornvdo\&#39;,\&#39;\&#39;)&#39;, 0)"
                                                                                         id="ContentPlaceHolder1_NestedContentPlaceHolder_dd_ornvdo"
                                                                                         class="form-control">
                                                                                         <option selected="selected"
@@ -1436,7 +1433,7 @@
                                                                         <button type="button" class="view_detail btn btn-info btn-sm" id="20112001">View History</button>
                                                                     </td><td>
                                                                         <span id="lblSRNO">4</span>
-                                                                    </td><td>18-12-2020</td><td>05:29:50</td><td>
+                                                                    </td><td>18-12-2023</td><td>05:29:50</td><td>
                                                                         <span id="lbl_Id">20112001</span>
                                                                     </td><td>Anjali Sharma</td><td>9855554551</td><td>dhammianjali@gmail.com </td><td>Branding Mastery</td><td>Active</td>
 			</tr> -->
@@ -2025,8 +2022,7 @@
                 } else {
                     $navbar.removeClass("navbar-fixed-top");
                 }
-            }
-            });
+            };
 
             $("#stories").click(function () {
                 $.ajax({
@@ -2085,7 +2081,7 @@
         </script>
 
         <script src="./Biz/js/custome_js/afterlogin.js"></script>
-    <script src="./Biz/js/custome_js/checkLogin.js"></script>
+        <script src="./Biz/js/custome_js/checkLogin.js"></script>
 
 </body>
 

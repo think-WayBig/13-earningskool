@@ -458,7 +458,8 @@
                                                     <div class="col-md-3 col-sm-3 xol-xs-12">
                                                         <ul class="dropdown__colum dropdown__columTwoB">
                                                             <!-- <li><a href="/Biz/BecomeAnInst">Become An Instructor</a></li> -->
-                                                            <li id="li_becminstr"><a href="BecomeAnAffiliate.html" class="userlog">Become An
+                                                            <li id="li_becminstr"><a href="BecomeAnAffiliate.html"
+                                                                    class="userlog">Become An
                                                                     Affiliate</a></li>
                                                         </ul>
                                                     </div>
@@ -522,8 +523,8 @@
                                         <span class="caret"></span>
                                     </button>
                                     <ul id="profile_option" class="dropdown-menu">
-                                        <li id="li_myprofile"><a href="member_profile.html"><i
-                                                    class="fa fa-user" aria-hidden="true"></i>&nbsp; My Profile</a>
+                                        <li id="li_myprofile"><a href="member_profile.html"><i class="fa fa-user"
+                                                    aria-hidden="true"></i>&nbsp; My Profile</a>
                                         </li>
                                         <li id="li_mycourse"><a href="my_course.html"><i class="fa fa-graduation-cap"
                                                     aria-hidden="true"></i>&nbsp;My
@@ -532,9 +533,9 @@
                                                     aria-hidden="true"></i>&nbsp;Certificates</a></li>
                                         <li id="li_prime"></li>
                                         <li id="li_subtoprime"><a href="/Biz/members/prime/PrimePurchase"
-                                                    id="subs_prime"><i class="fa fa-hand-o-right shine"
-                                                        aria-hidden="true"></i>&nbsp; Subscribe To Earningskool Prime</a>
-                                            </li> 
+                                                id="subs_prime"><i class="fa fa-hand-o-right shine"
+                                                    aria-hidden="true"></i>&nbsp; Subscribe To Earningskool Prime</a>
+                                        </li>
                                         <li id="li1"><a
                                                 href="https://www.facebook.com/groups/Earningskoollearnerscommunity"
                                                 target="_blank"><i class="fa fa-user-circle-o"
@@ -585,14 +586,12 @@
                                 <img src="./Biz/img/callback_vector.png" />
                             </div>
                             <div class="location">
-
                                 <div class="location-txt">
                                     <h3>Registered Address:</h3>
                                     <p>1305, 13th Floor, Pragati Tower Rajendra Place New Delhi 110008</p>
                                 </div>
                             </div>
                             <div class="location">
-
                                 <div class="location-txt">
                                     <h3>Collaboration Mail:</h3>
                                     <p>info@Earningskool.com</p>
@@ -605,10 +604,6 @@
                                     <p>support@Earningskool.com</p>
                                 </div>
                             </div>
-
-
-
-
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="signup-heading">
@@ -623,7 +618,6 @@
                                         <label for="txtName">Enter Name</label>
                                         <input name="ctl00$ContentPlaceHolder1$txtName" type="text" id="txtName"
                                             class="form-control" placeholder="Jhon" required="" />
-
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
@@ -636,42 +630,29 @@
                                             style="color:Red;display:none;">*Invalid Email</span>
                                         <input name="ctl00$ContentPlaceHolder1$email" type="text" id="email"
                                             class="form-control" placeholder="xyz@gmail.com" required="" />
-
                                     </div>
                                 </div>
 
                                 <div class="col-md-12 col-sm-12 col-xs-12" style="display:none">
                                     <div class="form-group">
                                         <label for="subject">Subject</label>
-
-
                                         <input name="ctl00$ContentPlaceHolder1$subject" type="number" id="subject"
                                             class="form-control" placeholder="Mobile No." />
-
-
-
                                     </div>
                                 </div>
 
                                 <div class="col-md-12 col-sm-12 col-xs-12">
                                     <div class="form-group">
                                         <label for="tbmobileno">Mobile no.</label>
-
-
                                         <input name="ctl00$ContentPlaceHolder1$tbmobileno" type="number" id="tbmobileno"
                                             class="form-control" placeholder="Mobile No." required="" />
-
-
                                     </div>
                                 </div>
                                 <div class="col-md-12 col-sm-12 col-xs-12">
                                     <div class="form-group">
                                         <label for="message">Message</label>
-                                        <textarea name="ctl00$ContentPlaceHolder1$message" rows="2" cols="20"
-                                            id="message" class="form-control" placeholder="Message" required="">
-</textarea>
-
-
+                                        <textarea name="ctl00$ContentPlaceHolder1$message" style="height: 150px;" rows="10" cols="20"
+                                            id="message" class="form-control" placeholder="Message" required=""></textarea>
                                     </div>
                                 </div>
 
@@ -692,14 +673,10 @@
 
                                 <div class="col-md-12 col-sm-12 col-xs-12">
                                     <div class="submit-btn">
-
                                         <input type="submit" name="ctl00$ContentPlaceHolder1$submit" value="Submit"
-                                            onclick=""
-                                            id="submit" class="btn btn-default" />
+                                            onclick="sendMessage()" id="submit" class="btn btn-default" />
                                     </div>
-
                                 </div>
-
                             </div>
                         </div>
 
@@ -1288,6 +1265,44 @@
         </script>
         </form>
 
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+        </script>
+        <script type="text/javascript">
+            (function () {
+                emailjs.init("AJKBtXL4-mNyhSZ7u");
+            })();
+        </script>
+
+        <script>
+            async function sendMessage() {
+                var name = document.getElementById("txtName");
+                var mail = document.getElementById("email");
+                var number = document.getElementById("tbmobileno");
+                var message = document.getElementById("message");
+
+                if (name.value == "" || mail.value == "" || number.value == "" || message.value == "") {
+                    alert("Please enter valid details!!");
+                    return;
+                }
+
+                var templateParams = {
+                    name: name.value,
+                    mail: mail.value,
+                    number: number.value,
+                    message: message.value
+                };
+
+                await emailjs.send("service_q0u0ier","template_yuh2ahv", templateParams)
+                    .then(function (response) {
+                        alert("Message sent successfully!");
+                    }, function (error) {
+                        alert("Error sending message! Try Again.");
+                    });
+
+                location.reload();
+            }
+        </script>
+
         <!-- Google Tag Manager (noscript) -->
         <noscript>
             <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5W6X6V8" height="0" width="0"
@@ -1307,7 +1322,7 @@
 
         <script src="./Biz/js/custome_js/afterlogin.js"></script>
         <script src="./Biz/assets/js/common-pages.js"></script>
-         
+
         <!-- Ionic Icons -->
         <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
 </body>

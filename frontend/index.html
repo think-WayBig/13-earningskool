@@ -523,12 +523,8 @@
                                     </button>
 
                                     <script>
-                                        async function loadImage() {
-                                            let image = document.getElementById("img_profile");
-                                            image.src = localStorage.getItem("userDp");
-                                        }
-                                        loadImage();
-                                        </script>
+
+                                    </script>
 
                                     <ul id="profile_option" class="dropdown-menu">
                                         <li id="li_myprofile"><a href="member_profile.html"><i class="fa fa-user"
@@ -537,7 +533,8 @@
                                         <li id="li_mycourse"><a href="my_course.html"><i class="fa fa-graduation-cap"
                                                     aria-hidden="true"></i>&nbsp;My
                                                 Courses</a></li>
-                                        <li id="li_certificate"><a href="/Biz/members/MCQ"><i class="fa fa-certificate"
+                                        <li id="li_certificate"><a href="./request-certificate.html"><i
+                                                    class="fa fa-certificate"
                                                     aria-hidden="true"></i>&nbsp;Certificates</a></li>
                                         <li id="li_prime"></li>
                                         <li id="li_subtoprime"><a href="/Biz/members/prime/PrimePurchase"
@@ -3297,6 +3294,7 @@
         <!-- <script src="./Biz/js/custome_js/cart.js?v=1.2"></script> -->
         <!-- Ionic Icons -->
         <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+        <script src="./Biz/js/custome_js/loadDp.js"></script>
         <script src="./Biz/js/custome_js/afterlogin.js"></script>
 
 </body>

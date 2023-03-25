@@ -19,11 +19,6 @@ else if (email === null) {
     })
 }
 
-let response = await fetch("https://api-earningskool.vercel.app/getUser/" + localStorage.getItem("User"));
-let res = await response.json();
-console.log(res.message.dp);
-localStorage.setItem("userDp", res.message.dp);
-
 function logout() {
     localStorage.removeItem('User');
     localStorage.removeItem('rcode');

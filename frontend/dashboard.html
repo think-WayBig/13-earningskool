@@ -509,7 +509,7 @@
                                         </li>
                                         <li id="li_mycourse"><a href="my_course.html"><i class="fa fa-graduation-cap"
                                                     aria-hidden="true"></i>&nbsp;My Courses</a></li>
-                                        <li id="li_certificate"><a href="/Biz/members/MCQ"><i class="fa fa-certificate"
+                                        <li id="li_certificate"><a href="./request-certificate.html"><i class="fa fa-certificate"
                                                     aria-hidden="true"></i>&nbsp;Certificates</a></li>
                                         <li id="li_prime"></li>
                                         <li id="li_subtoprime"><a href="/Biz/members/prime/PrimePurchase"
@@ -678,7 +678,7 @@
 
                             <ul class="dropdown-menu" id="ul29" style="display: block;">
                                 <li class="">
-                                    <a href="/Biz/members/MCQ">
+                                    <a href="./request-certificate.html">
                                         <span class="pcoded-micon"><i class="fa fa-graduation-cap"
                                                 aria-hidden="true"></i></span>
                                         <span class="pcoded-mtext">Course Test</span>
@@ -1009,7 +1009,7 @@
 
                                             </div>
                                         </div>
-                                        <h1 class="welcome__usre" id="welcomeUser"><span id="wlcm"></span></h1>
+                                        <h1 class="welcome__usre" style="text-transform: capitalize;" id="welcomeUser"><span id="wlcm"></span></h1>
                                         <!-- Page-header end -->
 
 
@@ -1278,9 +1278,17 @@
                                                                     <div class="detail__main">
 
                                                                         <div class="usre__img">
-                                                                            <img src='./Biz/img/pic.png'
+                                                                            <img id="usre__img2" src='./Biz/img/pic.png'
                                                                                 onerror="this.onerror=null;this.src='/pic/pic.png';" />
                                                                         </div>
+
+                                                                        <script>
+                                                                            function load_img() {
+                                                                                document.getElementById("usre__img2").src = localStorage.getItem("userDp")
+                                                                            }
+                                                                            load_img();
+                                                                        </script>
+
                                                                         <div class="user__nameDate">
                                                                             <p id="name"></p>
                                                                             <span
@@ -3135,6 +3143,7 @@
 
         <script src="./Biz/js/custome_js/afterlogin.js"></script>
         <script src="./Biz/js/custome_js/checkLogin.js"></script>
+        <script src="./Biz/js/custome_js/loadDp.js"></script>
 
         <!-- Ionic Icons -->
 </body>

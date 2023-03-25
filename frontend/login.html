@@ -1191,17 +1191,21 @@
 
             let res = await response.json();
 
-
             if (res.message == true) {
                 toast.innerHTML = "Login successful";
                 activeToast();
                 localStorage.setItem('rcode', res.referralCode);
 
+                let dp = await fetch("https://api-earningskool.vercel.app/getUser/" + email);
+                let dpResponse = await dp.json();
+                console.log(dpResponse);
+                localStorage.setItem("userDp", dpResponse.message.dp);
+
                 if (localStorage.getItem('interest') != undefined) {
                     var interest = localStorage.getItem('interest');
-                    setTimeout(() => window.location.href = "./CfCourseDetail.html?course=" + interest, 2000)
+                    setTimeout(() => window.location.href = "./CfCourseDetail.html?course=" + interest, 1000)
                 } else {
-                    setTimeout(() => window.location.href = "./index.html", 2000)
+                    setTimeout(() => window.location.href = "./index.html", 1000)
                 }
                 localStorage.setItem("User", email);
                 localStorage.setItem("isLoggedIn", true);

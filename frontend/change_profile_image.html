@@ -325,8 +325,9 @@
                                     <li id="li_mycourse"><a href="my_course.html"><i class="fa fa-graduation-cap"
                                                 aria-hidden="true"></i>&nbsp;My
                                             Courses</a></li>
-                                    <li id="li_certificate"><a href="/Biz/members/MCQ"><i class="fa fa-certificate"
-                                                aria-hidden="true"></i>&nbsp;Certificates</a></li>
+                                    <li id="li_certificate"><a href="./request-certificate.html"><i
+                                                class="fa fa-certificate" aria-hidden="true"></i>&nbsp;Certificates</a>
+                                    </li>
                                     <li id="li_prime"></li>
                                     <li id="li_subtoprime"><a href="/Biz/members/prime/PrimePurchase" id="subs_prime"><i
                                                 class="fa fa-hand-o-right shine" aria-hidden="true"></i>&nbsp; Subscribe
@@ -474,6 +475,14 @@
                                 </a>
                             </li>
 
+                            <li class="">
+                                <a href="./request-certificate.html">
+                                    <span class="pcoded-micon"><i class="fa fa-unlock-alt"
+                                            aria-hidden="true"></i></span>
+                                    <span class="pcoded-mtext">Request Certificate</span>
+                                </a>
+                            </li>
+
 
                         </ul>
                     </li>
@@ -494,7 +503,7 @@
 
                         <ul class="dropdown-menu" id="ul29" style="display: block;">
                             <li class="">
-                                <a href="/Biz/members/MCQ">
+                                <a href="./request-certificate.html">
                                     <span class="pcoded-micon"><i class="fa fa-graduation-cap"
                                             aria-hidden="true"></i></span>
                                     <span class="pcoded-mtext">Course Test</span>
@@ -779,9 +788,7 @@
                                                                 <input type="submit"
                                                                     name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$btnsubmit"
                                                                     value="Update Profile Image" onclick="upload_file()"
-                                                                    ;
-                                                                    id="submit_btn"
-                                                                    class="btn">
+                                                                    ; id="submit_btn" class="btn">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1349,6 +1356,8 @@
                 contentType: file.type
             };
 
+            alert('Please wait! Donot refresh the page');
+
             const task = await reference.child(name).put(file, metadata);
 
             const downloadURL = await reference.child(name).getDownloadURL();
@@ -1364,6 +1373,7 @@
                 }),
             })
             console.log(response);
+            localStorage.setItem("userDp", downloadURL);
             alert('Display Image Changed Successfully')
             location.reload();
         }
@@ -1371,6 +1381,7 @@
 
     <script src="./Biz/js/custome_js/afterlogin.js"></script>
     <script src="./Biz/js/custome_js/checkLogin.js"></script>
+    <script src="./Biz/js/custome_js/loadDp.js"></script>
     <!-- Ionic Icons -->
 </body>
 

@@ -8,7 +8,7 @@
 
     <meta name="robots" content="index, follow" />
 
-    <link href="../assets/img/favicon.png" rel="icon" />
+    <link href="../../assets/img/favicon.png" rel="icon" />
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
         rel="stylesheet" />
@@ -17,7 +17,7 @@
         rel="stylesheet" />
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>
-        End User License Agreement | Earningskool
+        Earningskool.com
     </title>
 
 
@@ -35,9 +35,6 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="./Biz/css/header.css?v=4.2" />
-<link rel="stylesheet" type="text/css" href="./Biz/assets/css/style.css?v=2.4"></link>
-
-    
     <link rel="stylesheet" href="./Biz/css/footer.css?v=1.3" />
     <link rel="stylesheet" href="./Biz/css/carousel.css" />
     <link rel="stylesheet" href="./Biz/css/carouseller.css" />
@@ -60,6 +57,12 @@
     </style>
 
 
+    <link
+        href="/WebResource.axd?d=lwgz3BEaFr8V6rnSnqQ4jarzk5vR52E-_gjDEkXZtClhhnd_oYKFPctIpQ8iTMgQnHicr7I9UQGxubp3WoRiWDlzEHnXrK-UsLY3a2GvSYX4Q3FsKZB9Ueutu7sddm65i4eJ2_5OCYBcAm0SwcdOvw2&amp;t=638016008498011624"
+        type="text/css" rel="stylesheet" />
+    <link
+        href="/WebResource.axd?d=UT1Cj7SEzX8U-GEgOjD-q5_AEUx1ISm7BehiKfcipUzXYXxzTp3jqKF_RvW_jK_jauR3bFS05K7K9aVitQlRbC975-LHIjRX2zHy1QtsbedzXgS3Q8w2RhMsB0IwRPoIH3RzTJ5MS3OovGwVVnevrQ2&amp;t=638016008498011624"
+        type="text/css" rel="stylesheet" />
 </head>
 
 <body>
@@ -102,7 +105,7 @@
     </div>
     <!-- Pre-loader end -->
     <div>
-        <header>
+        <header class="mobile_app_hide">
 
             <nav class="navbar-default header__nav" id="">
 
@@ -111,8 +114,8 @@
                         <div class="col-md-12">
                             <div class="header__logo">
                                 <a class="navbar-brand" href="index.html">
+                                    <img src="./Biz/img/logo.png" alt="logo" class="logo-img" />
 
-                                    <img src="./Biz/img/logo.png" alt="logo" class="logo-img">
                                 </a>
                             </div>
                             <div class="navbar-header">
@@ -431,15 +434,11 @@
 
 
 
-                                    <li></li>
+                                    <!-- <li><a href="/Biz/members/prime/PrimePurchase" id="primetab" class="prime__link"><span>Prime</span></a></li> -->
 
 
-                                    <li style="display: none;" class="afterlogin">
-                                        <a href="my_course.html" id="tab_mycourse">My Courses</a>
-                                    </li>
-                                    <li style="display: none;" class="afterlogin">
-                                        <a href="dashboard.html">Affilate Panel</a>
-                                    </li>
+                                    <li><a href="my_course.html" id="tab_mycourse">My Courses</a></li>
+                                    <li><a href="dashboard.html" id="tab_affiliate">Affiliate Panel</a></li>
                                     <li>
                                         <div class="dropdown header__dropdown header__dropdownTwo">
                                             <button class="dropdown-toggle" type="button" data-toggle="dropdown">
@@ -452,16 +451,15 @@
                                                         <ul class="dropdown__colum dropdown__columTwoA">
                                                             <!-- <li><a href="https://Earningskool.com/store/">Merchandise</a></li> -->
                                                             <li><a href="aboutus.html">About Us</a></li>
-                                                            <!-- <li><a href="/Blog/">Blog</a></li> -->
-                                                            <!-- <li><a href="/Biz/career">Career</a></li> -->
+                                                            <!-- <li><a href="/Blog/">Blog</a></li>
+                                                                <li><a href="/Biz/career">Career</a></li> -->
                                                             <li><a href="contactus.html">Contact Us</a></li>
                                                         </ul>
                                                     </div>
                                                     <div class="col-md-3 col-sm-3 xol-xs-12">
                                                         <ul class="dropdown__colum dropdown__columTwoB">
                                                             <!-- <li><a href="/Biz/BecomeAnInst">Become An Instructor</a></li> -->
-                                                            <li id="li_becminstr"><a href="BecomeAnAffiliate.html" class="userlog">Become An
-                                                                    Affiliate</a></li>
+
                                                         </ul>
                                                     </div>
                                                     <div class="col-md-3 col-sm-3 xol-xs-12">
@@ -495,57 +493,71 @@
 
 
                                 </ul>
-                                <ul id="userlog_signup" class="nav navbar-nav navbar-right nav__buttons">
 
-                                    <li><a href="signup.html" class="sign-up-a userlog">Enroll Now!</a></li>
-                                    <li><a href="login.html" class="login-a userlog">Login</a></li>
-
-                                </ul>
                             </div>
                             <div class="desktop__cart">
 
-                                <!-- <div id="stories" class="storiesWrapper"></div>
-    
-                                    <script src="/Biz/css/dist/skins/zuck.min.js?v=1.1"></script>
-                                    <script src="/Biz/css/dist/skins/script.js?v=1.1"></script>
-    
-    
-    
-                                    <div class="cart">
+                                <div id="stories" class="storiesWrapper"></div>
+
+                                <script src="./Biz/css/dist/skins/zuck.min.js?v=1.1"></script>
+                                <script src="./Biz/css/dist/skins/script.js?v=1.1"></script>
+
+
+
+
+
+
+                                <!-- <div id="bell_icon" class="bell__icon">
+                                        <ul>
+                                            <li id="li_notification" class="dropdown">
+                                                <a href="javascript:;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    
+                                                    <span class="badge_red" style="display: none;" id="not_dot"></span>
+                                                    
+                                                    <img src="./Biz/img/bell.png" class="bell_shake" />
+                                                </a>
+                                                <div class="bell_notification_box dropdown-menu" aria-labelledby="dropdownMenuButton" id="belln">
+                                                    <ul class="bell_notification" id="notification">
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div> -->
+
+                                <!-- <div class="cart">
                                         <button id="btn_cart" type="button" class="shopping-bag">
                                             <img src="./Biz/img/bag.png" />
                                         </button>
                                     </div> -->
-                                <div id="div_userprofile" class="dropdown user__dropdown afterlogin">
-                                    <button class="btn-primary dropdown-toggle" type="button" data-toggle="dropdown"
-                                        aria-expanded="false">
-                                        <img id="img_profile" onerror="this.onerror=null;this.src='./Biz/img/pic.png';"
-                                            src="./Biz/img/pic.png">
+                                <div id="div_userprofile" class="dropdown user__dropdown">
+                                    <button class="btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                                        <img id="img_profile"
+                                            src="./Biz/img/pic.png" />
                                         <span class="caret"></span>
                                     </button>
                                     <ul id="profile_option" class="dropdown-menu">
-                                        <li id="li_myprofile"><a href="member_profile.html"><i
-                                                    class="fa fa-user" aria-hidden="true"></i>&nbsp; My Profile</a>
+                                        <li id="li_myprofile"><a href="member_profile.html"><i class="fa fa-user"
+                                                    aria-hidden="true"></i>&nbsp; My Profile</a>
                                         </li>
                                         <li id="li_mycourse"><a href="my_course.html"><i class="fa fa-graduation-cap"
                                                     aria-hidden="true"></i>&nbsp;My
                                                 Courses</a></li>
-                                        <li id="li_certificate"><a href="./request-certificate.html"><i class="fa fa-certificate"
+                                        <li id="li_certificate"><a href="./request-certificate.html"><i
+                                                    class="fa fa-certificate"
                                                     aria-hidden="true"></i>&nbsp;Certificates</a></li>
                                         <li id="li_prime"></li>
                                         <li id="li_subtoprime"><a href="/Biz/members/prime/PrimePurchase"
-                                                    id="subs_prime"><i class="fa fa-hand-o-right shine"
-                                                        aria-hidden="true"></i>&nbsp; Subscribe To Earningskool Prime</a>
-                                            </li> 
+                                                id="subs_prime"><i class="fa fa-hand-o-right shine"
+                                                    aria-hidden="true"></i>&nbsp; Subscribe To Earningskool
+                                            </a></li>
                                         <li id="li1"><a
                                                 href="https://www.facebook.com/groups/Earningskoollearnerscommunity"
                                                 target="_blank"><i class="fa fa-user-circle-o"
                                                     aria-hidden="true"></i>&nbsp;Learner's Community</a></li>
                                         <li id="li_aff_pnl"><a href="dashboard.html"><i class="fa fa-users"
-                                                    aria-hidden="true"></i>&nbsp;Affiliate
-                                                Panel</a></li>
+                                                    aria-hidden="true"></i>&nbsp;Affiliate Panel</a></li>
                                         <li>
-                                            <hr>
+                                            <hr />
                                         </li>
                                         <li><a href="SupportInfo.html"><i class="fa fa-headphones"
                                                     aria-hidden="true"></i>&nbsp; Support</a></li>
@@ -553,7 +565,6 @@
                                                     aria-hidden="true"></i>&nbsp; Logout</a></li>
                                     </ul>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -564,295 +575,656 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Favicon icon -->
+        <link href="../assets/img/favicon.png" rel="icon">
+        <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+        <!-- Google font-->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+        <!-- feather Awesome -->
 
-        <link href="./Biz/css/enduser.css" rel="stylesheet" />
-        <link href="css/hidesection.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="../../Content/assets/icon/feather/css/feather.css">
+        </link>
+        <link rel="stylesheet" type="text/css" href="../../Content/assets/icon/icofont/css/icofont.css">
+        </link>
+        <!-- Style.css -->
+        <link rel="stylesheet" type="text/css"
+            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        </link>
+        <link rel="stylesheet" type="text/css" href="./Biz/assets/css/style.css?v=2.4">
+        </link>
+        <link rel="stylesheet" type="text/css" href="../../Content/assets/css/jquery.mCustomScrollbar.css">
+        </link>
+        <!-- Data Table Css -->
+        <link rel="stylesheet" type="text/css"
+            href="./Biz/bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
+        </link>
+        <link rel="stylesheet" type="text/css"
+            href="../../Content/assets/pages/data-table/css/buttons.dataTables.min.css">
+        </link>
+        <link rel="stylesheet" type="text/css"
+            href="./Biz/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
+        </link>
+        <!-- Date-time picker css -->
+        <!-- Date-time picker css -->
+        <link rel="stylesheet" type="text/css"
+            href="../../Content/assets/pages/advance-elements/css/bootstrap-datetimepicker.css" />
+        <!-- Date-time picker css -->
+        <link rel="stylesheet" type="text/css"
+            href="../../Content/assets/pages/advance-elements/css/bootstrap-datetimepicker.css" />
+        <link href="./Biz/css/membermasternew.css" rel="stylesheet" />
+        <link href="./Biz/css/memberpanel.css" rel="stylesheet" />
+
+
+
+
+
+        <style>
+            main {
+                zoom: 100% !important;
+            }
+
+            #content {
+                zoom: 80%;
+            }
+
+            .learner_cmt {
+                width: 100%;
+                font-size: 14px;
+                font-weight: 600;
+            }
+
+            .learner_cmt img {
+                max-width: 25px;
+            }
+        </style>
+
         <main>
-            <section class="gold-banner-section">
-                <div class="container">
-                    <div class="gold-banner-txt">
+            <div class="wrapper">
+                <!-- Sidebar Holder -->
+                <nav id="sidebar" class="">
+                    <div class="sidebar-header">
+                        <h3><span style="visibility: hidden;">My Account</span><i class="fa fa-times nav__close"
+                                aria-hidden="true"></i></h3>
+                    </div>
 
-                        <h2>Earningskool End User License Agreement</h2>
+                    <ul id="ContentPlaceHolder1_navbar_member" class="list-unstyled components">
+
+
+
+                        <!-- <li id="ContentPlaceHolder1_pro" class="dropdown side__barDropdown myprofile"
+                            style="display: none" dropdown-icon="style1" subitem-icon="style1">
+                            <a href="javascript:void(0)" class="dropdown-toggle cls_category List__title" type="button"
+                                data-toggle="dropdown" aria-expanded="false">
+                                <i class="fa fa-user" aria-hidden="true"></i>&nbsp;
+                                My Profile
+
+
+                            </a>
+
+                            <ul class="dropdown-menu" id="ul2" style="display: block;">
+                                <li class="">
+                                    <a href="member_profile.html">
+
+                                        <span class="pcoded-micon"><i class="fa fa-info-circle"
+                                                aria-hidden="true"></i></span>
+                                        <span class="pcoded-mtext">Personal Information​</span>
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="/Biz/members/invoice">
+                                        <span class="pcoded-micon"><i class="fa fa-th-large"
+                                                aria-hidden="true"></i></span>
+                                        <span class="pcoded-mtext">Invoice </span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="change_profile_image.html">
+                                        <span class="pcoded-micon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                        <span class="pcoded-mtext">Change Profile Image​</span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="/Biz/members/change_password">
+                                        <span class="pcoded-micon"><i class="fa fa-unlock-alt"
+                                                aria-hidden="true"></i></span>
+                                        <span class="pcoded-mtext">Change Password​</span>
+                                    </a>
+                                </li>
+
+
+                            </ul>
+                        </li>
+
+                        <li class="myprofile" style="display: none">
+                            <hr />
+                        </li>
+
+                        <li id="ContentPlaceHolder1_li_certification" class="dropdown side__barDropdown certificate"
+                            dropdown-icon="style1" style="display: none" subitem-icon="style1">
+                            <a href="javascript:void(0)" class="dropdown-toggle cls_category List__title" type="button"
+                                data-toggle="dropdown" aria-expanded="false">
+                                <i class="fa fa-certificate" aria-hidden="true"></i>&nbsp;
+                                Certificates
+
+
+                            </a>
+
+                            <ul class="dropdown-menu" id="ul29" style="display: block;">
+                                <li class="">
+                                    <a href="./request-certificate.html">
+                                        <span class="pcoded-micon"><i class="fa fa-graduation-cap"
+                                                aria-hidden="true"></i></span>
+                                        <span class="pcoded-mtext">Course Test</span>
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="/Biz/members/mycertificates">
+                                        <span class="pcoded-micon"><i class="fa fa-certificate"
+                                                aria-hidden="true"></i></span>
+                                        <span class="pcoded-mtext">My Certificates</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="certificate" style="display: none">
+                            <hr />
+                        </li>
+                        <li class='dropdown side__barDropdown my_courses' style='display: none' dropdown-icon='style1'
+                            subitem-icon='style1' runat='server' id='li1'><a href='/Biz/members/upgradeplan'
+                                class='dropdown-toggle cls_category List__title courses__list' type='button'><i
+                                    class='fa fa-certificate' aria-hidden='true'></i>&nbsp;Bundle<i
+                                    class='fa fa-plus-square'  aria-hidden='true'></i></a>
+                            <ul class='dropdown-menu' id='ul30' style='display:block;'>
+                                <li><a href=/Biz/members/course/course_landing?id=4> <span class='pcoded-micon'><i
+                                            class='fa fa-graduation-cap' aria-hidden='true'></i></span><span
+                                            class='pcoded-mtext'>Marketing Mastery</span></a></li>
+                                <li><a href=/Biz/members/course/course_landing?id=1> <span class='pcoded-micon'><i
+                                            class='fa fa-graduation-cap' aria-hidden='true'></i></span><span
+                                            class='pcoded-mtext'>Branding Mastery</span></a></li>
+                            </ul>
+                        </li>
+                        <li class='my_courses' style='display:none'>
+                            <hr />
+                        </li>
+                        <li class='dropdown side__barDropdown my_courses' style='display:none' dropdown-icon='style1'
+                            subitem-icon='style1' runat='server' id='li1'><a
+                                href='/Biz/Subscription/ViewPlan?ref_id=uBfQ6wSu/cYWrPOUDsSrsg==&sbnId=AHR4gVcm6Ro='
+                                class='dropdown-toggle cls_category List__title courses__list' type='button'><i
+                                    class='fa fa-certificate' aria-hidden='true'></i>&nbsp;Indemand<i
+                                    class='fa fa-plus-square' aria-hidden='true'></i></a>
+                            <ul class='dropdown-menu' id='ul30' style='display:block;'></ul>
+                        </li>
+                        <li class='my_courses' style='display:none'>
+                            <hr />
+                        </li>
+                        <li class='dropdown side__barDropdown my_courses' style='display: none' dropdown-icon='style1'
+                            subitem-icon='style1' runat='server' id='li1'><a href='/Biz/Subscription/CourseFlix'
+                                class='dropdown-toggle cls_category List__title courses__list' type='button'><i
+                                    class='fa fa-certificate' aria-hidden='true'></i>&nbsp;Upskilling<i
+                                    class='fa fa-plus-square' aria-hidden='true'></i></a>
+                            <ul class='dropdown-menu' id='ul30' style='display:block;'></ul>
+                        </li>
+                        <li class='my_courses' style='display:none'>
+                            <hr />
+                        </li> -->
+
+
+
+
+
+                        <li id="ContentPlaceHolder1_li_bcm_aff" class="cls_cat List__title" style="display: none">
+                            <a href="dashboard.html" id="ContentPlaceHolder1_link_li_bcm_aff" class="custom__arrow">
+                                <span class="pcoded-micon"><i class="fa fa-users" aria-hidden="true"></i>&nbsp;
+                                </span>
+                                <span id="ContentPlaceHolder1_spn_bcm_aff" class="pcoded-mtext">Affiliate
+                                    Panel</span>
+
+                            </a>
+                        </li>
+
+                        <li id="ContentPlaceHolder1_dash" class="cls_cat" style="display: none">
+                            <a class="aff__links tour_dash" href="dashboard.html">
+
+                                <span class="pcoded-mtext">Dashboard</span>
+                            </a>
+                        </li>
+                        <li id="ContentPlaceHolder1_li_kyc" class="cls_cat" style="display: none">
+                            <a class="aff__links tour_kyc" href="/Biz/members/kyc">
+                                <span class="pcoded-mtext">
+
+                                    <span id="ContentPlaceHolder1_kk">KYC</span>​</span>
+                            </a>
+                        </li>
+
+                        <!-- <li id="ContentPlaceHolder1_aff" style="display: none;" class="dropdown side__barDropdown"
+                            dropdown-icon="style1" subitem-icon="style1">
+                            <a href="javascript:void(0)" class="dropdown-toggle cls_category" type="button"
+                                data-toggle="dropdown" aria-expanded="false">
+                                <i class="fa fa-book" aria-hidden="true"></i>&nbsp;&nbsp; Affilate/commission
+                                <span class="fa fa-chevron-circle-down"></span>
+                            </a>
+
+
+                        </li> -->
+
+                        <li id="ContentPlaceHolder1_li_affiliates" class="cls_cat" style="display: none">
+                            <a class="aff__links" href="total_affiliate_list.html">
+                                <span class="pcoded-micon"><i class="fa fa-users" aria-hidden="true"></i></span>
+                                <span class="pcoded-mtext">Affiliates</span>
+                            </a>
+                        </li>
+                        <!-- <li id="ContentPlaceHolder1_li_orientation" class="cls_cat" style="display: none">
+                            <a class="aff__links" href="/Biz/members/ViewOrientation">
+                                <span class="pcoded-micon"><i class="fa fa-users" aria-hidden="true"></i></span>
+                                <span class="pcoded-mtext">Orientation Stats</span>
+                            </a>
+                        </li> -->
+                        <li id="ContentPlaceHolder1_li_leads" class="cls_cat" style="display: none">
+                            <a class="aff__links" href="user_leads.html">
+                                <span class="pcoded-micon"><i class="fa fa-users" aria-hidden="true"></i></span>
+                                <span class="pcoded-mtext">My Leads</span>
+                            </a>
+                        </li>
+
+                        <!-- <li id="ContentPlaceHolder1_li_offer" class="cls_cat" style="display: none">
+                            <a class="aff__links" href="/Biz/members/offer.aspx?id=1">
+                                <span class="pcoded-micon"><i class="fa fa-gift" aria-hidden="true"></i></span>
+                                <span class="pcoded-mtext">Offer</span>
+                            </a>
+                        </li> -->
+
+
+
+                        <li id="ContentPlaceHolder1_li_bizcommunity" class="cls_cat" style="display: none">
+                            <a class="aff__links tour_comm" href="earningskool_community.html">
+                                <span class="pcoded-micon"><i class="feather icon-users"></i></span>
+                                <span class="pcoded-mtext">Earningskool Community </span>
+                            </a>
+                        </li>
+
+                        <li id="ContentPlaceHolder1_li_leaderboard" class="cls_cat" style="display: none">
+                            <a class="aff__links" href="leaderboard.html">
+                                <span class="pcoded-micon"><i class="fa fa-bolt" aria-hidden="true"></i></span>
+                                <span class="pcoded-mtext">Leaderboard</span>
+                            </a>
+                        </li>
+
+                        <!-- <li id="ContentPlaceHolder1_mt" class="cls_cat" style="display: none">
+                            <a class="aff__links" href="/Biz/members/marketing_tool">
+                                <span class="pcoded-micon"><i class="fa fa-wrench" aria-hidden="true"></i></span>
+                                <span class="pcoded-mtext">Marketing Tools</span>
+                            </a>
+                        </li>
+
+                        <li id="ContentPlaceHolder1_li_training" class="cls_cat" style="display: none">
+                            <a class="aff__links tour_train" href="/Biz/members/training">
+                                <span class="pcoded-micon"><i class="fa fa-suitcase" aria-hidden="true"></i></span>
+                                <span class="pcoded-mtext">Training</span>
+                            </a>
+                        </li>
+
+                        <li id="ContentPlaceHolder1_li_webinar" class="cls_cat" style="display: none">
+                            <a class="aff__links" href="/Biz/members/webinar">
+                                <span class="pcoded-micon"><i class="fa fa-camera" aria-hidden="true"></i></span>
+                                <span class="pcoded-mtext">Webinar</span>
+                            </a>
+                        </li>
+
+                        <li style="display:none;">
+                            <a class="List__title" href="/Biz/members/live_qa/QandA.aspx">
+                                <span class="pcoded-micon"><i class="fa fa-headphones" aria-hidden="true"></i>&nbsp;
+                                </span>
+                                <span class="pcoded-mtext">Live Q & A</span>
+                            </a>
+                        </li>
+
+
+                        <li style="display:none;">
+                            <a class="List__title"
+                                href="https://www.youtube.com/watch?v=vaqdXJxfHWA&list=PL7eMf-MjiK_lVy6xHlq1h0nSXCRo_u-2O"
+                                target="_blank" style="margin-bottom:0;">
+                                <span class="pcoded-micon"><i class="fa fa-headphones" aria-hidden="true"></i>&nbsp;
+                                </span>
+                                <span class="pcoded-mtext learner_cmt">Recorded Live Q & A
+                                    <i class="fa fa-file-video-o" aria-hidden="true"
+                                        style="display:block;font-size:25px;"></i>
+                                </span>
+                            </a>
+                        </li> -->
+                        <li class="cls_cat" style="display: none;">
+                            <hr />
+                        </li>
+                        <li style="margin:10px 0px;">
+                            <a class="List__title tour_supp" href="SupportInfo.html">
+                                <span class="pcoded-micon"><i class="fa fa-headphones" aria-hidden="true"></i>&nbsp;
+                                </span>
+                                <span class="pcoded-mtext">Support</span>
+                            </a>
+                        </li>
+
+                    </ul>
+
+
+                </nav>
+
+
+
+
+
+
+
+
+
+                <link href="./Biz/css/total_affilate.css" rel="stylesheet" />
+                <script src="./Biz/js/custome_js/total_affilate.js"></script>
+                <link href="./Biz/css/sidebar_affiliate.css" rel="stylesheet" />
+                <link rel="stylesheet" href="./Biz/css/stepform.css">
+                <script src="./Biz/assets/js/common-pages.js"></script>
+                <script src="./Biz/js/custome_js/kyc.js"></script>
+
+                <!-- <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script> -->
+                <link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css" rel="stylesheet"
+                    type="text/css" />
+                <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                <script type="text/javascript">
+                    $(function () {
+                        $("[id*=simpletable]").DataTable({
+                            bLengthChange: true,
+                            lengthMenu: [
+                                [5, 10, -1],
+                                [5, 10, "All"]
+                            ],
+                            bFilter: true,
+                            bSort: true,
+                            bPaginate: true
+                        });
+                    });
+                </script>
+                <script>
+                    if (localStorage.getItem("flag") != "1") {
+                        Swal.fire({
+                            title: 'If you want to use your referral link!',
+                            text: 'Log out and paste the link in a fresh window Or Open the link on a different browser',
+
+                            icon: 'info',
+                            confirmButtonText: 'OK'
+                        })
+                        localStorage.setItem("flag", "1")
+                    }
+                </script>
+                <script type="text/javascript">
+                    function copyToClipboard(elem) {
+                        // create hidden text element, if it doesn't already exist
+                        var targetId = "_hiddenCopyText_";
+                        var isInput = elem.tagName === "INPUT" || elem.tagName === "TEXTAREA";
+                        var origSelectionStart, origSelectionEnd;
+                        if (isInput) {
+                            // can just use the original source element for the selection and copy
+                            target = elem;
+                            origSelectionStart = elem.selectionStart;
+                            origSelectionEnd = elem.selectionEnd;
+                        } else {
+                            // must use a temporary form element for the selection and copy
+                            target = document.getElementById(targetId);
+                            if (!target) {
+                                var target = document.createElement("textarea");
+                                target.style.position = "absolute";
+                                target.style.left = "-9999px";
+                                target.style.top = "0";
+                                target.id = targetId;
+                                document.body.appendChild(target);
+                            }
+                            target.textContent = elem.textContent;
+                        }
+                        // select the content
+                        var currentFocus = document.activeElement;
+                        target.focus();
+                        target.setSelectionRange(0, target.value.length);
+
+                        // copy the selection
+                        var succeed;
+                        try {
+                            succeed = document.execCommand("copy");
+                        } catch (e) {
+                            succeed = false;
+                        }
+                        // restore original focus
+                        if (currentFocus && typeof currentFocus.focus === "function") {
+                            currentFocus.focus();
+                        }
+
+                        if (isInput) {
+                            // restore prior selection
+                            elem.setSelectionRange(origSelectionStart, origSelectionEnd);
+                        } else {
+                            // clear temporary content
+                            target.textContent = "";
+                        }
+                        return succeed;
+                    }
+                </script>
+
+                <div id="content">
+                    <div class="container-fluid">
+                        <div class="pcoded-content">
+                            <div class="pcoded-inner-content">
+                                <div class="main-body">
+                                    <div class="page-wrapper">
+                                        <!-- Page-header start -->
+                                        <div class="page-header">
+
+                                            <div class="row align-items-end">
+                                                <div class="col-lg-8">
+                                                    <div class="page-header-title">
+                                                        <button type="button" id="sidebarCollapse"
+                                                            class="btn navbar-btn">
+                                                            <i class="glyphicon glyphicon-align-left"></i>
+                                                            &nbsp;
+
+                                                            <span></span>
+                                                        </button>
+                                                        <div class="d-inline">
+                                                            <h4>Request Your Certificate</h4>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!-- Page-header end -->
+
+                                        <!-- Page-body start -->
+                                        <div class="page-body">
+                                            <div class="row">
+                                                <div class="col-md-12 col-sm-12 col-xs-12">
+
+
+
+
+
+                                                </div>
+                                                <input type="hidden"
+                                                    name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$hdn_coupon_id"
+                                                    id="hdn_coupon_id" value="0" />
+                                                <input type="hidden"
+                                                    name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$hdn_qty"
+                                                    id="hdn_qty" value="0" />
+                                                <div class="modal enter__detailModal fade" id="modalcoupon"
+                                                    role="dialog">
+                                                    <div class="modal-dialog">
+
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title">Transfer Coupon</h4>
+                                                                <h5 class="modal-title" id="coupon_modal_heading">
+                                                                </h5>
+                                                            </div>
+                                                            <div class="modal-body">
+
+                                                                <table class="table">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>UserID/Email</th>
+
+                                                                            <th>Available Qty.</th>
+                                                                            <th>Transfer Qty.</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <input
+                                                                                    name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$tbuserid_email"
+                                                                                    type="text" id="tbuserid_email" />
+                                                                                <span
+                                                                                    data-val-controltovalidate="tbuserid_email"
+                                                                                    data-val-errormessage="**"
+                                                                                    id="ContentPlaceHolder1_NestedContentPlaceHolder_RequiredFieldValidator2"
+                                                                                    data-val="true"
+                                                                                    data-val-evaluationfunction="RequiredFieldValidatorEvaluateIsValid"
+                                                                                    data-val-initialvalue=""
+                                                                                    style="color:Red;visibility:hidden;">**</span>
+
+                                                                            </td>
+                                                                            <td>
+                                                                                <label id="lbl_avail_qty"></label>
+
+                                                                            </td>
+                                                                            <td>
+                                                                                <input
+                                                                                    name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$tbtrans_qty"
+                                                                                    type="number" id="tbtrans_qty" />
+                                                                                <span
+                                                                                    data-val-controltovalidate="tbtrans_qty"
+                                                                                    data-val-errormessage="**"
+                                                                                    id="ContentPlaceHolder1_NestedContentPlaceHolder_RequiredFieldValidator1"
+                                                                                    data-val="true"
+                                                                                    data-val-evaluationfunction="RequiredFieldValidatorEvaluateIsValid"
+                                                                                    data-val-initialvalue=""
+                                                                                    style="color:Red;visibility:hidden;">**</span>
+
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+
+
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <input type="submit"
+                                                                    name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$btn_trancouponsubmit"
+                                                                    value="Submit"
+                                                                    onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$btn_trancouponsubmit&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))"
+                                                                    id="ContentPlaceHolder1_NestedContentPlaceHolder_btn_trancouponsubmit"
+                                                                    class="btn btn-danger" />
+                                                                <button type="button" class="btn btn-default cls_class"
+                                                                    data-dismiss="modal">Close</button>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Page-body end -->
+                                    </div>
+                                </div>
+                                <!-- Main-body end -->
+                            </div>
+                        </div>
 
                     </div>
                 </div>
-            </section>
-            <section class="disc-section">
-                <div class="container">
-                    <p>
-                        THIS Earningskool END USER LICENSE AGREEMENT ("AGREEMENT") IS A LEGAL AND BINDING AGREEMENT
-                        MADE SOLELY BETWEEN YOU ("YOU" AND "YOUR") AND Earningskool ("WE," "US," OR "OUR"). BY
-                        CLICKING THE "ACCEPT" BUTTON OR BY INSTALLING, COPYING OR USING THE Earningskool
-                        APPLICATION, OR ANY WEB SITES OWNED OR CONTROLLED BY Earningskool, YOU ARE INDICATING THAT
-                        YOU HAVE READ THIS AGREEMENT, THAT YOU UNDERSTAND IT, AND THAT YOU CONSENT TO BE BOUND BY
-                        ALL OF ITS TERMS AND CONDITIONS. YOU ALSO ACCEPT
-                        THAT ANY THIRD PARTY BENEFICIARY, OR ANY DEVICE MANUFACTURERS OR TELECOMMUNICATION SERVICE
-                        PROVIDERS, MAY ENFORCE THE PROVISIONS IN THIS AGREEMENT AND THE TERMS OF USE. THIS AGREEMENT
-                        SETS FORTH YOUR RIGHTS AND OBLIGATIONS
-                        WITH RESPECT TO YOUR USE OF ANY VERSION OF THE DOWNLOADABLE Earningskool SOFTWARE (THE
-                        "SOFTWARE") AND ANY INFORMATION OR DATA OF ANY KIND, INCLUDING WITHOUT LIMITATION ANY
-                        ARTWORK, TEXT, CONTENT, VIDEO, AUDIO, OR PICTURES SERVED
-                        THROUGH THE SOFTWARE OR RECEIVED FROM OR ON ANY WEB SITE OWNED OR CONTROLLED BY Earningskool
-                        (COLLECTIVELY THE "CONTENT") (THE SOFTWARE AND THE CONTENT ARE TOGETHER REFERRED TO AS THE
-                        "APPLICATION"; THE "SOFTWARE" INCLUDES BETA
-                        AND PRE-RELEASE VERSIONS). IF YOU DO NOT AGREE TO THE TERMS OF THIS AGREEMENT, YOU ARE NOT
-                        AUTHORIZED TO USE THE APPLICATION AND/OR WEBSITE AND YOU MUST STOP THE REGISTRATION PROCESS
-                        AND PROMPTLY CEASE USING AND DESTROY ANY
-                        COPIES OF THE SOFTWARE IN YOUR POSSESSION. FAILURE TO ABIDE BY THE TERMS OF THIS AGREEMENT
-                        MAY RESULT IN TERMINATION OF YOUR ACCESS TO THE APPLICATION AND/OR THE WEBSITE, THE RELATED
-                        Earningskool SERVICE, AND/OR ANY PART THEREOF.
-                    </p>
-                    <p><b>1. GRANT OF LICENSE</b></p>
-                    <p>Earningskool hereby grants to you a limited, non-exclusive license to use the Application/
-                        website solely for personal, non-commercial use, on devices under your ownership and
-                        control, solely in the territories in which Earningskool
-                        has commercially launched and subject to the following terms:</p>
-                    <p>You may not:</p>
-                    <p>
-                        <ol class="ol_list">
-                            <li> link to the Application except as expressly permitted in writing by Earningskool;
-                            </li>
-                            <li> permit other individuals to use the website and/or the application with your login
-                                id and password;</li>
-                            <li> modify, translate, reverse engineer, decompile, disassemble (except to the extent
-                                that this restriction is expressly prohibited by law), tamper with, or create
-                                derivative works based upon the Application, including the
-                                Content, or any portion thereof (including without limitation any security
-                                components and digital rights management);
-                            <li> copy the website/ application or any portion thereof</li>
-                            <li> sell, rent, lease, transfer, distribute, broadcast, display or otherwise assign any
-                                rights to the website/ application to any third party;</li>
-                            <li> remove any proprietary notices or labels on the Website/Application;</li>
-                            <li> use the website/ application in conjunction with any device or service designed to
-                                circumvent technological measures employed to control access to, or the rights in, a
-                                content file or other work protected by the copyright
-                                laws of any jurisdiction;</li>
-                            <li> use the website/ application for any commercial or illegal purpose;</li>
-                            <li> use the website/ application for other than your personal, non-commercial purposes,
-                                including without limitation the excessive and/or repeated playing of content;</li>
-                            <li> use the website/ application to invade the privacy of, or obtain personal
-                                information about, any account holder or user, or to obtain a list of account
-                                holders or users;</li>
-                            <li> copy, modify, erase or damage any information contained on computer servers used or
-                                controlled by Earningskool or any third party used in connection with the website/
-                                application or the services provided through the website/
-                                application;</li>
-                            <li> use the website/ application to violate any legal right of any third party; or use
-                                any data mining, robots, or similar data gathering and or extraction tools in
-                                connection with the Application;</li>
-                            <li> access or use any password protected, secure or non-public areas of the website/
-                                application except as specifically authorized in writing by Earningskool
-                                (unauthorized individuals attempting to access these areas of the
-                                website/ application may be subject to prosecution);</li>
-                            <li> use any automated means to access or use the website/ application (including
-                                scripts, "bots" or similar software); or </li>
-                            <li> modify, translate, reverse engineer, decompile, reproduce, disassemble, or
-                                otherwise gain access to or attempt to gain access to any private key or "dev key"
-                                (as that term is generally understood within the software
-                                industry) associated with the website/ application, the Content or the Services, or
-                                to use or attempt to use any private key or "dev key" in a manner in violation of
-                                this Agreement or the applicable Earningskool service
-                                Terms and Conditions.</li>
 
-                        </ol>
-                    </p>
-                    <p>Violation of any of the foregoing restrictions may result in the termination of your account,
-                        without any notice. Earningskool reserves any and all rights or remedies that may be
-                        available in the event of your breach of this Agreement.</p>
-                    <p>You shall not be entitled to use any subscription-based features of the Application unless
-                        you have paid the applicable subscription fee and agreed to the terms of the Earningskool
-                        Service Terms and Conditions. Earningskool is not
-                        obligated to provide any such free trial period.</p>
-                    <p><b>2.UPGRADES / UPDATES</b></p>
-                    <p>You acknowledge that Earningskool may issue upgraded or modified versions of the Application/
-                        website from time to time, and may automatically electronically upgrade or modify the
-                        version of the Application that you are using on
-                        your device. You consent to such automatic upgrading or modification, and agree that this
-                        Agreement (as amended from time to time) will govern all such versions.</p>
-                    <p>The website/ application will operate only on those hardware and software platforms specified
-                        in the Application documentation. It is your responsibility to ensure that you have the
-                        appropriate software, hardware and Internet connection
-                        to operate the then-current version of the website/ application to avail the services.
-                        Earningskool reserves the right to cease supporting any hardware or software platform at any
-                        time, with or without notice.</p>
-                    <p>Earningskool may modify the website/ application at any time without notice and may
-                        discontinue any Earningskool application or web site at any time without notice. </p>
-                    <p><b>3.TITLE TO INTELLECTUAL PROPERTY</b></p>
-                    <p>
-                        You shall not use the website/ application or the Software for any illegal purpose.
-                        Earningskool retains all title and ownership rights in and to the intellectual property.
-                        Except as expressly stated in this Agreement, Earningskool does not grant any express
-                        or implied right or license to you under any patent, copyright, trademark, or trade secret
-                        rights of Earningskool
-                    </p>
-                    <p><b>4.TITLE TO CONTENT SERVED THROUGH THE APPLICATION</b></p>
-                    <p>The Content served by Earningskool or third parties directly through the website/ application
-                        is the property of Earningskool, its licensors, its partners, and/or its advertisers. Title,
-                        ownership rights and intellectual property rights
-                        in and to such Content is the property of Earningskool or third parties and is protected by
-                        applicable copyright and other law. Other than as expressly provided herein, this Agreement
-                        gives you no express or implied license to
-                        the Content, including without limitation, any right to use, sell, rent, copy, distribute,
-                        broadcast, modify, perform or publicly display any Content.</p>
-                    <p>Earningskool complies with copyright law and expects its users to do the same. You shall not
-                        use the website/ application to help you infringe the copyrights of Earningskool or any
-                        third party. Unauthorized use, copying, distribution,
-                        modification, public display, or public performance of copyrighted works is an infringement
-                        of the copyright holders' rights and a violation of the law. You agree that you shall only
-                        use the website/ application in a manner
-                        that does not violate any third-party rights and that complies with all applicable laws in
-                        the jurisdiction in which you use the website/application, including, but not limited to,
-                        applicable restrictions concerning copyrights
-                        and other intellectual property rights. In the event of Earningskool or any third party
-                        claim that your use of the website/application infringes any intellectual property rights,
-                        you will be solely responsible for the investigation,
-                        defence, settlement and discharge of any such claim.
-                    </p>
-                    <p><b>5.HYPERLINKED ENTITIES</b></p>
-                    <p>The website/application and offered service may contain hyperlinks to various third party web
-                        sites, advertisements and other resources ("Hyperlinked Entities"). These Hyperlinked
-                        Entities (other than web properties owned or operated
-                        by Earningskool) are not under the control of Earningskool and Earningskool is not
-                        responsible or liable for the content, communications or materials of any Hyperlinked
-                        Entities. The inclusion of any link does not imply endorsement
-                        by Earningskool of the Hyperlinked Entity or any association with its operators. You are
-                        responsible for adhering to the applicable terms of service for any Hyperlinked Entity. You
-                        are solely responsible and liable for any interactions
-                        you may have with such entities, advertisers, their sponsors and other third parties.</p>
-                    <p><b>6.REGISTRATION</b></p>
-                    <p>You agree to provide true, accurate, current and complete information about yourself as
-                        prompted by the registration process (such information being the "Account Information"). You
-                        agree to update your Account Information in order
-                        to keep such information current. You are solely and entirely responsible for maintaining
-                        the confidentiality of your password and user name. Furthermore, you are solely and entirely
-                        responsible for any and all activities that
-                        occur under your account.</p>
-                    <p><b>7.PAYMENTS</b></p>
-                    <p>Any transfer of payments made towards the purchase/ use of any services/course/content of the
-                        website/application should be towards the prescribed bank account _____________________
-                        only. Earningskool does not ask for or allow transfer
-                        of any payment/fee towards any other bank account. Any payments made by you to any
-                        affiliate’s personal account/ or any account other than the mentioned account shall not
-                        entitle you to become member/user of the services provided
-                        by Earningskool. Further, Earningskool shall in no manner whatsoever responsible/
-                        accountable for any payments made to any account except as mentioned here above.</p>
-                    <p><b>8.DISCLAIMER OF WARRANTY</b></p>
-                    <p>
-                        <THE WEBSITE/APPLICATION AND ITS CONTENT IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT ANY
-                            REPRESENTATION OR WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, AS TO THE APPLICATION OR ITS
-                            OPERATION. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, Earningskool, ITS PARTNER
-                            COMPANY OR COMPANIES, ITS LICENSORS, ITS INVESTORS, AND ITS DISTRIBUTION AND AFFILIATE
-                            PARTNERS, THE WIRELESS CARRIERS OVER WHOSE NETWORK THE APPLICATION IS PROVIDED, AND ITS
-                            RESEPECTIVE AFFILIATES AND SUBSCRIBERS, AND ALL DEVICE MANUFACTURERS, ON WHICH THE
-                            APPLICATION MAY BE USED, (THE "Earningskool ENTITIES" ) DISCLAIM ALL WARRANTIES, INCLUDING
-                            WITHOUT LIMITATION, ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
-                            PURPOSE, AND NONINFRINGEMENT.</p> <p>USE OF THE WEBSITE/APPLICATION IS AT
-                            YOUR OWN RISK. THE Earningskool ENTITIES MAKE NO WARRANTY THAT THE WEBSITE/APPLICATION
-                            WILL MEET YOUR REQUIREMENTS/EXPECTATIONS, OR THAT THE WEBSITE/APPLICATION WILL BE
-                            UNINTERRUPTED,
-                            TIMELY, SECURE, FREE OF VIRUSES, OR ERROR FREE; NOR DO THE Earningskool ENTITES MAKE ANY
-                            WARRANTY AS TO THE RESULTS THAT MAY BE OBTAINED FROM THE WEBSITE/APPLICATION OR AS TO
-                            THE ACCURACY OR RELIABILITY OF ANY CONTENT
-                            OBTAINED THROUGH THE WEBSITE/APPLICATION. THE Earningskool ENTITIES MAKE NO WARRANTY
-                            REGARDING ANY CONTENT OR SERVICES PURCHASED OR OBTAINED THROUGH THE WEBSITE/APPLICATION
-                            OR ANY TRANSACTIONS ENTERED INTO THROUGH THE
-                            APPLICATION/WEBSITE.
-                    </p>
-                    <p><b>9.LIMITATION OF LIABILITY</b></p>
-                    <p>ANY AND ALL RISK ARISING OUT OF THE USE AND/OR PERFORMANCE OF THE WEBSITE/APPLICATION REMAINS
-                        WITH YOU. IN NO EVENT SHALL THE Earningskool ENTITIES OR ANY OF THEIR RESPECTIVE OFFICERS,
-                        DIRECTORS, EMPLOYEES, AGENTS OR AFFILIATES,
-                        INCLUDING ANY DEVICE MANUFACTURERS OR TELECOMMUNICATION SERVICE PROVIDERS, BE LIABLE FOR ANY
-                        CONSEQUENTIAL, INCIDENTAL, DIRECT, INDIRECT, SPECIAL, PUNITIVE, OR OTHER DAMAGES WHATSOEVER
-                        (INCLUDING, WITHOUT LIMITATION,
-                        DAMAGES FOR LOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, LOSS OF BUSINESS INFORMATION,
-                        OR OTHER PECUNIARY LOSS) ARISING OUT OF OR RELATING TO THIS AGREEMENT OR THE SALE,
-                        DISTRIBUTION, PERFORMANCE OR NON-PERFORMANCE,
-                        USE OF, OR INABILITY TO USE THE WEBSITE/APPLICATION OR ANY PART THEREOF, EVEN IF
-                        Earningskool HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. BECAUSE SOME JURISDICTIONS
-                        DO NOT ALLOW THE EXCLUSION OR LIMITATION OF
-                        LIABILITY FOR CONSEQUENTIAL OR INCIDENTAL DAMAGES, SOME OF THE ABOVE LIMITATIONS MAY NOT
-                        APPLY TO YOU, BUT THEY SHALL APPLY TO THE MAXIMUM EXTENT PERMITTED BY LAW. IN NO EVENT SHALL
-                        THE Earningskool ENTITIES BE LIABLE
-                        FOR ANY CLAIMS (INCLUDING, WITHOUT LIMITATION, CLAIMS FOR BREACH OF CONTRACT, BREACH OF
-                        WARRANTY, GUARANTEE OR CONDITION, STRICT LIABILITY, NEGLIGENCE OR OTHER TORT) OR DAMAGES IN
-                        EXCESS OF THE AMOUNT PAID FOR THE APPLICATION
-                        OR THE SPECIFIC ITEM OF CONTENT GIVING RISE TO THE APPLICABLE CLAIM FOR DAMAGES.</p>
-                    <p>THE OWNERS AND LICENSORS OF THE CONTENT, AND ANY DEVICE MANUFACTURERS OR TELECOMMUNICATION
-                        SERVICE PROVIDERS ARE INTENDED THIRD-PARTY BENEFICIARIES OF THIS AGREEMENT, AND SHALL HAVE
-                        THE RIGHT TO ENFORCE THIS AGREEMENT AGAINST
-                        YOU.</p>
-                    <p><b>10.INDEMNITY</b></p>
-                    <p>You agree to indemnify and hold Earningskool and its parents, members, subsidiaries,
-                        affiliates, service providers, syndicators, distributors, licensors, officers, directors and
-                        employees, harmless from any claim or demand,
-                        including reasonable attorneys' fees, made by any third party due to, or arising out of or
-                        related to your violation of this Agreement, or your violation of any law, regulation or
-                        third-party right.</p>
-                    <p><b>11. TERMINATION</b></p>
-                    <p>This Agreement (and your license/membership) shall terminate automatically and immediately if
-                        you fail to comply with any of the limitations described in this Agreement. No notice shall
-                        be required from Earningskool to effectuate
-                        such termination. In addition, Earningskool reserves the right to terminate this Agreement
-                        and discontinue your access to the website/ application and its content at any time for any
-                        reason, and with or without notice.
-                        Upon termination of this Agreement for any reason you must immediately destroy all copies of
-                        the content.</p>
-                    <p><b>12.CUSTOMER SERVICE</b></p>
-                    <p>If you have any questions or concerns about your account, you may contact Customer Service,
-                        through post/ e-mail/ telephone or any other medium provided to you in the application or
-                        the official website of Earningskool. Your
-                        phone manufacturer or network operator shall not provide support services for the website/
-                        application.</p>
-                    <p><b>13. MODIFICATION</b></p>
-                    <p>Earningskool may modify this Agreement at any time in its sole discretion. In the event we
-                        shall post the revisions on this page. You are advised to visit the page regularly to stay
-                        updated on the currently applicable terms
-                        for your use of the Service, Software, website and Content. If any modification is
-                        unacceptable to you, you agree that your only recourse is to immediately terminate your use
-                        of the website/ application and destroy
-                        any copies of the Software in your possession. Your continued use of the website/application
-                        following our release of a revised End User License Agreement on the Application will
-                        constitute your binding acceptance of
-                        the change.<b> YOUR ACCEPTANCE OF THIS AGREEMENT INDICATES THAT YOU GIVE CONSENT TO
-                            Earningskool TO E-MAIL YOU WITH NOTICES CONCERNING MATERIAL CHANGES IN THE TERMS OF THIS
-                            AGREEMENT, THE APPLICATION OR THE SERVICES TO WHICH YOU HAVE SUBSCRIBED.</b></p>
-                    <p><b>14. RESTRICTED RIGHTS AND EXPORT RESTRICTIONS</b></p>
-                    <p>The website/application content is provided with restricted rights. By using the it, you are
-                        agreeing to the foregoing and are representing and warranting that you are not located in,
-                        under the control of, or a national
-                        or resident of, any country where the use of this application may be illegal or contrary to
-                        any law, Indian or otherwise.</p>
-                    <p><b> 15. GOVERNING LAW</b></p>
-                    <p>This Agreement shall be governed by the laws of State of New Delhi, India, without regard to
-                        or application of any choice of law or conflict of laws provisions. You consent to the
-                        exclusive jurisdiction of the courts sitting
-                        in New Delhi. If either Earningskool or you employ any attorneys to enforce any rights
-                        arising out of this Agreement, the prevailing party shall be entitled to recover reasonable
-                        attorneys' fees and costs. No delay or
-                        failure to take action under this Agreement shall constitute any waiver by Earningskool of
-                        any provision of this Agreement. This Agreement, together with our Terms of Use, Privacy
-                        Policy and any other rules, regulations,
-                        procedures and policies which are hereby incorporated or prescribed on any future date
-                        (including all documents expressly incorporated by reference), herein by this reference,
-                        constitutes the complete and exclusive
-                        agreement between Earningskool and you with respect to the subject matter hereof and
-                        supersedes all prior oral or written understandings, communications or agreements not
-                        specifically incorporated herein. If any provision
-                        of this Agreement is invalid or unenforceable under applicable law, it is, to that extent,
-                        deemed omitted and the remaining provisions will continue in full force and effect. This
-                        Agreement will bind and inure to the
-                        benefit of each party's permitted successors and assigns. This Agreement is personal to you
-                        and may not be transferred, assigned or delegated to anyone. Any attempt by you to assign,
-                        transfer or delegate this Agreement
-                        shall be null and void.</p>
-                    <p><b>Last modified: September 2021</b></p>
-
-
-                </div>
-            </section>
-
+            </div>
         </main>
+        <div class="modal fade in" id="myModal" role="dialog" style="display: none;">
+            <div class="modal-dialog" style="max-width: 590px;">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+
+                        <h5 class="modal-title">Demo Video For KYC</h5>
+                    </div>
+                    <div class="modal-body">
+                        <iframe width="700" height="394" src="https://player.vimeo.com/video/719342140?h=0efd121cf2"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen=""></iframe>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="popup_close" class="btn btn-default"
+                            data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal fade" id="commDetModal" role="dialog" style="background: rgba(19, 18, 18, 0.77)">
+            <div class="modal-dialog view__listPop">
+
+                <!-- Modal content-->
+                <div class="modal-content" style="overflow: auto;">
+                    <div style="text-align: center; padding-top: 10px; text-decoration: underline;">
+
+                        <h5 class="modal-title">User History:</h5>
+
+
+                    </div>
+
+                    <div class="modal-body" style="overflow: auto;">
+
+                        <div class="col-sm-12" style="display: flex; align-items: center;">
+                            <table class="table table-striped table-bordered nowrap dataTable no-footer" id="tbl_exp">
+                                <thead>
+                                    <tr>
+                                        <th>UserName</th>
+                                        <th>Purchase Date</th>
+                                        <th>Plan Name</th>
+                                        <th>Commission Amt.</th>
+
+
+                                    </tr>
+                                </thead>
+                                <tbody id="table_tbody">
+                                </tbody>
+                            </table>
+
+                        </div>
+
+
+                    </div>
+                    <div class="modal-footer">
+
+                        <button type="button" id="popup1_close" class="btn btn-default cls_close"
+                            data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+        <script>
+            $("#sidebarCollapse").on("click", function () {
+                $("#sidebar").toggleClass("active");
+                $(this).toggleClass("active");
+            });
+
+            $(".nav__close").click(function () {
+
+                $("#sidebarCollapse").click();
+            });
+        </script>
 
         <footer class="mobile_app_hide">
             <div class="top-footer">
@@ -902,6 +1274,7 @@
                                 <h4>Support</h4>
                                 <ul>
                                     <li><a href="contactus.html">Contact Us</a></li>
+                                    <!-- <li><a href="/Default#media-sec">Press</a></li> -->
                                     <li><a href="disclaimer.html">Disclaimer</a></li>
                                     <li><a href="Privacy.html">Privacy Policy</a></li>
                                     <li><a href="terms.html">Terms and Conditions</a></li>
@@ -915,6 +1288,11 @@
                                 <h4>Useful Links</h4>
                                 <ul>
                                     <li><a href="aboutus.html">About Us</a></li>
+                                    <!-- <li><a href="/blog">Blog</a></li>
+                                        <li><a href="/Biz/career">Career</a></li>
+                                        <li><a href="/podcasts/">Podcasts</a></li>
+                                        <li><a href="/store/">Merchandise</a></li>
+                                        <li><a href="/Biz/BecomeAnInst">Become An Instructor</a></li> -->
                                     <li><a href="BecomeAnAffiliate.html" class="userlog">Become An Affiliate</a></li>
                                 </ul>
                             </div>
@@ -949,41 +1327,41 @@
 
 
 
-        <div class="modal fade cart__modal" id="DetModal" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div>
-                        <h5 class="modal-title">Selected Courses:</h5>
-                    </div>
-                    <div class="modal-body" style="overflow: auto;">
-                        <div class="col-sm-12">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th>Course</th>
-                                        <th>Course Price</th>
-                                        <th>Qty</th>
-                                        <th>Remove</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="tbl_cart">
-                                </tbody>
-                            </table>
-                            <div class="cf__courseTotal">
-                                <label>Total:</label>
-                                <label id="cart_total" style="color: #ff783d;"></label>
+        <!-- <div class="modal fade cart__modal" id="DetModal" role="dialog">
+                <div class="modal-dialog">
+                   
+                    <div class="modal-content">
+                        <div>
+                            <h5 class="modal-title">Selected Courses:</h5>
+                        </div>
+                        <div class="modal-body" style="overflow: auto;">
+                            <div class="col-sm-12">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Course</th>
+                                            <th>Course Price</th>
+                                            <th>Qty</th>
+                                            <th>Remove</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbl_cart">
+                                    </tbody>
+                                </table>
+                                <div class="cf__courseTotal">
+                                    <label>Total:</label>
+                                    <label id="cart_total" style="color: #ff783d;"></label>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary mb-2 cls_close btn_submit_cart">CheckOut</button>
-                        <button type="button" class="btn btn-primary mb-2 cls_close" data-dismiss="modal">Close</button>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary mb-2 cls_close btn_submit_cart">CheckOut</button>
+                            <button type="button" class="btn btn-primary mb-2 cls_close" data-dismiss="modal">Close</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div> -->
 
 
         <div class="floating_chatbot">
@@ -1007,13 +1385,13 @@
                 $("#imgbot_icon").click(function () {
 
                     if ($("#hdn_offertime").val() != "") {
-                        window.location.href = "./Biz/UserHelp";
+                        window.location.href = "/Biz/UserHelp";
                     } else {
                         $(".tooltiptext").show();
                         $("#botsay").html(
                             "Get in touch <i class='fa fa-phone' aria-hidden='true'></i> +91 8567856753"
                         );
-                        window.location.href = "./Biz/UserHelp";
+                        window.location.href = "/Biz/UserHelp";
                     }
 
 
@@ -1175,6 +1553,7 @@
                 border-radius: 10px 0px 0px 10px;
             }
 
+
             .floating_chatbot .floating_chatbot_icon p i {
                 color: #333333c4;
                 font-size: 12px;
@@ -1251,86 +1630,20 @@
         <!-- scroll to top button -->
 
         <script>
-            $(document).ready(function () {
-                if ($("#hdnstory").val() == 1) {
-                    $("#stories").addClass("isview_story");
-                }
-                getstory();
+            AdjustHeader(); // Incase the user loads the page from halfway down (or something);
+            $(window).scroll(function () {
+                AdjustHeader();
+            });
 
-
-                function getstory() {
-                    $.ajax({
-                        type: "POST",
-                        url: "/../default.aspx/getStoryForUser",
-                        contentType: "application/json",
-                        data: {},
-                        dataType: "json",
-                        success: function (data) {
-
-
-                            var currentSkin = getCurrentSkin();
-
-                            for (var i = 0; i < data.d.length; i++) {
-
-
-                                var stories = new Zuck('stories', {
-                                    backNative: true,
-                                    previousTap: true,
-                                    skin: currentSkin['name'],
-                                    autoFullScreen: currentSkin['params'][
-                                        'autoFullScreen'
-                                    ],
-                                    avatars: currentSkin['params']['avatars'],
-                                    paginationArrows: currentSkin['params'][
-                                        'paginationArrows'
-                                    ],
-                                    list: currentSkin['params']['list'],
-                                    cubeEffect: currentSkin['params']['cubeEffect'],
-                                    localStorage: true,
-
-                                    stories: [
-                                        Zuck.buildTimelineItem(
-                                            "ramon",
-                                            "./Biz/img/bb.jpg",
-                                            "Earningskool",
-                                            "",
-                                            timestamp(), [
-                                                data.d[i]
-
-                                            ]
-                                        )
-                                    ]
-                                });
-                            }
-                        },
-                        error: function (xhr, ajaxOptions, thrownError) {
-
-                            //var obj = jQuery.parseJSON(xhr.responseText);
-                            //alert(obj.Message);
-                        },
-                        complete: function () {
-
-                        }
-                    });
-                }
-
-
-                var $navbar = $("#mNavbar");
-
-                AdjustHeader(); // Incase the user loads the page from halfway down (or something);
-                $(window).scroll(function () {
-                    AdjustHeader();
-                });
-
-                function AdjustHeader() {
-                    if ($(window).scrollTop() > 60) {
-                        if (!$navbar.hasClass("navbar-fixed-top")) {
-                            $navbar.addClass("navbar-fixed-top");
-                        }
-                    } else {
-                        $navbar.removeClass("navbar-fixed-top");
+            function AdjustHeader() {
+                if ($(window).scrollTop() > 60) {
+                    if (!$navbar.hasClass("navbar-fixed-top")) {
+                        $navbar.addClass("navbar-fixed-top");
                     }
+                } else {
+                    $navbar.removeClass("navbar-fixed-top");
                 }
+            }
             });
 
             $("#stories").click(function () {
@@ -1363,48 +1676,21 @@
             })
         </script>
 
-
-        <!-- <script>
-                // Set the date we're counting down to
-                var offerTime = $("#hdn_offertime").val();
-                var countDownDate = new Date(offerTime).getTime();
-
-                // Update the count down every 1 second
-                var x = setInterval(function() {
-
-                    // Get today's date and time
-                    var now = new Date().getTime();
-
-                    // Find the distance between now and the count down date
-                    var distance = countDownDate - now;
-
-                    // Time calculations for days, hours, minutes and seconds
-                    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                    // Output the result in an element with id="spn_time"
-                    document.getElementById("spn_time").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-
-                    // If the count down is over, write some text 
-                    if (distance < 0) {
-                        clearInterval(x);
-                        document.getElementById("spn_time").innerHTML = "EXPIRED";
-
-                        $("#div_update_plan").hide();
-                    }
-                }, 1000);
-            </script> -->
-
+        <script type="text/javascript">
+            //<![CDATA[
+            Sys.Application.add_init(function () {
+                $create(Sys.Extended.UI.CalendarBehavior, {
+                    "id": "tbfrom_CalendarExtender"
+                }, null, null, $get("ContentPlaceHolder1_NestedContentPlaceHolder_tbfrom"));
+            });
+            Sys.Application.add_init(function () {
+                $create(Sys.Extended.UI.CalendarBehavior, {
+                    "id": "tbto_CalendarExtender"
+                }, null, null, $get("ContentPlaceHolder1_NestedContentPlaceHolder_tbto"));
+            });
+            //]]>
+        </script>
         </form>
-
-        <!-- Google Tag Manager (noscript) -->
-        <noscript>
-            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5W6X6V8" height="0" width="0"
-                style="display: none; visibility: hidden"></iframe>
-        </noscript>
-        <!-- End Google Tag Manager (noscript) -->
 
         <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
         <script>
@@ -1417,10 +1703,8 @@
         </script>
 
         <script src="./Biz/js/custome_js/afterlogin.js"></script>
-        <script src="./Biz/assets/js/common-pages.js"></script>
+        <script src="./Biz/js/custome_js/checkLogin.js"></script>
         <script src="./Biz/js/custome_js/loadDp.js"></script>
-         
-        <!-- Ionic Icons -->
 </body>
 
 </html>

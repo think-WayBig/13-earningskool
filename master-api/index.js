@@ -62,6 +62,15 @@ app.post("/register", async (req, res) => {
   }
 });
 
+app.put('/dpChange', (req, res) => {
+  let userEmail = req.body.email;
+  users_collection.findOneAndUpdate({ email: userEmail }, { dp: req.body.dp }, null, (err, data) => {
+    res.send({
+      "NewUrl": req.body.dp
+    })
+  });
+})
+
 app.post("/login", async (req, res) => {
   let userEmail = req.body.email;
   let userPassword = req.body.pass;

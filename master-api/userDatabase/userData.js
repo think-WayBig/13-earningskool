@@ -12,10 +12,6 @@ const users_schema = new mongoose.Schema({
     required: true,
     unique: true,
   },
-  confirmemail: {
-    type: String,
-    required: true,
-  },
   phone: {
     type: Number,
     required: true,
@@ -35,6 +31,10 @@ const users_schema = new mongoose.Schema({
     type: String,
     unique: true,
   },
+  dp:{
+    type: String,
+    default: "./Biz/img/pic.png",
+  },
   date: {
     type: String,
     default: moment().format('DD-MM-YYYY')
@@ -43,9 +43,7 @@ const users_schema = new mongoose.Schema({
     type: String,
     default: moment().format('HH:mm:ss')
   }
-  
 });
-
 
 const users_collection = new mongoose.model("users_collection", users_schema);
 module.exports = users_collection;

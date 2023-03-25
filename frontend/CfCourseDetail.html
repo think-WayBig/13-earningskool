@@ -455,7 +455,8 @@
                                                     <div class="col-md-3 col-sm-3 xol-xs-12">
                                                         <ul class="dropdown__colum dropdown__columTwoB">
                                                             <!-- <li><a href="/Biz/BecomeAnInst">Become An Instructor</a></li> -->
-                                                            <li id="li_becminstr"><a href="BecomeAnAffiliate.html" class="userlog">Become An
+                                                            <li id="li_becminstr"><a href="BecomeAnAffiliate.html"
+                                                                    class="userlog">Become An
                                                                     Affiliate</a></li>
                                                         </ul>
                                                     </div>
@@ -485,10 +486,6 @@
                                             </ul>
                                         </div>
                                     </li>
-
-
-
-
                                 </ul>
                                 <ul id="userlog_signup" class="nav navbar-nav navbar-right nav__buttons">
 
@@ -519,8 +516,8 @@
                                         <span class="caret"></span>
                                     </button>
                                     <ul id="profile_option" class="dropdown-menu">
-                                        <li id="li_myprofile"><a href="member_profile.html"><i
-                                                    class="fa fa-user" aria-hidden="true"></i>&nbsp; My Profile</a>
+                                        <li id="li_myprofile"><a href="member_profile.html"><i class="fa fa-user"
+                                                    aria-hidden="true"></i>&nbsp; My Profile</a>
                                         </li>
                                         <li id="li_mycourse"><a href="my_course.html"><i class="fa fa-graduation-cap"
                                                     aria-hidden="true"></i>&nbsp;My
@@ -529,9 +526,9 @@
                                                     aria-hidden="true"></i>&nbsp;Certificates</a></li>
                                         <li id="li_prime"></li>
                                         <li id="li_subtoprime"><a href="/Biz/members/prime/PrimePurchase"
-                                                    id="subs_prime"><i class="fa fa-hand-o-right shine"
-                                                        aria-hidden="true"></i>&nbsp; Subscribe To Earningskool Prime</a>
-                                            </li> 
+                                                id="subs_prime"><i class="fa fa-hand-o-right shine"
+                                                    aria-hidden="true"></i>&nbsp; Subscribe To Earningskool Prime</a>
+                                        </li>
                                         <li id="li1"><a
                                                 href="https://www.facebook.com/groups/Earningskoollearnerscommunity"
                                                 target="_blank"><i class="fa fa-user-circle-o"
@@ -677,14 +674,6 @@
                 }
             }
         </style>
-
-
-
-
-
-
-
-
         <main>
 
             <section class="course_fix_btn">
@@ -709,10 +698,7 @@
                         <div class="bundel_courses_video">
                             <iframe src='https://player.vimeo.com/video/711077615?h=1685872b46'
                                 title="How to Earn 1Lakh a Month with Social Media? | Earningskool | Affiliate Marketing"
-                                frameborder="0"
-                                
-                                allowfullscreen=""
-                                ></iframe>
+                                frameborder="0" allowfullscreen=""></iframe>
                             <!-- <div class="bundle_overlay getleadPop">
                                 <img src="./Biz/img/play_btn.png">
                             </div> -->
@@ -723,7 +709,6 @@
                         <div class="courses_purchase_video">
                             <div style="display:flex;align-items:center;">
                                 <p>SALE</p>
-
                             </div>
                             <h3><span class="cls_price">₹699</span></h3>
                         </div>
@@ -733,8 +718,17 @@
                                 title='Complete Course on Blockchain and Cryptocurrency'><i class="fa fa-shopping-cart"
                                     aria-hidden="true" style="margin-right: 10px;"></i>Add To Cart</a> -->
 
+                            <script>
+                                function registerProcess() {
+                                    const urlParams = new URLSearchParams(window.location.search);
+                                    const course = urlParams.get('course');
 
-                            <input type="submit" name="ctl00$ContentPlaceHolder1$btn_buynow" value="Buy Now"
+                                    localStorage.setItem('interest', course);
+                                    location.href = './signup.html'
+                                }
+                            </script>
+
+                            <input type="submit" name="ctl00$ContentPlaceHolder1$btn_buynow" onclick="registerProcess()" value="Buy Now"
                                 id="btn_buynow" class="buy__now" class="fa fa-shopping-cart" aria-hidden="true"
                                 style="margin-right: 10px;" />
                             <h6 style="border-top: 1px solid #d9d9d9; padding-top: 30px; margin-top: 30px;"><i

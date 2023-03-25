@@ -35,9 +35,10 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="./Biz/css/header.css?v=4.2" />
-<link rel="stylesheet" type="text/css" href="./Biz/assets/css/style.css?v=2.4"></link>
+    <link rel="stylesheet" type="text/css" href="./Biz/assets/css/style.css?v=2.4">
+    </link>
 
-    
+
     <link rel="stylesheet" href="./Biz/css/footer.css" />
     <link rel="stylesheet" href="./Biz/css/carousel.css" />
     <link rel="stylesheet" href="./Biz/css/carouseller.css" />
@@ -457,7 +458,8 @@
                                                     <div class="col-md-3 col-sm-3 xol-xs-12">
                                                         <ul class="dropdown__colum dropdown__columTwoB">
                                                             <!-- <li><a href="/Biz/BecomeAnInst">Become An Instructor</a></li> -->
-                                                            <li id="li_becminstr"><a href="BecomeAnAffiliate.html" >Become An
+                                                            <li id="li_becminstr"><a
+                                                                    href="BecomeAnAffiliate.html">Become An
                                                                     Affiliate</a></li>
                                                         </ul>
                                                     </div>
@@ -1193,11 +1195,14 @@
             if (res.message == true) {
                 toast.innerHTML = "Login successful";
                 activeToast();
-                //   console.log(res.referralCode)
                 localStorage.setItem('rcode', res.referralCode);
-                setTimeout(function () {
-                    window.location.href = "./index.html";
-                }, 2000)
+
+                if (localStorage.getItem('interest') != undefined) {
+                    var interest = localStorage.getItem('interest');
+                    setTimeout(() => window.location.href = "./CfCourseDetail.html?course=" + interest, 2000)
+                } else {
+                    setTimeout(() => window.location.href = "./index.html", 2000)
+                }
                 localStorage.setItem("User", email);
                 localStorage.setItem("isLoggedIn", true);
             }
@@ -1241,7 +1246,7 @@
     </script>
 
 
-     
+
     <!-- Ionic Icons -->
     <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
     <script src="./Biz/assets/js/common-pages.js"></script>

@@ -99,6 +99,14 @@ app.post("/login", async (req, res) => {
 
 });
 
+app.get('/getUser/:userEmail', async (req, res) => {
+  let req_userData = await users_collection.findOne({ email: req.params.userEmail });
+
+  res.send({
+    message: req_userData
+  })
+});
+
 app.get("/", (req, res) => {
   courseDetails.find((err, data) => {
     if (err) {

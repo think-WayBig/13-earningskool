@@ -162,10 +162,76 @@ app.post('/affiliate', async (req, res) => {
 
   // Find the users who have used the referral code
   const users = await users_collection.find({ referredByCode: referralCode });
-  console.log(users);
+
+  // Find the user who referred the current user
+  const referrer = await users_collection.findOne({referralCode: user.referredByCode});
+
+  console.log(referrer);
   // Return the user's details as a response
-  res.send({ user, users });
+  res.send({ user, users, referrer});
 })
+
+app.put('/userDetails/:email', async (req, res) => {
+  let userEmail = req.body.email;
+  let state = req.body.state;
+  let gender = req.body.gender;
+  let dob = req.body.dob
+  let city = req.body.city;
+  let pincode = req.body.pincode;
+  let address = req.body.address;
+
+  try{
+    let result = await users_collection.findOneAndUpdate({ email: userEmail }, {state:state,gender:gender,dob:dob,city:city,pincode:pincode,address:address}, { returnOriginal: false, upsert: true });
+    
+    console.log("User details updated successfully")
+
+        if (!userEmail) {
+          console.log("User not found");
+          return res.status(404).send('User not found');
+        }
+    return res.send({"message":'success'});
+  }
+  catch (error) {
+    console.error(error);
+    return res.status(500).send('Internal server error');
+  }
+});
+
+app.put('/changePassword/:email', async (req, res) => {
+  let userEmail = req.body.email;
+  let { oldPassword, newPassword, repeatNewPassword } = req.body;
+
+  try {
+    // Find user by email
+    const user = await users_collection.findOne({ email : userEmail });
+
+    if (!user) {
+      return res.status(404).send('User not found');
+    }
+
+    // Check if old password matches
+    if (user.pass !== oldPassword) {
+      return res.status(401).send({'message':'Invalid old password'});
+    }
+
+    if (repeatNewPassword !== newPassword) {
+      return res.status(401).send({'message':'Passwords do not match'});
+    }
+
+    // Update password
+    const result = await users_collection.findOneAndUpdate({ email : userEmail }, { pass: newPassword }, { new: true });
+
+    console.log('Password updated successfully');
+    console.log(result);
+
+    return res.send({'message':'Password updated successfully'});
+  } catch (error) {
+    console.error(error);
+    return res.status(500).send('Internal server error');
+  }
+});
+
+
 
 app.listen(port, () => {
   console.log(`listening on port ${port} :- http://localhost:${port}`);

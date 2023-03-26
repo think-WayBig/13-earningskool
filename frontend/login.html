@@ -38,7 +38,6 @@
     <link rel="stylesheet" type="text/css" href="./Biz/assets/css/style.css?v=2.4">
     </link>
 
-
     <link rel="stylesheet" href="./Biz/css/footer.css" />
     <link rel="stylesheet" href="./Biz/css/carousel.css" />
     <link rel="stylesheet" href="./Biz/css/carouseller.css" />
@@ -582,6 +581,7 @@
                                             <div class="pass-div ">
                                                 <input name="pass" type="password" id="ContentPlaceHolder1_txtPassword"
                                                     class="form-control " placeholder="Password " />
+                                                    <i class="fa fa-eye" id="toggle-password" style="right:17px"></i>
                                             </div>
 
                                         </div>
@@ -1160,6 +1160,15 @@
     </form>
 
     <script>
+        const togglePassword = document.querySelector('#toggle-password');
+        var password= document.getElementById("ContentPlaceHolder1_txtPassword");
+
+        togglePassword.addEventListener('click', function() {
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        this.classList.toggle('fa-eye-slash');
+        this.style.display="block";
+        });
         async function login() {
             var email = document.getElementById("ContentPlaceHolder1_txtUsername").value;
             var pass = document.getElementById("ContentPlaceHolder1_txtPassword").value;
@@ -1167,12 +1176,12 @@
 
             if (email == "") {
                 document.getElementById("ContentPlaceHolder1_txtUsername").focus();
-                toast.innerHTML = "Email is required";
+                toast.innerHTML = "Email is required.";
                 activeToast();
                 return;
             } else if (pass == "") {
                 document.getElementById("ContentPlaceHolder1_txtPassword").focus();
-                toast.innerHTML = "Password is required";
+                toast.innerHTML = "Password is required.";
                 activeToast();
                 return;
             }
@@ -1192,7 +1201,7 @@
             let res = await response.json();
 
             if (res.message == true) {
-                toast.innerHTML = "Login successful";
+                toast.innerHTML = "Login successful.";
                 activeToast();
                 localStorage.setItem('rcode', res.referralCode);
 
@@ -1212,12 +1221,12 @@
             }
 
             if (res.message == false) {
-                toast.innerHTML = "Incorrect password";
+                toast.innerHTML = "Incorrect password.";
                 activeToast();
             }
 
             if (res.message == "invalid") {
-                toast.innerHTML = "Email does not exist";
+                toast.innerHTML = "Email does not exist.";
                 activeToast();
             }
 

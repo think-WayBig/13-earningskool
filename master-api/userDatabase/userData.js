@@ -35,6 +35,21 @@ const users_schema = new mongoose.Schema({
     type: String,
     default: "./Biz/img/pic.png",
   },
+  gender:{
+    type: String,
+  },
+  dob:{
+    type: String,
+  },
+  city:{
+    type: String,
+  },
+  pincode:{
+    type: Number,
+  },
+  address:{
+    type: String,
+  },
   date: {
     type: String,
     default: moment().format('DD-MM-YYYY')

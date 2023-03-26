@@ -2184,3 +2184,19 @@ ul.bell_notification li p span {
         transform: rotate(360deg);
     }
 }
+.fa-eye {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 15px !important;
+  }
+  
+  .fa-eye-slash {
+    display: none;
+  }
+  
+  input[type="password"] {
+    padding-right: 30px;
+  }

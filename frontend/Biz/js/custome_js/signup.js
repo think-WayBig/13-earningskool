@@ -29,6 +29,15 @@ async function setReferralCode() {
 }
 
 setReferralCode();
+const togglePassword = document.querySelector('#toggle-password');
+  var password= document.getElementById("txtPassword");
+
+togglePassword.addEventListener('click', function() {
+  const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+  password.setAttribute('type', type);
+  this.classList.toggle('fa-eye-slash');
+  this.style.display="block";
+});
 
 async function registration() {
 
@@ -43,54 +52,83 @@ async function registration() {
   var referredByCode = document.getElementById("referredByCode").value;
   var chktandc = document.getElementById("chktandc");
   var chkrefund = document.getElementById("chkrefund");
+  
 
   const referralCode = name.slice(0, 3) + phone.slice(-4);
 
   if (name == "") {
     document.getElementById("txtfullname").focus();
-    toast.innerHTML = "Name is required";
+    toast.innerHTML = "Name is required.";
     activeToast();
     return;
   } else if (email == "") {
     document.getElementById("txtLoginId").focus();
-    toast.innerHTML = "Email is required";
+    toast.innerHTML = "Email is required.";
     activeToast();
     return;
   } else if (confirmemail == "") {
     document.getElementById("ContentPlaceHolder1_txtconfirmemail").focus();
-    toast.innerHTML = "Confirm Email is required";
+    toast.innerHTML = "Confirm Email is required.";
     activeToast();
     return;
   } else if (confirmemail != email) {
     document.getElementById("ContentPlaceHolder1_txtconfirmemail").focus();
-    toast.innerHTML = "Email do not match";
+    toast.innerHTML = "Email do not match.";
     activeToast();
     return;
   } else if (phone == "") {
     document.getElementById("txtMobileNumber").focus();
-    toast.innerHTML = "Mobile Number is required";
+    toast.innerHTML = "Mobile number is required.";
+    activeToast();
+    return;
+  } else if (!isValidMobileNumber(phone)) {
+    document.getElementById("txtMobileNumber").focus();
+    toast.innerHTML = "Mobile number is not valid.";
     activeToast();
     return;
   } else if (pass == "") {
     document.getElementById("txtPassword").focus();
-    toast.innerHTML = "Password is required";
+    toast.innerHTML = "Password is required.";
+    activeToast();
+    return;
+  } else if (!validatePassword(pass)) {
+    document.getElementById("txtPassword").focus();
+    toast.innerHTML = "Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one digit, and one special character (@$!%*?&).";
     activeToast();
     return;
   } else if (state == "Select State") {
     document.getElementById("dd_state").focus();
-    toast.innerHTML = "State is required";
+    toast.innerHTML = "State is required.";
     activeToast();
     return;
   } else if (!chktandc.checked) {
     chktandc.focus();
-    toast.innerHTML = "Please agree to the terms and conditions if you want to proceed";
+    toast.innerHTML = "Please agree to the terms and conditions if you want to proceed.";
     activeToast();
     return;
   } else if (!chkrefund.checked) {
     chkrefund.focus();
-    toast.innerHTML = "Please agree to the refund policy if you want to proceed";
+    toast.innerHTML = "Please agree to the refund policy if you want to proceed.";
     activeToast();
     return;
+  }
+
+  
+
+  function isValidMobileNumber(mobileNumber) {
+    // Regular expression to match 10 digit mobile numbers
+    const mobileNumberRegex = /^[0-9]{10}$/;
+  
+    // Check if the mobile number matches the regex
+    return mobileNumberRegex.test(mobileNumber);
+  }
+
+  function validatePassword(password) {
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    if (!passwordRegex.test(password)) {
+      return false;
+    }
+    return true;
   }
 
   const response = await fetch("https://api-earningskool.vercel.app/register", {
@@ -107,7 +145,7 @@ async function registration() {
   let res = await response.json();
 
   if (res.message == "success") {
-    toast.innerHTML = "Registration successful";
+    toast.innerHTML = "Registration successful.";
     // alert(`Your referral code is ${referralCode}`);
     setTimeout(function () { window.location.href = "./login.html"; }, 1000)
 
@@ -122,7 +160,7 @@ async function registration() {
     activeToast();
   }
   if (res.message == "invalid") {
-    toast.innerHTML = "Registration failed";
+    toast.innerHTML = "Registration failed.";
     activeToast();
   }
   console.log(res);

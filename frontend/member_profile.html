@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="./Biz/css/header.css?v=4.3" />
     <link rel="stylesheet" href="./Biz/css/footer.css?v=1.3" />
+    <link rel="stylesheet" href="./Biz/css/toast.css" />
     <link rel="stylesheet" href="./Biz/css/carousel.css" />
     <link rel="stylesheet" href="./Biz/css/carouseller.css" />
     <link rel="stylesheet" href="./Biz/css/animate.css" />
@@ -955,7 +956,7 @@
                                                                         style="color: red;"></span></label>
                                                                 <input
                                                                     name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$txtIntroducerName"
-                                                                    type="text" value="Stuti"
+                                                                    type="text" value=""
                                                                     id="ContentPlaceHolder1_NestedContentPlaceHolder_txtIntroducerName"
                                                                     disabled="disabled"
                                                                     class="aspNetDisabled form-control" />
@@ -965,7 +966,7 @@
                                                                         style="color: red;">*</span></label>
                                                                 <input
                                                                     name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$txtIntroducerMobile"
-                                                                    type="text" value="XXXXXXX242"
+                                                                    type="text" value=""
                                                                     id="ContentPlaceHolder1_NestedContentPlaceHolder_txtIntroducerMobile"
                                                                     disabled="disabled"
                                                                     class="aspNetDisabled form-control" />
@@ -1000,7 +1001,7 @@
                                                                 style="margin-left: auto; margin-right: auto; display: block; color: red;"></span>
                                                         </div>
                                                         <div class="form-group">
-                                                            <div class="col-sm-6">
+                                                            <div class="col-sm-12">
                                                                 <label class="col-form-label">Name<span
                                                                         style="margin-left:15px;">(Kindly complete your
                                                                         KYC, to change the name. <a
@@ -1011,7 +1012,7 @@
                                                                             Here</a>)</span></label>
                                                                 <input
                                                                     name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$txtName"
-                                                                    type="text" value="Mayank soni" readonly="readonly"
+                                                                    type="text" value="" readonly="readonly"
                                                                     id="ContentPlaceHolder1_NestedContentPlaceHolder_txtName"
                                                                     class="form-control" style="cursor: not-allowed;" />
                                                                 <span
@@ -1024,7 +1025,7 @@
                                                                     data-val-initialvalue=""
                                                                     style="color:Red;display:none;">Name Required</span>
                                                             </div>
-                                                            <div class="col-sm-6">
+                                                            <!-- <div class="col-sm-6">
                                                                 <label class="col-form-label">Login Id<span
                                                                         style="color: red;">*</span></label>
                                                                 <input
@@ -1034,14 +1035,14 @@
                                                                     disabled="disabled"
                                                                     class="aspNetDisabled form-control"
                                                                     autocomplete="nope" />
-                                                            </div>
+                                                            </div> -->
                                                         </div>
                                                         <div class="form-group">
                                                             <div class="col-sm-6">
                                                                 <label class="col-form-label">Email</label>
                                                                 <input
                                                                     name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$txtEmail"
-                                                                    type="text" value="mayank.soni258.mk@gmail.com"
+                                                                    type="text" value=""
                                                                     readonly="readonly"
                                                                     id="ContentPlaceHolder1_NestedContentPlaceHolder_txtEmail"
                                                                     class="form-control" style="cursor: not-allowed;" />
@@ -1060,7 +1061,7 @@
                                                                 <label class="col-form-label">Mobile Number</label>
                                                                 <input
                                                                     name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$txtMobileNumber"
-                                                                    type="text" value="XXXXXXX484" readonly="readonly"
+                                                                    type="text" value="" readonly="readonly"
                                                                     id="ContentPlaceHolder1_NestedContentPlaceHolder_txtMobileNumber"
                                                                     class="form-control" />
                                                                 <span
@@ -1083,7 +1084,7 @@
                                                                 <label class="col-form-label">Gender</label>
 
                                                                 <select
-                                                                    name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$ddgen"
+                                                                    name="gender"
                                                                     id="ContentPlaceHolder1_NestedContentPlaceHolder_ddgen"
                                                                     class="form-control">
                                                                     <option selected="selected" value="Male">Male
@@ -1097,7 +1098,7 @@
                                                             <div class="col-sm-6">
                                                                 <label class="col-form-label">DOB</label>
                                                                 <input
-                                                                    name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$txtdob"
+                                                                    name="dob"
                                                                     type="date"
                                                                     id="ContentPlaceHolder1_NestedContentPlaceHolder_txtdob"
                                                                     class="form-control" />
@@ -1144,7 +1145,7 @@
                                                             <div class="col-sm-6">
                                                                 <label class="col-form-label">Select State</label>
                                                                 <select
-                                                                    name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$ddlstatee"
+                                                                    name="state"
                                                                     id="ContentPlaceHolder1_NestedContentPlaceHolder_ddlstatee"
                                                                     class="form-control">
                                                                     <option selected="selected" value="Select State">
@@ -1203,7 +1204,7 @@
                                                             <div class="col-sm-6">
                                                                 <label class="col-form-label">Enter City</label>
                                                                 <input
-                                                                    name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$txtcity"
+                                                                    name="city"
                                                                     type="text"
                                                                     id="ContentPlaceHolder1_NestedContentPlaceHolder_txtcity"
                                                                     class="form-control" />
@@ -1220,7 +1221,7 @@
                                                             <div class="col-sm-6">
                                                                 <label class="col-form-label">PIN Code</label>
                                                                 <input
-                                                                    name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$txtpincode"
+                                                                    name="pincode"
                                                                     type="text"
                                                                     id="ContentPlaceHolder1_NestedContentPlaceHolder_txtpincode"
                                                                     class="form-control" />
@@ -1231,7 +1232,7 @@
                                                             <div class="col-sm-12">
                                                                 <label class="col-form-label">Address</label>
                                                                 <textarea
-                                                                    name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$txtAddress"
+                                                                    name="address"
                                                                     rows="2" cols="20"
                                                                     id="ContentPlaceHolder1_NestedContentPlaceHolder_txtAddress"
                                                                     class="form-control">
@@ -1247,13 +1248,13 @@
                                                                 <input type="submit"
                                                                     name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$btnsubmit"
                                                                     value="Update Information"
-                                                                    onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$btnsubmit&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))"
                                                                     id="ContentPlaceHolder1_NestedContentPlaceHolder_btnsubmit"
                                                                     class="btn" />
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div id="snackbar"></div>
 
 
 
@@ -1849,6 +1850,7 @@
     <script src="./Biz/js/custome_js/afterlogin.js"></script>
     <script src="./Biz/js/custome_js/loadDp.js"></script>
     <script src="./Biz/js/custome_js/checkLogin.js"></script>
+    <script src="./Biz/js/custome_js/memberProfile.js"></script>
     <!-- Ionic Icons -->
 
 </body>

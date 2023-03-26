@@ -48,7 +48,7 @@ document.querySelector("#ContentPlaceHolder1_NestedContentPlaceHolder_btnSubmit"
     }
     
     // Make a PUT request to the /userDetails/:email endpoint
-    let response = await fetch(`http://localhost:3000/changePassword/${useremail}`, {
+    let response = await fetch(`https://api-earningskool.vercel.app/changePassword/${useremail}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({email: useremail,

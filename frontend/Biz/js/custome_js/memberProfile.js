@@ -4,7 +4,7 @@ var toast = document.getElementById("snackbar");
 
 async function fetchUserDetails() {
   try {
-    const response = await fetch("http://localhost:3000/affiliate", {
+    const response = await fetch("https://api-earningskool.vercel.app/affiliate", {
       method: "POST",
       body: JSON.stringify({ email: useremail, referralCode: userReferralCode }),
       headers: {
@@ -44,7 +44,7 @@ async function fetchUserDetails() {
     document.querySelector("#ContentPlaceHolder1_NestedContentPlaceHolder_btnsubmit").addEventListener("click", async function(){
        
         // Make a PUT request to the /userDetails/:email endpoint
-        let response = await fetch(`http://localhost:3000/userDetails/${useremail}`, {
+        let response = await fetch(`https://api-earningskool.vercel.app/userDetails/${useremail}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({email: useremail,

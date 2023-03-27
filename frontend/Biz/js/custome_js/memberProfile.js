@@ -13,29 +13,32 @@ async function fetchUserDetails() {
     });
     const data = await response.json();
 
-    // Display the user who referred the current user
-    document.querySelector("#ContentPlaceHolder1_NestedContentPlaceHolder_txtIntroducerName").value = data.referrer.name;
-    document.querySelector("#ContentPlaceHolder1_NestedContentPlaceHolder_txtIntroducerMobile").value =  data.referrer.phone;
-
+    
     // Display the user's details in the personal information
     document.querySelector("#ContentPlaceHolder1_NestedContentPlaceHolder_txtName").value = data.user.name;
     document.querySelector("#ContentPlaceHolder1_NestedContentPlaceHolder_txtEmail").value = data.user.email;
     document.querySelector("#ContentPlaceHolder1_NestedContentPlaceHolder_txtMobileNumber").value = data.user.phone;
-    document.querySelector("#ContentPlaceHolder1_NestedContentPlaceHolder_ddgen").value = data.user.gender;
-    document.querySelector("#ContentPlaceHolder1_NestedContentPlaceHolder_txtdob").value = data.user.dob;
+    if(data.user.gender.length !== 0 && data.user.dob.length !== 0 && data.user.city.length !== 0 && data.user.pincode.length !== 0 && data.user.address.length !== 0){
+      document.querySelector("#ContentPlaceHolder1_NestedContentPlaceHolder_ddgen").value = data.user.gender;
+      document.querySelector("#ContentPlaceHolder1_NestedContentPlaceHolder_txtdob").value = data.user.dob;
+      document.querySelector("#ContentPlaceHolder1_NestedContentPlaceHolder_txtcity").value = data.user.city;
+      document.querySelector("#ContentPlaceHolder1_NestedContentPlaceHolder_txtpincode").value = data.user.pincode;
+      document.querySelector("#ContentPlaceHolder1_NestedContentPlaceHolder_txtAddress").value = data.user.address;
+    }
     document.querySelector("#ContentPlaceHolder1_NestedContentPlaceHolder_ddlstatee").value = data.user.state;
-    document.querySelector("#ContentPlaceHolder1_NestedContentPlaceHolder_txtcity").value = data.user.city;
-    document.querySelector("#ContentPlaceHolder1_NestedContentPlaceHolder_txtpincode").value = data.user.pincode;
-    document.querySelector("#ContentPlaceHolder1_NestedContentPlaceHolder_txtAddress").value = data.user.address;
-    
+   
     // Get the user's details from the form to update
     let gender = document.querySelector("#ContentPlaceHolder1_NestedContentPlaceHolder_ddgen");
     let dob = document.querySelector("#ContentPlaceHolder1_NestedContentPlaceHolder_txtdob");
     let state = document.querySelector("#ContentPlaceHolder1_NestedContentPlaceHolder_ddlstatee");
-    // var state = (stateselect.value);
     let city = document.querySelector("#ContentPlaceHolder1_NestedContentPlaceHolder_txtcity");
     let pincode = document.querySelector("#ContentPlaceHolder1_NestedContentPlaceHolder_txtpincode");
     let address = document.querySelector("#ContentPlaceHolder1_NestedContentPlaceHolder_txtAddress");
+
+    // Display the user who referred the current user
+    document.querySelector("#ContentPlaceHolder1_NestedContentPlaceHolder_txtIntroducerName").value = data.referrer.name;
+    document.querySelector("#ContentPlaceHolder1_NestedContentPlaceHolder_txtIntroducerMobile").value =  data.referrer.phone;
+
      
     // const updatedFields = {
     //     gender,dob,state,city,pincode,address

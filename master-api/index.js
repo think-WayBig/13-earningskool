@@ -4,6 +4,7 @@ const bodyparser = require("body-parser");
 const port = 3000;
 const users_collection = require("./userDatabase/userData");
 const courseDetails = require("./CourseDatabase/coursesData");
+const course_payment_details = require("./CoursePaymentRequestDatabase/coursePaymentRequestData");
 require("./mongooseConnection");
 let path = require('path');
 
@@ -20,6 +21,14 @@ app.use(express.json());
 
 app.get("/register", (req, res) => {
   res.send("Welcome");
+});
+
+app.get("/payment_request", async (req, res) => {
+  // let req_userData = new users_collection(req.body)
+    const req_course_payment_data = await course_payment_details.find({});
+    console.log(req_course_payment_data);
+    res.send(req_course_payment_data);
+     
 });
 
 app.get('/:referralCode', async (req, res) => {
@@ -231,6 +240,64 @@ app.put('/changePassword/:email', async (req, res) => {
   }
 });
 
+app.post("/payment_request", async (req, res) => {
+  // let req_userData = new users_collection(req.body);
+
+  try {
+    const req_course_payment_data = new course_payment_details(req.body);
+    await req_course_payment_data.save();
+    res.status(202).send({
+      "message": "success",
+    });
+
+
+  } catch (err) {
+    res.send({
+      "error": err,
+      "message": "invalid"
+    });
+  }
+});
+
+app.put("/approvedCourse/:email", async (req, res) => {
+  // let req_userData = new users_collection(req.body);
+  let userEmail = req.body.email;
+  let mycourses = req.body.course_id;
+  console.log(userEmail);
+  console.log(mycourses);
+
+  try {
+    let req_course_payment_data = await users_collection.findOneAndUpdate({email : userEmail} ,{ $push: {myCourses:{course_id: mycourses}} } ,{ returnOriginal: false, upsert: true });
+    console.log(req_course_payment_data);
+    res.status(202).send({
+      "message": "success",
+    });
+
+
+  } catch (err) {
+    res.send({
+      "error": err,
+      "message": "invalid"
+    });
+  }
+});
+
+app.delete('/payment_request/:id/:courseId/:transactionId', async (req, res) => {
+  try {
+    const result = await course_payment_details.findOneAndDelete({
+      course_id: req.body.course_id,
+      email: req.body.email,
+      txn_id: req.body.txn_id
+    });
+    if (!result) {
+      return res.status(404).send('Data not found');
+    }
+    res.send(result);
+  } catch (error) {
+    console.log(error);
+    res.status(500).send('Internal server error');
+  }
+});
 
 
 app.listen(port, () => {

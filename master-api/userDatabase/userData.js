@@ -57,7 +57,11 @@ const users_schema = new mongoose.Schema({
   time: {
     type: String,
     default: moment().format('HH:mm:ss')
-  }
+  },
+  myCourses:[
+    { 
+        course_id :{type: String, required: true}
+    }]
 });
 
 const users_collection = new mongoose.model("users_collection", users_schema);

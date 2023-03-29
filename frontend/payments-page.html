@@ -38,6 +38,7 @@
     <link rel="stylesheet" type="text/css" href="./Biz/assets/css/style.css?v=2.4">
     </link>
     <link rel="stylesheet" href="./Biz/css/footer.css?v=1.3" />
+    <link rel="stylesheet" href="./Biz/css/toast.css">
     <link rel="stylesheet" href="./Biz/css/carousel.css" />
     <link rel="stylesheet" href="./Biz/css/carouseller.css" />
     <link rel="stylesheet" href="./Biz/css/animate.css" />
@@ -373,7 +374,7 @@
                                             </li>
                                         </ul>
                                     </li> -->
-                                <li class="biz_bundle_nav">
+                                <!--<li class="biz_bundle_nav">
                                     <div class="header__dropdown">
                                         <button class="dropdown-toggle dropdown_nav_show2" type="button">
                                             Upskilling Courses
@@ -422,7 +423,7 @@
 
                                         </ul>
                                     </div>
-                                </li>
+                                </li>-->
 
 
 
@@ -603,15 +604,24 @@
         <!--- browse question section start --->
         <section class="browse_section">
             <div class="container">
-                <div class="browse_question">
-                    <button>Paytm</button>
-                    <button>GPay</button>
-                    <button>BharatPe</button>
-                    <button>PhonePe</button>
+                <div class="browse_question" style="display:flex;justify-content: center;gap:20px;place-items: center;">
+                    <a href=""><img src="./Biz/img/google-pay.png" alt="" style="height:70px"></a>
+                    <a href=""><img src="./Biz/img/paytm.png" alt="" style="height: 84px"></a>
+                    <a href=""><img src="./Biz/img/phonepe.png" alt="" style="height:103px;object-fit: none;"></a>
+                    <a href=""><img src="./Biz/img/bharatpe-logo.png" alt="" style="height:103px;transform: scale3d(1.27, 1.2, 1.2);"></a>
                 </div>
                 <div class="container">
-                    <input type="text" id="txnId">
-                    <input type="submit" value="Submit">
+                    <div class="form-group" style="display:flex;justify-content: center;">
+                        <div class="col-sm-6">
+                            <input type="text" id="txn_id" name="txn_id" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group" style="display:flex;justify-content: center;">
+                        <div class="col-sm-2 submit-btn" style="padding-top: 0;">
+                            <input type="submit" value="Submit" id="submit" onclick="submit()">
+                        </div>
+                    </div>
+                    <div id="snackbar"></div>
                 </div>
             </div>
         </section>
@@ -641,7 +651,7 @@
     <!-- <script src="./Biz/js/jquery-ui.js"></script> -->
 
 
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         $(document).ready(function () {
             var value = "";
             $('#ContentPlaceHolder1_tbsearch').autocomplete({
@@ -710,7 +720,7 @@
             })
 
         });
-    </script>
+    </script> -->
     <script>
         function select(element) {
             let selectData = element.textContent;
@@ -842,9 +852,8 @@
 
 
 
-    <div class="modal fade cart__modal" id="DetModal" role="dialog">
+    <!-- <div class="modal fade cart__modal" id="DetModal" role="dialog">
         <div class="modal-dialog">
-            <!-- Modal content-->
             <div class="modal-content">
                 <div>
                     <h5 class="modal-title">Selected Courses:</h5>
@@ -876,7 +885,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
     <div class="floating_chatbot">
@@ -906,7 +915,7 @@
                     $(".tooltiptext").show();
                     $("#botsay").html(
                         "Get in touch <i class='fa fa-phone' aria-hidden='true'></i> +91 8567856753"
-                        );
+                    );
                     window.location.href = "/Biz/UserHelp";
                 }
 
@@ -937,6 +946,56 @@
             }, 3000)
 
         })
+    </script>
+    <script>
+        var toast = document.getElementById("snackbar");
+        
+        async function submit() {
+
+        var txn_id = document.getElementById("txn_id").value;  
+        
+        const urlParams = new URLSearchParams(window.location.search);
+        const course_id = urlParams.get('id');
+        const user_email =  localStorage.getItem('User');
+
+        if (txn_id == "") {
+            document.getElementById("txn_id").focus();
+            toast.innerHTML = "Name is required.";
+            activeToast();
+            return;
+        }         
+
+        const response = await fetch("https://api-earningskool.vercel.app/payment_request", {
+            method: "POST",
+            headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+            txn_id, course_id, user_email
+            }),
+        });
+
+        let res = await response.json();
+
+        if (res.message == "success") {
+            toast.innerHTML = "Submission successful.";
+            setTimeout(function () { window.location.href = "./index.html"; }, 1000)
+
+            activeToast();
+        }
+        if (res.message == "invalid") {
+            toast.innerHTML = "Submission failed.";
+            activeToast();
+        }
+        console.log(res);
+        }
+        function activeToast() {
+        toast.className = "show";
+        setTimeout(function () {
+            toast.className = toast.className.replace("show", "");
+        }, 3000);
+        }
     </script>
     <style>
         body {
@@ -1144,7 +1203,7 @@
 
     <!-- scroll to top button -->
 
-    <script>
+    <!-- <script>
         $(document).ready(function () {
             if ($("#hdnstory").val() == 1) {
                 $("#stories").addClass("isview_story");
@@ -1251,10 +1310,10 @@
             $("#div_update_plan").hide();
 
         })
-    </script>
+    </script> -->
 
 
-    <script>
+    <!-- <script>
         // Set the date we're counting down to
         var offerTime = $("#hdn_offertime").val();
         var countDownDate = new Date(offerTime).getTime();
@@ -1286,7 +1345,7 @@
                 $("#div_update_plan").hide();
             }
         }, 1000);
-    </script>
+    </script> -->
 
     </form>
 

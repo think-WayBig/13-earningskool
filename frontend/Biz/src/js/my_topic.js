@@ -348,7 +348,7 @@ $(document).ready(function() {
 
 
 async function getCourseDetails(id) {
-    const response = await fetch(`http://localhost:4000/courseDetail/${id}`);
+    const response = await fetch(`https://api-earningskool.vercel.app/courseDetail/${id}`);
     const data = await response.json();
     return data;
   }

@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="./Biz/css/header.css?v=4.2" />
     <link rel="stylesheet" href="./Biz/css/footer.css?v=1.3" />
+    <link rel="stylesheet" href="./Biz/css/toast.css">
     <link rel="stylesheet" href="./Biz/css/carousel.css" />
     <link rel="stylesheet" href="./Biz/css/carouseller.css" />
     <link rel="stylesheet" href="./Biz/css/animate.css" />
@@ -483,7 +484,7 @@
                                 <div id="div_userprofile" class="dropdown user__dropdown">
                                     <button class="btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
                                         <img id="img_profile"
-                                            onerror="this.onerror=null;this.src=&#39;/pic/pic.png&#39;;"
+                                            onerror="this.onerror=null;this.src='&#39;/pic/pic.png&#39;;'"
                                             src="./Biz/img/pic.png" />
                                         <span class="caret"></span>
                                     </button>
@@ -871,11 +872,11 @@
 
 
                 <link href="./Biz/css/total_affilate.css" rel="stylesheet" />
-                <script src="./Biz/js/custome_js/total_affilate.js"></script>
+                <!-- <script src="./Biz/js/custome_js/total_affilate.js"></script> -->
                 <link href="./Biz/css/sidebar_affiliate.css" rel="stylesheet" />
                 <link rel="stylesheet" href="./Biz/css/stepform.css">
                 <script src="./Biz/assets/js/common-pages.js"></script>
-                <script src="./Biz/js/custome_js/kyc.js"></script>
+                <!-- <script src="./Biz/js/custome_js/kyc.js"></script> -->
 
                 <!-- <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script> -->
                 <link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css" rel="stylesheet"
@@ -1005,7 +1006,7 @@
                                                             <div class="row">
                                                                 <div class="col-sm-12">
                                                                     
-                                                                    <div class="justify-content-center mx-auto step-container">
+                                                                    <!-- <div class="justify-content-center mx-auto step-container">
                                                                         <div class="col-md-4 col-sm-12">
                                                                             <div id="ContentPlaceHolder1_NestedContentPlaceHolder_tab_profileinfo" class="col-4 step-box">
                                                                                 <h6 class="step-title-0"><span id="spn_profileinfo" class="fa fa-circle"></span><span class="break-line"></span><span class="step-title">Profile Information</span></h6>
@@ -1022,7 +1023,7 @@
                                                                                 <h6 class="step-title-0"><span id="ContentPlaceHolder1_NestedContentPlaceHolder_spn_paninfo" class="fa fa-circle"></span><span class="break-line"></span><span class="step-title">PAN Information</span> </h6>
                                                                             </div>
                                                                         </div>
-                                                                    </div>
+                                                                    </div> -->
                         
                                                                     <div id="dvprofileinfo">
                         
@@ -1043,79 +1044,79 @@
                                                                                 <div class="form-group">
                                                                                     <div class="col-md-6 col-sm-12">
                                                                                         <label class="col-form-label">First Name<span style="color: red;">*</span></label>
-                                                                                        <input name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$txtName" type="text" value="Mayank soni" readonly="readonly" id="txtName" class="form-control">
+                                                                                        <input name="name" type="text" id="user_name" class="form-control">
                                                                                         
                                                                                     </div>
                                                                                     <div class="col-md-6 col-sm-12">
                                                                                         <label class="col-form-label">Email<span style="color: red;">*</span></label>
-                                                                                        <input name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$txtEmail" type="text" value="mayank.soni258.mk@gmail.com" readonly="readonly" id="txtEmail" class="form-control">
+                                                                                        <input name="email" type="text" id="email" class="form-control">
                                                                                         
                                                                                     </div>
                                                                                     <div class="col-md-6 col-sm-12">
                                                                                         <label class="col-form-label">Mobile No<span style="color: red;">*</span></label>
-                                                                                        <input name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$txtmobileno" type="text" value="7717259484" readonly="readonly" id="txtmobileno" class="form-control">
+                                                                                        <input name="phone" type="text" id="phone" class="form-control">
                                                                                         
                                                                                     </div>
                                                                                     <div class="col-md-6 col-sm-12">
                                                                                         <label class="col-form-label">City<span style="color: red;">*</span></label>
-                                                                                        <input name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$txtcity" type="text" id="txtcity" class="form-control">
+                                                                                        <input name="city" type="text" id="city" class="form-control">
                                                                                         <span data-val-controltovalidate="txtcity" data-val-errormessage="City Required" data-val-display="Dynamic" id="ContentPlaceHolder1_NestedContentPlaceHolder_RequiredFieldValidator4" required="" data-val="true" data-val-evaluationfunction="RequiredFieldValidatorEvaluateIsValid" data-val-initialvalue="" style="color:Red;display:none;">City Required</span>
                                                                                     </div>
                                                                                     <div class="col-md-6 col-sm-12">
                                                                                         <label class="col-form-label">State<span style="color: red;">*</span></label>
-                                                                                        <select name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$ddlstatee" id="ddlstatee" class="form-control">
-                            <option value="Select State">Select State</option>
-                            <option value="Andhra Pradesh">Andhra Pradesh</option>
-                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-                            <option value="Assam">Assam</option>
-                            <option value="Bihar">Bihar</option>
-                            <option value="Chandigarh">Chandigarh</option>
-                            <option value="Chattisgarh">Chattisgarh</option>
-                            <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
-                            <option value="Daman and Diu">Daman and Diu</option>
-                            <option value="Delhi">Delhi</option>
-                            <option value="Goa">Goa</option>
-                            <option value="Gujarat">Gujarat</option>
-                            <option value="Haryana">Haryana</option>
-                            <option value="Himachal Pradesh">Himachal Pradesh</option>
-                            <option value="Jammu and Kashmir">Jammu and Kashmir</option>
-                            <option value="Jharkhand">Jharkhand</option>
-                            <option value="Karnataka">Karnataka</option>
-                            <option value="Kerala">Kerala</option>
-                            <option value="Lakshadweep">Lakshadweep</option>
-                            <option value="Madhya Pradesh">Madhya Pradesh</option>
-                            <option value="Maharashtra">Maharashtra</option>
-                            <option value="Manipur">Manipur</option>
-                            <option value="Meghalaya">Meghalaya</option>
-                            <option value="Mizoram">Mizoram</option>
-                            <option value="Nagaland">Nagaland</option>
-                            <option value="Orissa">Orissa</option>
-                            <option value="Pondicherry">Pondicherry</option>
-                            <option value="Punjab">Punjab</option>
-                            <option value="Rajasthan">Rajasthan</option>
-                            <option value="Tamil Nadu">Tamil Nadu</option>
-                            <option value="Tripura">Tripura</option>
-                            <option value="Uttarakhand">Uttarakhand</option>
-                            <option value="Uttaranchal">Uttaranchal</option>
-                            <option value="Uttar Pradesh">Uttar Pradesh</option>
-                            <option value="West Bengal">West Bengal</option>
-                            <option value="Sikkim">Sikkim</option>
-                            <option value="Telangana">Telangana</option>
-                            <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
-                        
-                        </select>
+                                                                                        <select name="state" id="state" class="form-control">
+                                                                                            <option value="Select State">Select State</option>
+                                                                                            <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                                                                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                                                                            <option value="Assam">Assam</option>
+                                                                                            <option value="Bihar">Bihar</option>
+                                                                                            <option value="Chandigarh">Chandigarh</option>
+                                                                                            <option value="Chattisgarh">Chattisgarh</option>
+                                                                                            <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+                                                                                            <option value="Daman and Diu">Daman and Diu</option>
+                                                                                            <option value="Delhi">Delhi</option>
+                                                                                            <option value="Goa">Goa</option>
+                                                                                            <option value="Gujarat">Gujarat</option>
+                                                                                            <option value="Haryana">Haryana</option>
+                                                                                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                                                                            <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                                                                            <option value="Jharkhand">Jharkhand</option>
+                                                                                            <option value="Karnataka">Karnataka</option>
+                                                                                            <option value="Kerala">Kerala</option>
+                                                                                            <option value="Lakshadweep">Lakshadweep</option>
+                                                                                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                                                                            <option value="Maharashtra">Maharashtra</option>
+                                                                                            <option value="Manipur">Manipur</option>
+                                                                                            <option value="Meghalaya">Meghalaya</option>
+                                                                                            <option value="Mizoram">Mizoram</option>
+                                                                                            <option value="Nagaland">Nagaland</option>
+                                                                                            <option value="Orissa">Orissa</option>
+                                                                                            <option value="Pondicherry">Pondicherry</option>
+                                                                                            <option value="Punjab">Punjab</option>
+                                                                                            <option value="Rajasthan">Rajasthan</option>
+                                                                                            <option value="Tamil Nadu">Tamil Nadu</option>
+                                                                                            <option value="Tripura">Tripura</option>
+                                                                                            <option value="Uttarakhand">Uttarakhand</option>
+                                                                                            <option value="Uttaranchal">Uttaranchal</option>
+                                                                                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                                                                            <option value="West Bengal">West Bengal</option>
+                                                                                            <option value="Sikkim">Sikkim</option>
+                                                                                            <option value="Telangana">Telangana</option>
+                                                                                            <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                                                                        
+                                                                                        </select>
                                                                                         <span data-val-controltovalidate="ddlstatee" data-val-errormessage="State Required" data-val-display="Dynamic" id="ContentPlaceHolder1_NestedContentPlaceHolder_RequiredFieldValidator5" data-val="true" data-val-evaluationfunction="RequiredFieldValidatorEvaluateIsValid" data-val-initialvalue="Select State" style="color:Red;display:none;">State Required</span>
                                                                                     </div>
                                                                                     <div class="col-md-6 col-sm-12">
                                                                                         <label class="col-form-label">Select Document type<span style="color: red;">*</span></label>
-                                                                                        <select name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$dd_doctype" onchange="javascript:setTimeout('__doPostBack(\'ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$dd_doctype\',\'\')', 0)" id="dd_doctype" class="form-control">
-                            <option selected="selected" value="0">-Select-</option>
-                            <option value="AC">Aadhaar</option>
-                            <option value="DL">Driving License </option>
-                            <option value="VIC">Voter Identity Card </option>
-                            <option value="PP">Passport </option>
-                        
-                        </select>
+                                                                                        <select name="doctype" id="doctype" class="form-control">
+                                                                                             <option selected="selected" value="Select">Select</option>
+                                                                                            <option value="Aadhaar">Aadhaar</option>
+                                                                                            <option value="Driving License">Driving License </option>
+                                                                                            <option value="Voter Identity Card">Voter Identity Card </option>
+                                                                                            <option value="Passport">Passport </option>
+                                                                                        
+                                                                                        </select>
                                                                                     </div>
                         
                                                                                     <div class="col-md-6 col-sm-12">
@@ -1135,14 +1136,14 @@
                                                                                     <div class="col-md-6 col-sm-12">
                                                                                         <label class="col-form-label">Upload Front Side<span style="color: red;"></span></label>
                         
-                                                                                        <input type="file" name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$fupaadharfront" id="fupaadharfront" class="form-control" onchange="previewFile()">
+                                                                                        <input type="file" name="doc_image_front_side" id="imagefrontside" class="form-control" onchange="previewFile()">
                                                                                         
                                                                                         <img id="ContentPlaceHolder1_NestedContentPlaceHolder_imgaadharfront" style="width:100%;">
                                                                                     </div>
                         
                                                                                     <div class="col-md-6 col-sm-12">
                                                                                         <label class="col-form-label">Upload Back Side<span style="color: red;"></span></label>
-                                                                                        <input type="file" name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$fupaadhaarback" id="fupaadhaarback" class="form-control" onchange="previewFile2()">
+                                                                                        <input type="file" name="doc_image_back_side" id="imagebackside" class="form-control" onchange="previewFile2()">
                                                                                         
                                                                                         <img id="ContentPlaceHolder1_NestedContentPlaceHolder_imgaadharback" style="width:100%;">
                                                                                     </div>
@@ -1152,18 +1153,18 @@
                                                                                     <span id="ContentPlaceHolder1_NestedContentPlaceHolder_Label3" style="margin-left: auto; margin-right: auto; font-weight: bold; color: #2db32d;">INSTRUCTION:Your Adhaar card details must be matching with your registered name in Bizgurukul.</span>
                                                                                 </div>
                                                                                 
-                                                                                <div class="form-group">
+                                                                                <!-- <div class="form-group">
                                                                                     <div class="col-sm-12">
                                                                                         <div class="explore__moreBTN">
                                                                                             <button type="button" class="btn" id="btn_profile_info">Next</button>
                                                                                         </div>
                                                                                     </div>
-                                                                                </div>
+                                                                                </div> -->
                                                                             </div>
                                                                         </div>
                                                                     </div>
                         
-                                                                    <div id="dv_acctinfo" style="display: none">
+                                                                    <div id="dv_acctinfo">
                                                                         <div class="card">
                                                                             <div class="card-block">
                                                                                 <div class="m-b-20">
@@ -1174,12 +1175,12 @@
                                                                                     <div class="col-md-6 col-sm-12">
                                                                                         <label class="col-form-label">Account  Holder Name</label>
                         
-                                                                                        <input name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$txtaccount_name" type="text" id="txtaccount_name" class="form-control">
+                                                                                        <input name="account_name" type="text" id="account_name" class="form-control">
                                                                                         <span data-val-controltovalidate="txtaccount_name" data-val-errormessage="Account Name Required" data-val-display="Dynamic" data-val-validationgroup="nxtacc" id="ContentPlaceHolder1_NestedContentPlaceHolder_RequiredFieldValidator10" data-val="true" data-val-evaluationfunction="RequiredFieldValidatorEvaluateIsValid" data-val-initialvalue="" style="color:Red;display:none;">Account Name Required</span>
                                                                                     </div>
                                                                                     <div class="col-md-6 col-sm-12">
                                                                                         <label class="col-form-label">Account Number</label>
-                                                                                        <input name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$txtaccount_number" type="number" id="txtaccount_number" class="form-control" onkeypress="return RestrictSpace()">
+                                                                                        <input name="account_number" type="number" id="account_number" class="form-control" onkeypress="return RestrictSpace()">
                                                                                         <span data-val-controltovalidate="txtaccount_number" data-val-errormessage="Account Number Required" data-val-display="Dynamic" data-val-validationgroup="nxtacc" id="ContentPlaceHolder1_NestedContentPlaceHolder_RequiredFieldValidator8" data-val="true" data-val-evaluationfunction="RequiredFieldValidatorEvaluateIsValid" data-val-initialvalue="" style="color:Red;display:none;">Account Number Required</span>
                                                                                         <span data-val-controltovalidate="txtaccount_number" data-val-errormessage="Please Enter Only Numbers" data-val-validationgroup="nxtacc" id="ContentPlaceHolder1_NestedContentPlaceHolder_RegularExpressionValidator1" data-val="true" data-val-evaluationfunction="RegularExpressionValidatorEvaluateIsValid" data-val-validationexpression="^\d+$" style="color:Red;visibility:hidden;">Please Enter Only Numbers</span>
                                                                                     </div>
@@ -1188,75 +1189,77 @@
                                                                                 <div class="form-group">
                                                                                     <div class="col-md-6 col-sm-12">
                                                                                         <label class="col-form-label">Bank Name</label>
-                                                                                        <select name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$dd_bank" id="dd_bank" class="form-control">
-                            <option value="0">-Select Bank-</option>
-                            <option value="1">AIRTEL PAYMENTS BANK</option>
-                            <option value="2">ALLAHABAD BANK</option>
-                            <option value="3">AXIS BANK</option>
-                            <option value="4">ANDHRA BANK</option>
-                            <option value="5">BANK OF INDIA</option>
-                            <option value="6">BHARAT BANK</option>
-                            <option value="7">BANK OF BAHRAIN AND KUWAIT</option>
-                            <option value="8">BANK OF BARODA</option>
-                            <option value="9">BANK OF MAHARASHTRA</option>
-                            <option value="10">CENTRAL BANK OF INDIA</option>
-                            <option value="11">CATHOLIC SYRIAN BANK</option>
-                            <option value="12">CANARA BANK</option>
-                            <option value="13">CITIBANK</option>
-                            <option value="14">CITY UNION BANK</option>
-                            <option value="15">CORPORATION BANK</option>
-                            <option value="16">COSMOS BANK</option>
-                            <option value="17">DEVELOPMENT BANK OF SINGAPORE</option>
-                            <option value="18">DCB BANK LIMITED</option>
-                            <option value="19">DHANLAXMI BANK</option>
-                            <option value="20">DENA BANK</option>
-                            <option value="21">DEUTSCHE BANK</option>
-                            <option value="22">FEDERAL BANK</option>
-                            <option value="23">GOPINATH PATIL PARSIK JANATA SAHAKARI BANK LTD</option>
-                            <option value="24">HDFC BANK</option>
-                            <option value="25">HSBC</option>
-                            <option value="26">ICICI BANK</option>
-                            <option value="27">IDBI BANK</option>
-                            <option value="28">IDFC BANK</option>
-                            <option value="29">INDUSIND BANK</option>
-                            <option value="30">INDIAN BANK</option>
-                            <option value="31">INDIAN OVERSEAS BANK</option>
-                            <option value="32">JANATA SAHAKARI BANK LTD PUNE</option>
-                            <option value="33">JAMMU AND KASHMIR BANK</option>
-                            <option value="34">KARNATAKA BANK</option>
-                            <option value="35">KARUR VYSYA BANK</option>
-                            <option value="36">KOTAK BANK</option>
-                            <option value="37">LAKSHMI VILAS BANK</option>
-                            <option value="38">ORIENTAL BANK OF COMMERCE</option>
-                            <option value="39">PUNJAB AND SIND BANK</option>
-                            <option value="40">PAYTM PAYMENTS BANK LTD</option>
-                            <option value="41">PUNJAB NATIONAL BANK</option>
-                            <option value="42">RBL BANK</option>
-                            <option value="43">ROYAL BANK OF SCOTLAND</option>
-                            <option value="44">STANDARD CHARTERED BANK</option>
-                            <option value="45">SMALL FINANCE BANK</option>
-                            <option value="46">SVC COOPERATIVE BANK LTD</option>
-                            <option value="47">SYNDICATE BANK</option>
-                            <option value="48">SARASWAT BANK</option>
-                            <option value="49">SOUTH INDIAN BANK</option>
-                            <option value="50">STATE BANK OF INDIA</option>
-                            <option value="51">TAMILNAD MERCANTILE BANK</option>
-                            <option value="52">UCO BANK</option>
-                            <option value="53">UJJIVAN SMALL FINANCE BANK</option>
-                            <option value="54">UNION BANK OF INDIA RETAIL</option>
-                            <option value="55">UNITED BANK OF INDIA</option>
-                            <option value="56">VIJAYA BANK</option>
-                            <option value="57">YES BANK</option>
-                            <option value="Other">Other</option>
-                        
-                        </select>
-                                                                                        <input name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$txtbank_name" type="text" id="txtbank_name" class="form-control" placeholder="Type your bank name here" style="display: none">
+                                                                                        <select name="bank_name" id="bank_name" class="form-control" onchange="selectbankname()">
+                                                                                            <option value="-Select Bank-" selected>-Select Bank-</option>
+                                                                                            <option value="AIRTEL PAYMENTS BANK">AIRTEL PAYMENTS BANK</option>
+                                                                                            <option value="ALLAHABAD BANK">ALLAHABAD BANK</option>
+                                                                                            <option value="AXIS BANK">AXIS BANK</option>
+                                                                                            <option value="ANDHRA BANK">ANDHRA BANK</option>
+                                                                                            <option value="BANK OF INDIA">BANK OF INDIA</option>
+                                                                                            <option value="BHARAT BANK">BHARAT BANK</option>
+                                                                                            <option value="BANK OF BAHRAIN AND KUWAIT">BANK OF BAHRAIN AND KUWAIT</option>
+                                                                                            <option value="BANK OF BARODA">BANK OF BARODA</option>
+                                                                                            <option value="BANK OF MAHARASHTRA">BANK OF MAHARASHTRA</option>
+                                                                                            <option value="CENTRAL BANK OF INDIA">CENTRAL BANK OF INDIA</option>
+                                                                                            <option value="CATHOLIC SYRIAN BANK">CATHOLIC SYRIAN BANK</option>
+                                                                                            <option value="CANARA BANK">CANARA BANK</option>
+                                                                                            <option value="CITIBANK">CITIBANK</option>
+                                                                                            <option value="CITY UNION BANK">CITY UNION BANK</option>
+                                                                                            <option value="CORPORATION BANK">CORPORATION BANK</option>
+                                                                                            <option value="COSMOS BANK">COSMOS BANK</option>
+                                                                                            <option value="DEVELOPMENT BANK OF SINGAPORE">DEVELOPMENT BANK OF SINGAPORE</option>
+                                                                                            <option value="DCB BANK LIMITED">DCB BANK LIMITED</option>
+                                                                                            <option value="DHANLAXMI BANK">DHANLAXMI BANK</option>
+                                                                                            <option value="DENA BANK">DENA BANK</option>
+                                                                                            <option value="DEUTSCHE BANK">DEUTSCHE BANK</option>
+                                                                                            <option value="FEDERAL BANK">FEDERAL BANK</option>
+                                                                                            <option value="GOPINATH PATIL PARSIK JANATA SAHAKARI BANK LTD">GOPINATH PATIL PARSIK JANATA SAHAKARI BANK LTD</option>
+                                                                                            <option value="HDFC BANK">HDFC BANK</option>
+                                                                                            <option value="HSBC">HSBC</option>
+                                                                                            <option value="ICICI BANK">ICICI BANK</option>
+                                                                                            <option value="IDBI BANK">IDBI BANK</option>
+                                                                                            <option value="IDFC BANK">IDFC BANK</option>
+                                                                                            <option value="INDUSIND BANK">INDUSIND BANK</option>
+                                                                                            <option value="INDIAN BANK">INDIAN BANK</option>
+                                                                                            <option value="INDIAN OVERSEAS BANK">INDIAN OVERSEAS BANK</option>
+                                                                                            <option value="JANATA SAHAKARI BANK LTD PUNE">JANATA SAHAKARI BANK LTD PUNE</option>
+                                                                                            <option value="JAMMU AND KASHMIR BANK">JAMMU AND KASHMIR BANK</option>
+                                                                                            <option value="KARNATAKA BANK">KARNATAKA BANK</option>
+                                                                                            <option value="KARUR VYSYA BANK">KARUR VYSYA BANK</option>
+                                                                                            <option value="KOTAK BANK">KOTAK BANK</option>
+                                                                                            <option value="LAKSHMI VILAS BANK">LAKSHMI VILAS BANK</option>
+                                                                                            <option value="ORIENTAL BANK OF COMMERCE">ORIENTAL BANK OF COMMERCE</option>
+                                                                                            <option value="PUNJAB AND SIND BANK">PUNJAB AND SIND BANK</option>
+                                                                                            <option value="PAYTM PAYMENTS BANK LTD">PAYTM PAYMENTS BANK LTD</option>
+                                                                                            <option value="PUNJAB NATIONAL BANK">PUNJAB NATIONAL BANK</option>
+                                                                                            <option value="RBL BANK">RBL BANK</option>
+                                                                                            <option value="ROYAL BANK OF SCOTLAND">ROYAL BANK OF SCOTLAND</option>
+                                                                                            <option value="STANDARD CHARTERED BANK">STANDARD CHARTERED BANK</option>
+                                                                                            <option value="SMALL FINANCE BANK">SMALL FINANCE BANK</option>
+                                                                                            <option value="SVC COOPERATIVE BANK LTD">SVC COOPERATIVE BANK LTD</option>
+                                                                                            <option value="SYNDICATE BANK">SYNDICATE BANK</option>
+                                                                                            <option value="SARASWAT BANK">SARASWAT BANK</option>
+                                                                                            <option value="SOUTH INDIAN BANK">SOUTH INDIAN BANK</option>
+                                                                                            <option value="STATE BANK OF INDIA">STATE BANK OF INDIA</option>
+                                                                                            <option value="TAMILNAD MERCANTILE BANK">TAMILNAD MERCANTILE BANK</option>
+                                                                                            <option value="UCO BANK">UCO BANK</option>
+                                                                                            <option value="5UJJIVAN SMALL FINANCE BANK3">UJJIVAN SMALL FINANCE BANK</option>
+                                                                                            <option value="UNION BANK OF INDIA RETAIL">UNION BANK OF INDIA RETAIL</option>
+                                                                                            <option value="UNITED BANK OF INDIA">UNITED BANK OF INDIA</option>
+                                                                                            <option value="VIJAYA BANK">VIJAYA BANK</option>
+                                                                                            <option value="YES BANK">YES BANK</option>
+                                                                                            <option value="Other">Other</option>
                                                                                         
+                                                                                        </select>
+
+                                                                                        
+                                                                                        <input name="bank_name" type="text" id="other_bank_name" class="form-control" placeholder="Type your bank name here" style="display: none">
+                                                                                       
                                                                                     </div>
                         
                                                                                     <div class="col-md-6 col-sm-12">
                                                                                         <label class="col-form-label">IFSC Code</label>
-                                                                                        <input name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$txtifsc" type="text" maxlength="11" id="txtifsc" class="form-control" onkeypress="return RestrictSpace()" style="text-transform: uppercase;">
+                                                                                        <input name="ifsc_code" type="text" maxlength="11" id="ifsc_code" class="form-control" onkeypress="return RestrictSpace()" style="text-transform: uppercase;">
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="form-group">
@@ -1264,17 +1267,17 @@
                                                                                     <div class="col-md-6 col-sm-12">
                                                                                         <label class="col-form-label">Upload Cancel Cheque/Passbook/Bank Statement <span style="color: red;"></span></label>
                         
-                                                                                        <input type="file" name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$fupcancelcheque" id="fupcancelcheque" class="form-control" validationgroup="nxtacc" onchange="previewFile3()">
+                                                                                        <input type="file" name="bank_statement" id="bank_statement" class="form-control" validationgroup="nxtacc" onchange="previewFile3()">
                                                                                         <img id="ContentPlaceHolder1_NestedContentPlaceHolder_imgcancelcheque" onerror="this.onerror=null; this.src='../cpic/PDF.png'" style="width:100%;">
                                                                                     </div>
                         
                                                                                          <div class="col-md-6 col-sm-12">
                                                                                         <label class="col-form-label">PayTm Mobie No. <span style="color: red;"></span></label>
                         
-                                                                                       <input name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$txpaymobno" type="text" maxlength="10" id="txpaymobno" class="form-control" onkeypress="return RestrictSpace()">
+                                                                                       <input name="paytm_mobno" type="text" maxlength="10" id="paytm_mobno" class="form-control" onkeypress="return RestrictSpace()">
                                                                                     </div>
                                                                                 </div>
-                                                                                <div class="form-group kyc__checkBox">
+                                                                                <!-- <div class="form-group kyc__checkBox">
                                                                                     <div class="col-md-6 col-sm-12">
                                                                                         <input type="checkbox" id="chkpdfpwd" name="chkpsw" style="width: 6%;">
                                                                                         <label class="col-form-label" for="chkpsw">This document is password protected</label><br>
@@ -1284,7 +1287,7 @@
                                                                                         <label class="col-form-label">Document Password</label>
                                                                                         <input name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$txtdocspsw" type="text" id="txtdocspsw" class="form-control" placeholder="Document Password">
                                                                                     </div>
-                                                                                </div>
+                                                                                </div> -->
                         
                                                                                 <div class="form-group kyc__inct">
                                                                                     <div class="col-md-12 col-sm-12">
@@ -1298,7 +1301,7 @@
                                                                                 </div>
                         
                         
-                                                                                <div class="form-group">
+                                                                                <!-- <div class="form-group">
                                                                                     <div class="col-sm-12" style="display: flex; align-items: center; justify-content: center;">
                         
                                                                                         <div class="explore__moreBTN">
@@ -1309,14 +1312,14 @@
                                                                                             <button id="btnacctinfo" type="button" class="btn">Next</button>
                                                                                         </div>
                                                                                     </div>
-                                                                                </div>
+                                                                                </div> -->
                         
                         
                                                                             </div>
                         
                                                                         </div>
                                                                     </div>
-                                                                    <div id="dv_pancard" style="display: none">
+                                                                    <div id="dv_pancard">
                         
                         
                         
@@ -1329,17 +1332,17 @@
                                                                                 <div class="form-group">
                                                                                     <div class="col-md-6 col-sm-12">
                                                                                         <label class="col-form-label">PAN Number<span style="color: red;">*</span></label>
-                                                                                        <input name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$txtpanno" type="text" maxlength="10" id="txtpanno" class="form-control" onkeypress="return RestrictSpace()" style="text-transform: uppercase;">
+                                                                                        <input name="pan_no" type="text" maxlength="10" id="pan_no" class="form-control" onkeypress="return RestrictSpace()" style="text-transform: uppercase;">
                                                                                     </div>
                                                                                     <div class="col-md-6 col-sm-12">
                                                                                         <label class="col-form-label">PAN Name.<span style="color: red;">*</span></label>
-                                                                                        <input name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$txtpanname" type="text" id="ContentPlaceHolder1_NestedContentPlaceHolder_txtpanname" class="form-control">
+                                                                                        <input name="panname" type="text" id="panname" class="form-control">
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="form-group">
                                                                                     <div class="col-md-6 col-sm-12">
                                                                                         <label class="col-form-label">Upload PAN Card File<span style="color: red;"></span></label>
-                                                                                        <input type="file" name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$fuppan" id="fuppan" class="form-control" onchange="previewFile4()">
+                                                                                        <input type="file" name="pan_image" id="pan_image" class="form-control" onchange="previewFile4()">
                                                                                         
                                                                                         <img id="ContentPlaceHolder1_NestedContentPlaceHolder_imgpan" style="width:100%;">
                                                                                     </div>
@@ -1357,16 +1360,14 @@
                                                                                         <input name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$txtotp" type="text" id="txtotp" class="form-control" required="" placeholder="OTP">
                                                                                         <span id="ContentPlaceHolder1_NestedContentPlaceHolder_Label4" style="margin-left: auto; margin-right: auto; font-weight: bold; color: red; width: 100%; font-size:12px;">OTP has been sent to your registered mobile no.</span>
                                                                                         <div class="explore__moreBTN">
-                                                                                            <input type="submit" name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$btn_submit" value="Submit" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$btn_submit&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="btn_submit" class="btn">
+                                                                                            <input type="submit" name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$btn_submit" value="Submit"  id="btn_submit" class="btn">
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
                                                                                 <div id="dv_finish">
                                                                                     <div class="explore__moreBTN">
                                                                                         
-                                                                                        <button id="btn_pancardprev" type="button" class="btn">Prev</button>
-                                                                                        
-                                                                                        <button id="btn_pancard" type="button" class="btn">Save &amp; Finish</button>
+                                                                                        <button id="btn_pancard" type="button" class="btn" onclick="submit()">Save &amp; Finish</button>
                         
                                                                                     </div>
                                                                                 </div>
@@ -1381,8 +1382,9 @@
                                                         </div>
                                                     </div>
 
-
+                                                    <div id="snackbar"></div>
                                                 </div>
+
                                                 <input type="hidden"
                                                     name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$hdn_coupon_id"
                                                     id="hdn_coupon_id" value="0" />
@@ -1454,7 +1456,7 @@
                                                                 <input type="submit"
                                                                     name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$btn_trancouponsubmit"
                                                                     value="Submit"
-                                                                    onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$btn_trancouponsubmit&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))"
+                                                                    
                                                                     id="ContentPlaceHolder1_NestedContentPlaceHolder_btn_trancouponsubmit"
                                                                     class="btn btn-danger" />
                                                                 <button type="button" class="btn btn-default cls_class"
@@ -1960,7 +1962,7 @@
 
         <!-- scroll to top button -->
 
-        <script>
+        <!-- <script>
             AdjustHeader(); // Incase the user loads the page from halfway down (or something);
             $(window).scroll(function () {
                 AdjustHeader();
@@ -1975,7 +1977,7 @@
                     $navbar.removeClass("navbar-fixed-top");
                 }
             }
-            });
+            
 
             $("#stories").click(function () {
                 $.ajax({
@@ -2005,7 +2007,7 @@
                 $("#div_update_plan").hide();
 
             })
-        </script>
+        </script> -->
 
         <script type="text/javascript">
             //<![CDATA[
@@ -2031,6 +2033,130 @@
                     appId: "f7398055-1f34-4727-833a-4c5268b79f6a",
                 });
             });
+        </script>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-storage.js"></script>
+
+        <script>
+            const firebaseConfig = {
+            apiKey: "AIzaSyBxNw9mZbK2G-rZFS834wGEFv_phaSbR0c",
+            authDomain: "earningskool-e7d23.firebaseapp.com",
+            projectId: "earningskool-e7d23",
+            storageBucket: "earningskool-e7d23.appspot.com",
+            messagingSenderId: "1019647335445",
+            appId: "1:1019647335445:web:395fc9ec285d2691de821c",
+            measurementId: "G-2LJWK11T4K"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        </script>
+        <script>
+            var toast = document.getElementById("snackbar");
+
+
+            function selectbankname(){
+                var bank_name = document.querySelector('#bank_name').value;
+                if(bank_name === "Other"){
+                    let other_bank_name = document.querySelector('#other_bank_name');
+                    other_bank_name.style.display = "block";
+                }
+            }
+
+            async function submit(){
+            let user_name = document.querySelector("#user_name").value;
+            let user_email = document.querySelector("#email").value;
+            let phone = document.querySelector("#phone").value;
+            let city = document.querySelector("#city").value;
+            let state = document.querySelector("#state").value;
+            let doctype = document.querySelector("#doctype").value;
+            let account_name = document.querySelector("#account_name").value;
+            let account_number = document.querySelector("#account_number").value;
+            let bank_name = document.querySelector("#bank_name").value;
+            let ifsc_code = document.querySelector("#ifsc_code").value;
+            let paytm_mobno = document.querySelector("#paytm_mobno").value;
+            let pan_no = document.querySelector("#pan_no").value;
+            let panname = document.querySelector("#panname").value;
+            
+                const doc_image_front_side = document.querySelector('#imagefrontside').files[0];
+                const doc_image_back_side = document.querySelector('#imagebackside').files[0];
+                const bank_statement = document.querySelector('#bank_statement').files[0];
+                const pan_image = document.querySelector('#pan_image').files[0];
+
+                const doc_front_side_reference = firebase.storage().ref("/kyc/doc_image_front_side");
+                const doc_back_side_reference = firebase.storage().ref("/kyc/doc_image_back_side");
+                const bank_statement_reference = firebase.storage().ref("/kyc/bank_statement");
+                const pan_image_reference = firebase.storage().ref("/kyc/pan_image");
+
+                const name1 = new Date() + '-' + doc_image_front_side.name;
+                const name2 = new Date() + '-' + doc_image_front_side.name;
+                const name3 = new Date() + '-' + doc_image_front_side.name;
+                const name4 = new Date() + '-' + doc_image_front_side.name;
+
+                const doc_front_side_metadata = { contentType: doc_image_front_side.type };
+                const metadata2 = { contentType: doc_image_front_side.type };
+                const metadata3 = { contentType: doc_image_front_side.type };
+                const metadata4 = { contentType: doc_image_front_side.type };
+
+                alert('Please wait! Donot refresh the page');
+
+                const task1 = await doc_front_side_reference.child(name1).put(doc_image_front_side, doc_front_side_metadata);
+                const task2 = await doc_back_side_reference.child(name2).put(doc_image_back_side, metadata2);
+                const task3 = await bank_statement_reference.child(name3).put(bank_statement, metadata3);
+                const task4 = await pan_image_reference.child(name4).put(pan_image, metadata4);
+
+                const doc_image_front_side_URL = await doc_front_side_reference.child(name1).getDownloadURL();
+                const doc_image_back_side_URL = await doc_back_side_reference.child(name2).getDownloadURL();
+                const bank_statement_URL = await bank_statement_reference.child(name3).getDownloadURL();
+                const pan_image_URL = await pan_image_reference.child(name4).getDownloadURL();
+                
+                const response = await fetch("https://api-earningskool.vercel.app/kyc_details", {
+                            method: "POST",
+                            headers: {
+                            Accept: "application/json",
+                            "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify({
+                            name : user_name,
+                            email : user_email,
+                            phone,
+                            city, state, doctype,account_name,
+                            account_number,
+                            bank_name,
+                            ifsc_code,
+                            paytm_mobno,
+                            pan_no,
+                            panname,
+                            doc_image_front_side: doc_image_front_side_URL,
+                            doc_image_back_side: doc_image_back_side_URL,
+                            bank_statement : bank_statement_URL,
+                            pan_image: pan_image_URL
+                            }),
+                });
+                const res = response.json();
+                console.log(res);
+                if (res.message == "success") {
+                    toast.innerHTML = "Details stored successfully.";
+                    // alert(`Your referral code is ${referralCode}`);
+                    setTimeout(function () { window.location.href = "./login.html"; }, 1000)
+                
+                    activeToast();
+                }
+            }
+            function activeToast() {
+            toast.className = "show";
+            setTimeout(function () {
+                toast.className = toast.className.replace("show", "");
+            }, 3000);
+            }
+
+        
         </script>
 
         <script src="./Biz/js/custome_js/afterlogin.js"></script>

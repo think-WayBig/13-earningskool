@@ -5,8 +5,10 @@ const port = 3000;
 const users_collection = require("./userDatabase/userData");
 const courseDetails = require("./CourseDatabase/coursesData");
 const course_payment_details = require("./CoursePaymentRequestDatabase/coursePaymentRequestData");
+const certificate_request_details = require("./RequestCertificate/certificateRequestData");
 require("./mongooseConnection");
 let path = require('path');
+const kyc_details = require("./KYC_Details/kycDetails");
 
 const app = express();
 
@@ -26,6 +28,14 @@ app.get("/register", (req, res) => {
 app.get("/payment_request", async (req, res) => {
   // let req_userData = new users_collection(req.body)
     const req_course_payment_data = await course_payment_details.find({});
+    console.log(req_course_payment_data);
+    res.send(req_course_payment_data);
+     
+});
+
+app.get("/certificate_request", async (req, res) => {
+  // let req_userData = new users_collection(req.body)
+    const req_course_payment_data = await certificate_request_details.find({});
     console.log(req_course_payment_data);
     res.send(req_course_payment_data);
      
@@ -169,15 +179,25 @@ app.post('/affiliate', async (req, res) => {
     return res.status(404).send('User not found');
   }
 
-  // Find the users who have used the referral code
-  const users = await users_collection.find({ referredByCode: referralCode });
+  // // Find the users who have used the referral code
+  // const users = await users_collection.find({ referredByCode: referralCode });
 
   // Find the user who referred the current user
   const referrer = await users_collection.findOne({referralCode: user.referredByCode});
 
   console.log(referrer);
   // Return the user's details as a response
-  res.send({ user, users, referrer});
+  res.send({ user, referrer});
+})
+
+app.post('/user_leads', async (req, res) => {
+  const { referralCode } = req.body;
+
+  // Find the users who have used the referral code
+  const users = await users_collection.find({ referredByCode: referralCode, myCourses: { $elemMatch: { course_id: { $exists: true } } } });
+
+  // Return the user's details as a response
+  res.send({ users});
 })
 
 app.put('/userDetails/:email', async (req, res) => {
@@ -259,6 +279,44 @@ app.post("/payment_request", async (req, res) => {
   }
 });
 
+app.post("/certificate_request", async (req, res) => {
+  // let req_userData = new users_collection(req.body);
+
+  try {
+    const req_course_payment_data = new certificate_request_details(req.body);
+    await req_course_payment_data.save();
+    res.status(202).send({
+      "message": "success",
+    });
+
+
+  } catch (err) {
+    res.send({
+      "error": err,
+      "message": "invalid"
+    });
+  }
+});
+
+app.post("/kyc_details", async (req, res) => {
+  // let req_userData = new users_collection(req.body);
+
+  try {
+    const req_course_payment_data = new kyc_details(req.body);
+    await req_course_payment_data.save();
+    res.status(202).send({
+      "message": "success",
+    });
+
+
+  } catch (err) {
+    res.send({
+      "error": err,
+      "message": "invalid"
+    });
+  }
+});
+
 app.put("/approvedCourse/:email", async (req, res) => {
   // let req_userData = new users_collection(req.body);
   let userEmail = req.body.email;
@@ -267,7 +325,8 @@ app.put("/approvedCourse/:email", async (req, res) => {
   console.log(mycourses);
 
   try {
-    let req_course_payment_data = await users_collection.findOneAndUpdate({email : userEmail} ,{ $push: {myCourses:{course_id: mycourses}} } ,{ returnOriginal: false, upsert: true });
+    
+    let req_course_payment_data = await users_collection.findOneAndUpdate({email : userEmail} ,{ $addToSet: {myCourses:{course_id: mycourses, certificate: false}} } ,{ returnOriginal: false, upsert: true });
     console.log(req_course_payment_data);
     res.status(202).send({
       "message": "success",
@@ -288,6 +347,44 @@ app.delete('/payment_request/:id/:courseId/:transactionId', async (req, res) => 
       course_id: req.body.course_id,
       email: req.body.email,
       txn_id: req.body.txn_id
+    });
+    if (!result) {
+      return res.status(404).send('Data not found');
+    }
+    res.send(result);
+  } catch (error) {
+    console.log(error);
+    res.status(500).send('Internal server error');
+  }
+});
+
+app.put("/certificateSend/:email", async (req, res) => {
+  // let req_userData = new users_collection(req.body);
+  let userEmail = req.body.email;
+  let mycourseid = req.body.course_id;
+  console.log(userEmail);
+  console.log(mycourseid);
+
+  try {
+    let req_course_payment_data = await users_collection.findOneAndUpdate({email : userEmail, "myCourses.course_id": mycourseid } ,{  $set: { "myCourses.$.certificate": true } } ,{ returnOriginal: false, upsert: true });
+    console.log(req_course_payment_data);
+    res.status(202).send({
+      "message": "success",
+    });
+
+  } catch (err) {
+    res.send({
+      "error": err,
+      "message": "invalid"
+    });
+  }
+});
+
+app.delete('/certificate_request/:courseId/:email', async (req, res) => {
+  try {
+    const result = await certificate_request_details.findOneAndDelete({
+      course_id: req.body.course_id,
+      email: req.body.email,
     });
     if (!result) {
       return res.status(404).send('Data not found');

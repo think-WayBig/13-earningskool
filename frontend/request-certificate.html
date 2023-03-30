@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="./Biz/css/header.css?v=4.2" />
     <link rel="stylesheet" href="./Biz/css/footer.css?v=1.3" />
+    <link rel="stylesheet" href="./Biz/css/toast.css"/>
     <link rel="stylesheet" href="./Biz/css/carousel.css" />
     <link rel="stylesheet" href="./Biz/css/carouseller.css" />
     <link rel="stylesheet" href="./Biz/css/animate.css" />
@@ -744,7 +745,7 @@
                             </a>
                         </li>
                         <li id="ContentPlaceHolder1_li_kyc" class="cls_cat" style="display: none">
-                            <a class="aff__links tour_kyc" href="/Biz/members/kyc">
+                            <a class="aff__links tour_kyc" href="kyc.html">
                                 <span class="pcoded-mtext">
 
                                     <span id="ContentPlaceHolder1_kk">KYC</span>​</span>
@@ -871,7 +872,7 @@
 
 
                 <link href="./Biz/css/total_affilate.css" rel="stylesheet" />
-                <script src="./Biz/js/custome_js/total_affilate.js"></script>
+                <!-- <script src="./Biz/js/custome_js/total_affilate.js"></script> -->
                 <link href="./Biz/css/sidebar_affiliate.css" rel="stylesheet" />
                 <link rel="stylesheet" href="./Biz/css/stepform.css">
                 <script src="./Biz/assets/js/common-pages.js"></script>
@@ -980,7 +981,7 @@
                                                         </button>
                                                         <div class="d-inline">
                                                             <h4>Request Your Certificate</h4>
-
+                                                            
                                                         </div>
                                                     </div>
                                                 </div>
@@ -989,100 +990,70 @@
                                         </div>
                                         <!-- Page-header end -->
 
-                                        <!-- Page-body start -->
-                                        <div class="page-body">
-                                            <div class="row">
-                                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <!-- Page body start -->
+                                    <div class="page-body">
+                                        <div class="row">
 
 
+                                            <div class="col-sm-12">
+                                                <!-- Basic Form Inputs card start -->
+                                                <div class="card">
 
-
-
-                                                </div>
-                                                <input type="hidden"
-                                                    name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$hdn_coupon_id"
-                                                    id="hdn_coupon_id" value="0" />
-                                                <input type="hidden"
-                                                    name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$hdn_qty"
-                                                    id="hdn_qty" value="0" />
-                                                <div class="modal enter__detailModal fade" id="modalcoupon"
-                                                    role="dialog">
-                                                    <div class="modal-dialog">
-
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h4 class="modal-title">Transfer Coupon</h4>
-                                                                <h5 class="modal-title" id="coupon_modal_heading">
-                                                                </h5>
-                                                            </div>
-                                                            <div class="modal-body">
-
-                                                                <table class="table">
-                                                                    <thead>
-                                                                        <tr>
-                                                                            <th>UserID/Email</th>
-
-                                                                            <th>Available Qty.</th>
-                                                                            <th>Transfer Qty.</th>
-                                                                        </tr>
-                                                                    </thead>
-                                                                    <tbody>
-                                                                        <tr>
-                                                                            <td>
-                                                                                <input
-                                                                                    name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$tbuserid_email"
-                                                                                    type="text" id="tbuserid_email" />
-                                                                                <span
-                                                                                    data-val-controltovalidate="tbuserid_email"
-                                                                                    data-val-errormessage="**"
-                                                                                    id="ContentPlaceHolder1_NestedContentPlaceHolder_RequiredFieldValidator2"
-                                                                                    data-val="true"
-                                                                                    data-val-evaluationfunction="RequiredFieldValidatorEvaluateIsValid"
-                                                                                    data-val-initialvalue=""
-                                                                                    style="color:Red;visibility:hidden;">**</span>
-
-                                                                            </td>
-                                                                            <td>
-                                                                                <label id="lbl_avail_qty"></label>
-
-                                                                            </td>
-                                                                            <td>
-                                                                                <input
-                                                                                    name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$tbtrans_qty"
-                                                                                    type="number" id="tbtrans_qty" />
-                                                                                <span
-                                                                                    data-val-controltovalidate="tbtrans_qty"
-                                                                                    data-val-errormessage="**"
-                                                                                    id="ContentPlaceHolder1_NestedContentPlaceHolder_RequiredFieldValidator1"
-                                                                                    data-val="true"
-                                                                                    data-val-evaluationfunction="RequiredFieldValidatorEvaluateIsValid"
-                                                                                    data-val-initialvalue=""
-                                                                                    style="color:Red;visibility:hidden;">**</span>
-
-                                                                            </td>
-                                                                        </tr>
-                                                                    </tbody>
-                                                                </table>
-
-
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <input type="submit"
-                                                                    name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$btn_trancouponsubmit"
-                                                                    value="Submit"
-                                                                    onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$btn_trancouponsubmit&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))"
-                                                                    id="ContentPlaceHolder1_NestedContentPlaceHolder_btn_trancouponsubmit"
-                                                                    class="btn btn-danger" />
-                                                                <button type="button" class="btn btn-default cls_class"
-                                                                    data-dismiss="modal">Close</button>
+                                                    <div class="card-block">
+                                                       
+                                                        <div class="form-group">
+                                                            <div class="col-md-6 col-sm-12">
+                                                                <label class="col-form-label">Your Mail</label>
+                                                                <input
+                                                                    name="user_email"
+                                                                    type="text" value="User Name"
+                                                                    id="ContentPlaceHolder1_NestedContentPlaceHolder_txtName"
+                                                                    disabled="disabled"
+                                                                    class="aspNetDisabled form-control" />
                                                             </div>
 
+                                                            <script>
+                                                                function nameEnter() {
+                                                                    document.getElementById(
+                                                                        "ContentPlaceHolder1_NestedContentPlaceHolder_txtName"
+                                                                    ).value = localStorage.getItem("User");
+                                                                }
+                                                                nameEnter();
+                                                            </script>
+                                                            <div class="col-md-6 col-sm-12">
+                                                    
+                                                                    <label class="col-form-label">Your Courses</label>
+    
+                                                                    <select
+                                                                        name="course_id"
+                                                                        id="mycourses"
+                                                                        class="form-control">
+                                                                        <option selected="selected" value="Select Course">Select Course
+                                                                        </option>
+                                                                    </select>
+
+                                                            </div>
+                                                            
+                                                        <div class="form-group">
+                                                            <div class="col-sm-12">
+                                                                <div class="explore__moreBTN">
+                                                                    <input type="submit"
+                                                                        name="ctl00$ctl00$ContentPlaceHolder1$NestedContentPlaceHolder$btnSubmit"
+                                                                        value="Request Certificate"
+                                                                        id="ContentPlaceHolder1_NestedContentPlaceHolder_btnSubmit"
+                                                                        class="btn" onclick="submit()"/>
+                                                                </div>
+                                                            </div>
                                                         </div>
+                                                     <div id="snackbar"></div>
                                                     </div>
                                                 </div>
+
                                             </div>
+
                                         </div>
-                                        <!-- Page-body end -->
+                                    </div>
+                                    <!-- Page body end -->
                                     </div>
                                 </div>
                                 <!-- Main-body end -->
@@ -1094,75 +1065,7 @@
 
             </div>
         </main>
-        <div class="modal fade in" id="myModal" role="dialog" style="display: none;">
-            <div class="modal-dialog" style="max-width: 590px;">
-
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-
-                        <h5 class="modal-title">Demo Video For KYC</h5>
-                    </div>
-                    <div class="modal-body">
-                        <iframe width="700" height="394" src="https://player.vimeo.com/video/719342140?h=0efd121cf2"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen=""></iframe>
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" id="popup_close" class="btn btn-default"
-                            data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="modal fade" id="commDetModal" role="dialog" style="background: rgba(19, 18, 18, 0.77)">
-            <div class="modal-dialog view__listPop">
-
-                <!-- Modal content-->
-                <div class="modal-content" style="overflow: auto;">
-                    <div style="text-align: center; padding-top: 10px; text-decoration: underline;">
-
-                        <h5 class="modal-title">User History:</h5>
-
-
-                    </div>
-
-                    <div class="modal-body" style="overflow: auto;">
-
-                        <div class="col-sm-12" style="display: flex; align-items: center;">
-                            <table class="table table-striped table-bordered nowrap dataTable no-footer" id="tbl_exp">
-                                <thead>
-                                    <tr>
-                                        <th>UserName</th>
-                                        <th>Purchase Date</th>
-                                        <th>Plan Name</th>
-                                        <th>Commission Amt.</th>
-
-
-                                    </tr>
-                                </thead>
-                                <tbody id="table_tbody">
-                                </tbody>
-                            </table>
-
-                        </div>
-
-
-                    </div>
-                    <div class="modal-footer">
-
-                        <button type="button" id="popup1_close" class="btn btn-default cls_close"
-                            data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-
+      
 
 
         <script>
@@ -1595,7 +1498,7 @@
                     $navbar.removeClass("navbar-fixed-top");
                 }
             }
-            });
+            
 
             $("#stories").click(function () {
                 $.ajax({
@@ -1652,10 +1555,85 @@
                 });
             });
         </script>
+        <script>
+            var toast = document.getElementById("snackbar");
+            var user_email = document.querySelector("#ContentPlaceHolder1_NestedContentPlaceHolder_txtName").value;
+
+            async function getUserDetails(){
+                const getUserDetails = await fetch(`https://api-earningskool.vercel.app/getUser/${user_email}`);
+                const data = await getUserDetails.json();
+                const courses = document.querySelector("#mycourses");
+                const mycourses = data.message.myCourses;
+                mycourses.map(async (mycourses)=>{
+                    if(mycourses.certificate == false){
+                        var option = document.createElement("option");
+                        const fetchCourse = await fetch(`https://api-earningskool.vercel.app/courseDetail/${mycourses.course_id}`);
+                        const data = await fetchCourse.json();
+                        option.textContent = `${data.title}(${mycourses.course_id}) `;
+                        option.setAttribute("value", mycourses.course_id);
+                        courses.append(option);
+                        console.log(mycourses.course_id)
+                    }
+                    
+                })
+                console.log(mycourses);
+                return data
+            }
+
+            getUserDetails();
+            async function submit() {
+            
+            const user_email =  localStorage.getItem('User');
+            const course_id = document.getElementById("mycourses").value;
+    
+            if (course_id == "Select Course") {
+                document.getElementById("mycourses").focus();
+                toast.innerHTML = "Please select a course first.";
+                activeToast();
+                return;
+            }         
+            
+
+            const response = await fetch("https://api-earningskool.vercel.app/certificate_request", {
+                method: "POST",
+                headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                course_id, user_email
+                }),
+            });
+    
+            let res = await response.json();
+    
+            if (res.message == "success") {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Congratulations!',
+                    text:'Your certificate request has been successfully submitted. We will now begin processing your request and will notify you via email once your certificate is ready for download.',
+                    showConfirmButton: true,
+                })
+            }
+            if (res.message == "invalid") {
+                toast.innerHTML = "Submission failed.";
+                activeToast();
+            }
+            console.log(res);
+            }
+            function activeToast() {
+            toast.className = "show";
+            setTimeout(function () {
+                toast.className = toast.className.replace("show", "");
+            }, 3000);
+            }
+        </script>
 
         <script src="./Biz/js/custome_js/afterlogin.js"></script>
         <script src="./Biz/js/custome_js/checkLogin.js"></script>
         <script src="./Biz/js/custome_js/loadDp.js"></script>
+        <script src="sweetalert2.min.js"></script>
+        <link rel="stylesheet" href="sweetalert2.min.css">
 </body>
 
 </html>

@@ -21,9 +21,17 @@ async function fetchUserDetails() {
     
 
      // Display the users who have used the referral code in the dashboard
+     const resp = await fetch("https://api-earningskool.vercel.app/user_leads", {
+      method: "POST",
+      body: JSON.stringify({ referralCode: userReferralCode }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const res = await resp.json();
 
     const usersList = document.querySelector("#usersList");
-    data.users.forEach((user) => {
+    res.users.forEach((user) => {
         var mainDiv = document.createElement("div");
         mainDiv.classList.add("single_user_pil", "d-flex" ,"align-items-center", "justify-content-between");
        
@@ -35,7 +43,7 @@ async function fetchUserDetails() {
         
         var img = document.createElement("img");
         img.classList.add("img-fluid" ,"radius_50");
-        img.setAttribute('src','./Biz/img/pic.png');
+        img.setAttribute('src',user.dp);
         
         var span = document.createElement("span");
         span.classList.add("f_s_14", "f_w_400", "text_color_11");

@@ -338,7 +338,7 @@
                             <th scope="col"></th>
                         </tr>
                     </thead>
-                    <tbody id="affiliateList">                 
+                    <tbody id="approveRequestList">                 
                     </tbody>
                 </table>
             </div>
@@ -393,7 +393,7 @@
         const response = await fetch('https://api-earningskool.vercel.app/payment_request');
         const data = await response.json();
 
-        const affiliateList = document.querySelector("#affiliateList");
+        const approveRequestList = document.querySelector("#approveRequestList");
         data.forEach((user,index) => {
             var srno = 1;
             var tr = document.createElement("tr");
@@ -454,7 +454,7 @@
             td6.append(btn1);
             td7.append(btn2);
             tr.append(td2,td3,td4,td5,td6,td7);
-            affiliateList.append(tr);
+            approveRequestList.append(tr);
         });
         return data;
         }

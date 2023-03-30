@@ -172,6 +172,25 @@
             transition: all 0.3s;
         }
 
+    /*-----------table style-----------*/
+
+    table{
+            border : 0px;
+        }
+        tr{
+            background-color: #F5F5FF;
+            margin-top: 10px;
+        }
+        th{
+            border: 0px;
+            font-size: 14px;
+        }
+        td{
+            border: 0px;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
         /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
@@ -300,8 +319,24 @@
                 </div>
             </nav>
 
-            <h2>Certificate Requests</h2>
-
+            <h2 class="mb-4">Certificate Requests</h2>
+            <div class="col-lg-10">
+                <table class="table" cellspacing="0" rules="all" border="1" id="simpletable" style="font-weight:bold;border-collapse:collapse;">
+                    <thead>
+                        <tr>
+                            <!-- <th scope="col">
+                                View
+                            </th> -->
+                            <th scope="col"> Sr. No. </th>
+                            <th scope="col">Course Id</th>
+                            <th scope="col">User Email</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="certificateRequestList">                 
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
@@ -348,6 +383,65 @@
         }
 
         loginAllow();
+
+        async function fetchCollectionData() {
+        const response = await fetch('https://api-earningskool.vercel.app/certificate_request');
+        const data = await response.json();
+
+        const certificateRequestList = document.querySelector("#certificateRequestList");
+        data.forEach((user,index) => {
+            var srno = 1;
+            var tr = document.createElement("tr");
+
+            var td2 = document.createElement("td");
+            td2.textContent = index+1;
+
+            var td3 = document.createElement("td");
+            td3.textContent = user.course_id;
+
+            var td4 = document.createElement("td");
+            td4.textContent = user.user_email;
+
+            var td6 = document.createElement("td");
+            var btn1 = document.createElement("button");
+            btn1.classList.add("btn", "btn-sm")
+            btn1.style.background = "#6d7fcc";
+            btn1.style.color = "#fff";
+            btn1.style.padding="2px 15px";
+            btn1.textContent = 'Certificate Sent';
+            btn1.addEventListener("click", async function(){
+                var email = user.user_email;
+                var course_id = user.course_id;
+                let response = await fetch(`https://api-earningskool.vercel.app/certificateSend/${email}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({email:email,
+                                          course_id:course_id}),
+                });
+                let data = await response.json();
+                console.log(data);
+                if (data.message == "success") {
+                    let resp = await fetch(`https://api-earningskool.vercel.app/certificate_request/${course_id}/${email}`,{
+                        method:'DELETE',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({email:email,
+                                              course_id:course_id}),
+                    });
+                    window.location.reload();
+                }
+                else{
+                    window.location.reload();
+                }
+            })
+
+            td6.append(btn1);
+            tr.append(td2,td3,td4,td6);
+            certificateRequestList.append(tr);
+        });
+        return data;
+        }
+
+        fetchCollectionData();
 
         function logout() {
             localStorage.removeItem('AdminId');

@@ -3,7 +3,7 @@ var userReferralCode = localStorage.getItem("rcode");
 
 async function fetchUserDetails() {
   try {
-    const response = await fetch("https://api-earningskool.vercel.app/affiliate", {
+    const response = await fetch("https://api-earningskool.vercel.app/user_leads", {
       method: "POST",
       body: JSON.stringify({ email: useremail, referralCode: userReferralCode }),
       headers: {
@@ -19,8 +19,8 @@ async function fetchUserDetails() {
      // Display the users who have used the referral code in the dashboard
 
     const affiliateList = document.querySelector("#affiliateList");
-    data.users.forEach((user,index) => {
-        var srno = 1;
+    data.users.forEach(async (user,index) => {
+       
         var tr = document.createElement("tr");
         tr.style.color = "green";
 
@@ -49,8 +49,13 @@ async function fetchUserDetails() {
         td8.textContent = user.email;
 
         var td9 = document.createElement("td");
-        td9.textContent = "";
-
+        
+        user.myCourses.map(async(courses)=>{
+            const fetchCourse = await fetch(`https://api-earningskool.vercel.app/courseDetail/${courses.course_id}`);
+            const data = await fetchCourse.json();
+            td9.textContent = data.title;
+        })
+        
         var td10 = document.createElement("td");
         td10.textContent = "Active";
 

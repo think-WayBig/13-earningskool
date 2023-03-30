@@ -2116,7 +2116,7 @@
                 const bank_statement_URL = await bank_statement_reference.child(name3).getDownloadURL();
                 const pan_image_URL = await pan_image_reference.child(name4).getDownloadURL();
                 
-                const response = await fetch("http://localhost:3000/kyc_details", {
+                const response = await fetch("https://api-earningskool.vercel.app/kyc_details", {
                             method: "POST",
                             headers: {
                             Accept: "application/json",

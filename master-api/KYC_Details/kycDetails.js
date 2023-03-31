@@ -46,7 +46,7 @@ const kyc_details_schema = new mongoose.Schema({
   bank_statement:{
     type: String,
   },
-  paytm_mobno:{
+  upi_id:{
     type: String,
   },
   pan_no:{

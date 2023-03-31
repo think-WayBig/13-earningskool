@@ -187,7 +187,7 @@ async function fetchUserDetails() {
     });
     const data = await response.json();
     
-    document.querySelector("#txtref").value = data.user.referralCode;
+    document.querySelector("#txtref").value = `https://www.earningskool.com/signup.html?referral=${data.user.referralCode}`;
 
   } catch (error) {
     console.error(error);

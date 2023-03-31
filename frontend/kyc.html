@@ -745,7 +745,7 @@
                             </a>
                         </li>
                         <li id="ContentPlaceHolder1_li_kyc" class="cls_cat" style="display: none">
-                            <a class="aff__links tour_kyc" href="/Biz/members/kyc">
+                            <a class="aff__links tour_kyc" href="kyc.html">
                                 <span class="pcoded-mtext">
 
                                     <span id="ContentPlaceHolder1_kk">KYC</span>​</span>
@@ -866,11 +866,6 @@
 
 
 
-
-
-
-
-
                 <link href="./Biz/css/total_affilate.css" rel="stylesheet" />
                 <!-- <script src="./Biz/js/custome_js/total_affilate.js"></script> -->
                 <link href="./Biz/css/sidebar_affiliate.css" rel="stylesheet" />
@@ -882,7 +877,7 @@
                 <link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css" rel="stylesheet"
                     type="text/css" />
                 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-                <script type="text/javascript">
+                <!-- <script type="text/javascript">
                     $(function () {
                         $("[id*=simpletable]").DataTable({
                             bLengthChange: true,
@@ -895,7 +890,7 @@
                             bPaginate: true
                         });
                     });
-                </script>
+                </script> -->
                 <script>
                     if (localStorage.getItem("flag") != "1") {
                         Swal.fire({
@@ -1043,28 +1038,28 @@
                                                                                 </div>
                                                                                 <div class="form-group">
                                                                                     <div class="col-md-6 col-sm-12">
-                                                                                        <label class="col-form-label">First Name<span style="color: red;">*</span></label>
-                                                                                        <input name="name" type="text" id="user_name" class="form-control">
+                                                                                        <label class="col-form-label">Name<span style="color: red;">*</span></label>
+                                                                                        <input name="name" type="text" id="user_name" class="form-control" required>
                                                                                         
                                                                                     </div>
                                                                                     <div class="col-md-6 col-sm-12">
                                                                                         <label class="col-form-label">Email<span style="color: red;">*</span></label>
-                                                                                        <input name="email" type="text" id="email" class="form-control">
+                                                                                        <input name="email" type="email" id="email" class="form-control" required>
                                                                                         
                                                                                     </div>
                                                                                     <div class="col-md-6 col-sm-12">
                                                                                         <label class="col-form-label">Mobile No<span style="color: red;">*</span></label>
-                                                                                        <input name="phone" type="text" id="phone" class="form-control">
+                                                                                        <input name="phone" type="text" id="phone" class="form-control" required>
                                                                                         
                                                                                     </div>
                                                                                     <div class="col-md-6 col-sm-12">
                                                                                         <label class="col-form-label">City<span style="color: red;">*</span></label>
-                                                                                        <input name="city" type="text" id="city" class="form-control">
+                                                                                        <input name="city" type="text" id="city" class="form-control" required>
                                                                                         <span data-val-controltovalidate="txtcity" data-val-errormessage="City Required" data-val-display="Dynamic" id="ContentPlaceHolder1_NestedContentPlaceHolder_RequiredFieldValidator4" required="" data-val="true" data-val-evaluationfunction="RequiredFieldValidatorEvaluateIsValid" data-val-initialvalue="" style="color:Red;display:none;">City Required</span>
                                                                                     </div>
                                                                                     <div class="col-md-6 col-sm-12">
                                                                                         <label class="col-form-label">State<span style="color: red;">*</span></label>
-                                                                                        <select name="state" id="state" class="form-control">
+                                                                                        <select name="state" id="state" class="form-control" required>
                                                                                             <option value="Select State">Select State</option>
                                                                                             <option value="Andhra Pradesh">Andhra Pradesh</option>
                                                                                             <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -1109,7 +1104,7 @@
                                                                                     </div>
                                                                                     <div class="col-md-6 col-sm-12">
                                                                                         <label class="col-form-label">Select Document type<span style="color: red;">*</span></label>
-                                                                                        <select name="doctype" id="doctype" class="form-control">
+                                                                                        <select name="doctype" id="doctype" class="form-control" required>
                                                                                              <option selected="selected" value="Select">Select</option>
                                                                                             <option value="Aadhaar">Aadhaar</option>
                                                                                             <option value="Driving License">Driving License </option>
@@ -1136,14 +1131,14 @@
                                                                                     <div class="col-md-6 col-sm-12">
                                                                                         <label class="col-form-label">Upload Front Side<span style="color: red;"></span></label>
                         
-                                                                                        <input type="file" name="doc_image_front_side" id="imagefrontside" class="form-control" onchange="previewFile()">
+                                                                                        <input type="file" name="doc_image_front_side" id="imagefrontside" class="form-control" >
                                                                                         
                                                                                         <img id="ContentPlaceHolder1_NestedContentPlaceHolder_imgaadharfront" style="width:100%;">
                                                                                     </div>
                         
                                                                                     <div class="col-md-6 col-sm-12">
                                                                                         <label class="col-form-label">Upload Back Side<span style="color: red;"></span></label>
-                                                                                        <input type="file" name="doc_image_back_side" id="imagebackside" class="form-control" onchange="previewFile2()">
+                                                                                        <input type="file" name="doc_image_back_side" id="imagebackside" class="form-control">
                                                                                         
                                                                                         <img id="ContentPlaceHolder1_NestedContentPlaceHolder_imgaadharback" style="width:100%;">
                                                                                     </div>
@@ -1180,7 +1175,7 @@
                                                                                     </div>
                                                                                     <div class="col-md-6 col-sm-12">
                                                                                         <label class="col-form-label">Account Number</label>
-                                                                                        <input name="account_number" type="number" id="account_number" class="form-control" onkeypress="return RestrictSpace()">
+                                                                                        <input name="account_number" type="number" id="account_number" class="form-control">
                                                                                         <span data-val-controltovalidate="txtaccount_number" data-val-errormessage="Account Number Required" data-val-display="Dynamic" data-val-validationgroup="nxtacc" id="ContentPlaceHolder1_NestedContentPlaceHolder_RequiredFieldValidator8" data-val="true" data-val-evaluationfunction="RequiredFieldValidatorEvaluateIsValid" data-val-initialvalue="" style="color:Red;display:none;">Account Number Required</span>
                                                                                         <span data-val-controltovalidate="txtaccount_number" data-val-errormessage="Please Enter Only Numbers" data-val-validationgroup="nxtacc" id="ContentPlaceHolder1_NestedContentPlaceHolder_RegularExpressionValidator1" data-val="true" data-val-evaluationfunction="RegularExpressionValidatorEvaluateIsValid" data-val-validationexpression="^\d+$" style="color:Red;visibility:hidden;">Please Enter Only Numbers</span>
                                                                                     </div>
@@ -1259,7 +1254,7 @@
                         
                                                                                     <div class="col-md-6 col-sm-12">
                                                                                         <label class="col-form-label">IFSC Code</label>
-                                                                                        <input name="ifsc_code" type="text" maxlength="11" id="ifsc_code" class="form-control" onkeypress="return RestrictSpace()" style="text-transform: uppercase;">
+                                                                                        <input name="ifsc_code" type="text" maxlength="11" id="ifsc_code" class="form-control" style="text-transform: uppercase;">
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="form-group">
@@ -1267,14 +1262,14 @@
                                                                                     <div class="col-md-6 col-sm-12">
                                                                                         <label class="col-form-label">Upload Cancel Cheque/Passbook/Bank Statement <span style="color: red;"></span></label>
                         
-                                                                                        <input type="file" name="bank_statement" id="bank_statement" class="form-control" validationgroup="nxtacc" onchange="previewFile3()">
+                                                                                        <input type="file" name="bank_statement" id="bank_statement" class="form-control" validationgroup="nxtacc" >
                                                                                         <img id="ContentPlaceHolder1_NestedContentPlaceHolder_imgcancelcheque" onerror="this.onerror=null; this.src='../cpic/PDF.png'" style="width:100%;">
                                                                                     </div>
                         
                                                                                          <div class="col-md-6 col-sm-12">
-                                                                                        <label class="col-form-label">PayTm Mobie No. <span style="color: red;"></span></label>
+                                                                                        <label class="col-form-label">UPI Id <span style="color: red;"></span></label>
                         
-                                                                                       <input name="paytm_mobno" type="text" maxlength="10" id="paytm_mobno" class="form-control" onkeypress="return RestrictSpace()">
+                                                                                       <input name="upi_id" type="text" maxlength="10" id="upi_id" class="form-control">
                                                                                     </div>
                                                                                 </div>
                                                                                 <!-- <div class="form-group kyc__checkBox">
@@ -1332,17 +1327,17 @@
                                                                                 <div class="form-group">
                                                                                     <div class="col-md-6 col-sm-12">
                                                                                         <label class="col-form-label">PAN Number<span style="color: red;">*</span></label>
-                                                                                        <input name="pan_no" type="text" maxlength="10" id="pan_no" class="form-control" onkeypress="return RestrictSpace()" style="text-transform: uppercase;">
+                                                                                        <input name="pan_no" type="text" maxlength="10" id="pan_no" class="form-control" style="text-transform: uppercase;" required>
                                                                                     </div>
                                                                                     <div class="col-md-6 col-sm-12">
                                                                                         <label class="col-form-label">PAN Name.<span style="color: red;">*</span></label>
-                                                                                        <input name="panname" type="text" id="panname" class="form-control">
+                                                                                        <input name="panname" type="text" id="panname" class="form-control" required>
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="form-group">
                                                                                     <div class="col-md-6 col-sm-12">
                                                                                         <label class="col-form-label">Upload PAN Card File<span style="color: red;"></span></label>
-                                                                                        <input type="file" name="pan_image" id="pan_image" class="form-control" onchange="previewFile4()">
+                                                                                        <input type="file" name="pan_image" id="pan_image" class="form-control" >
                                                                                         
                                                                                         <img id="ContentPlaceHolder1_NestedContentPlaceHolder_imgpan" style="width:100%;">
                                                                                     </div>
@@ -2008,7 +2003,7 @@
 
             })
         </script> -->
-
+<!-- 
         <script type="text/javascript">
             //<![CDATA[
             Sys.Application.add_init(function () {
@@ -2022,7 +2017,7 @@
                 }, null, null, $get("ContentPlaceHolder1_NestedContentPlaceHolder_tbto"));
             });
             //]]>
-        </script>
+        </script> -->
         </form>
 
         <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
@@ -2074,16 +2069,75 @@
             let user_email = document.querySelector("#email").value;
             let phone = document.querySelector("#phone").value;
             let city = document.querySelector("#city").value;
-            let state = document.querySelector("#state").value;
+            var state = document.querySelector("#state").value;
             let doctype = document.querySelector("#doctype").value;
             let account_name = document.querySelector("#account_name").value;
             let account_number = document.querySelector("#account_number").value;
-            let bank_name = document.querySelector("#bank_name").value;
+            let bank_name ='';
             let ifsc_code = document.querySelector("#ifsc_code").value;
-            let paytm_mobno = document.querySelector("#paytm_mobno").value;
+            let upi_id = document.querySelector("#upi_id").value;
             let pan_no = document.querySelector("#pan_no").value;
             let panname = document.querySelector("#panname").value;
+
+            if(user_name == ""){
+                document.querySelector("#user_name").focus();
+                toast.innerHTML = "Name is required.";
+                activeToast();
+                return;
+            }else if(user_email == ""){
+                document.querySelector("#email").focus();
+                toast.innerHTML = "Email is required.";
+                activeToast();
+                return;
+            }else if(phone == ""){
+                document.querySelector("#phone").focus();
+                toast.innerHTML = "Mobile number is required.";
+                activeToast();
+                return;
+            }else if (!isValidMobileNumber(phone)) {
+                document.getElementById("phone").focus();
+                toast.innerHTML = "Mobile number is not valid.";
+                activeToast();
+                return;
+            }else if(city == ""){
+                document.querySelector("#city").focus();
+                toast.innerHTML = "City is required.";
+                activeToast();
+                return;
+            }else if(state == "Select State"){
+                document.querySelector("#state").focus();
+                toast.innerHTML = "Please select a state first.";
+                activeToast();
+                return;
+            }else if(doctype == "Select"){
+                document.querySelector("#doctype").focus();
+                toast.innerHTML = "Please select a document type first.";
+                activeToast();
+                return;
+            }else if(pan_no == ""){
+                document.querySelector("#pan_no").focus();
+                toast.innerHTML = "PAN number is required.";
+                activeToast();
+                return;
+            }else if(panname == ""){
+                document.querySelector("#panname").focus();
+                toast.innerHTML = "PAN Name is required.";
+                activeToast();
+                return;
+            }else if(document.querySelector("#bank_name").value == "Other"){
+                 bank_name = document.getElementById("other_bank_name").value;
+            }else if(bank_name !== "Other"){
+                 bank_name = document.querySelector("#bank_name").value;
+            }
+
+            function isValidMobileNumber(mobileNumber) {
+                // Regular expression to match 10 digit mobile numbers
+                const mobileNumberRegex = /^[0-9]{10}$/;
             
+                // Check if the mobile number matches the regex
+                return mobileNumberRegex.test(mobileNumber);
+            }
+                        
                 const doc_image_front_side = document.querySelector('#imagefrontside').files[0];
                 const doc_image_back_side = document.querySelector('#imagebackside').files[0];
                 const bank_statement = document.querySelector('#bank_statement').files[0];
@@ -2130,7 +2184,7 @@
                             account_number,
                             bank_name,
                             ifsc_code,
-                            paytm_mobno,
+                            upi_id,
                             pan_no,
                             panname,
                             doc_image_front_side: doc_image_front_side_URL,

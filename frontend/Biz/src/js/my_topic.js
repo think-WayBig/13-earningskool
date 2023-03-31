@@ -1,350 +1,350 @@
 //<reference path="../../../content/bower_components/jquery/js/jquery.min.js" />
 
-$(document).ready(function() {
-    let videoId = $("#hdn_videoId").val();
-    CheckRatingPer();
-    $("#tab_comment").click(function() {
-        reset();
-        getComment(videoId);
-        $("#div_comment").show();
-        $("#tab_comment").addClass('active');
+// $(document).ready(function() {
+//     let videoId = $("#hdn_videoId").val();
+//     CheckRatingPer();
+//     $("#tab_comment").click(function() {
+//         reset();
+//         getComment(videoId);
+//         $("#div_comment").show();
+//         $("#tab_comment").addClass('active');
 
-    })
-
-
-    $("#tab_faq").click(function() {
-        reset();
-        $("#div_faq").show();
-        $("#tab_faq").addClass('active');
-    })
+//     })
 
 
-    $("#tab_links").click(function() {
-        reset();
-        $("#div_links").show();
-        $("#tab_links").addClass('active');
-    })
+//     $("#tab_faq").click(function() {
+//         reset();
+//         $("#div_faq").show();
+//         $("#tab_faq").addClass('active');
+//     })
 
 
-    function reset() {
-
-        $("#div_comment").hide();
-        $("#div_faq").hide();
-        $("#div_links").hide();
-
-        $("#tab_comment").removeAttr('class');
-        $("#tab_faq").removeAttr('class');
-        $("#tab_links").removeAttr('class');
-
-    }
-
-    getComment(videoId)
-
-    function getComment(id) {
-
-        $.ajax({
-            type: "POST",
-            data: '{"videoID":"' + id + '","subType":"B"}',
-            url: "../BizPro/BizProContentDet.aspx/getComment",
-            contentType: "application/json",
-            dataType: "json",
-            beforeSend: function() {
-
-                $("#dv_loader").show();
-                $("#cmt_all").hide();
-            },
-            success: function(msg) {
-
-                var obj = jQuery.parseJSON(msg.d);
-
-                $(".user__cmtWrap").html(obj.htmldata);
-                $("#total_cmt").html(obj.total_cmt + "<span>comment(s)</span>");
-                $("#dv_loader").hide();
-                $("#cmt_all").show();
-            },
-            error: function(xhr, ajaxOptions, thrownError) {
-
-                var obj = jQuery.parseJSON(xhr.responseText);
-                alert(obj.Message);
-            },
-            complete: function() {
-
-            }
-        });
-
-    }
-
-    $(document.body).on('click', '.view_reply', function(e) {
-
-        var cmtId = $(this).attr('data-id');
-        getSubComment(cmtId);
-        $(".user_allrply_area-" + cmtId + "").toggle();
+//     $("#tab_links").click(function() {
+//         reset();
+//         $("#div_links").show();
+//         $("#tab_links").addClass('active');
+//     })
 
 
-    });
+//     function reset() {
 
-    function getSubComment(cmtid) {
+//         $("#div_comment").hide();
+//         $("#div_faq").hide();
+//         $("#div_links").hide();
 
-        $.ajax({
-            type: "POST",
-            data: '{"cmtID":"' + cmtid + '","subType":"B"}',
-            url: "../BizPro/BizProContentDet.aspx/getSubComment",
-            contentType: "application/json",
-            dataType: "json",
-            success: function(msg) {
+//         $("#tab_comment").removeAttr('class');
+//         $("#tab_faq").removeAttr('class');
+//         $("#tab_links").removeAttr('class');
 
-                /*var obj = jQuery.parseJSON(msg.d);*/
+//     }
 
-                $(".user_allrply_area-" + cmtid + "").html(msg.d);
-            },
-            error: function(xhr, ajaxOptions, thrownError) {
+//     getComment(videoId)
 
-                var obj = jQuery.parseJSON(xhr.responseText);
-                alert(obj.Message);
-            },
-            complete: function() {
+//     function getComment(id) {
 
-            }
-        });
+//         $.ajax({
+//             type: "POST",
+//             data: '{"videoID":"' + id + '","subType":"B"}',
+//             url: "../BizPro/BizProContentDet.aspx/getComment",
+//             contentType: "application/json",
+//             dataType: "json",
+//             beforeSend: function() {
 
-    }
-    $("#postreply").click(function() {
-        var comment = $("#commenttextarea").val();
-        if (comment != "") {
-            insertComment(comment, videoId);
-        }
-    });
+//                 $("#dv_loader").show();
+//                 $("#cmt_all").hide();
+//             },
+//             success: function(msg) {
 
-    function insertComment(comment, videoid) {
+//                 var obj = jQuery.parseJSON(msg.d);
 
-        $.ajax({
-            type: "POST",
-            data: '{"comment":"' + comment + '","videoID":"' + videoid + '","subType":"B"}',
-            url: "../BizPro/BizProContentDet.aspx/insertComment",
-            contentType: "application/json",
-            dataType: "json",
-            success: function(msg) {
-                $("#commenttextarea").val("");
-                $("#textcount").text("0");
-                Swal.fire({
-                    position: 'center',
-                    icon: 'success',
-                    toast: true,
-                    title: 'Your comment has been submitted!',
-                    showConfirmButton: false,
-                    timer: 3000
-                })
-            },
-            error: function(xhr, ajaxOptions, thrownError) {
+//                 $(".user__cmtWrap").html(obj.htmldata);
+//                 $("#total_cmt").html(obj.total_cmt + "<span>comment(s)</span>");
+//                 $("#dv_loader").hide();
+//                 $("#cmt_all").show();
+//             },
+//             error: function(xhr, ajaxOptions, thrownError) {
 
-                var obj = jQuery.parseJSON(xhr.responseText);
-                alert(obj.Message);
-            },
-            complete: function() {
+//                 var obj = jQuery.parseJSON(xhr.responseText);
+//                 alert(obj.Message);
+//             },
+//             complete: function() {
 
-            }
-        });
-    }
+//             }
+//         });
 
-    $(document.body).on('click', '.btn__reply', function(e) {
+//     }
 
-        var cmtId = $(this).attr('data-id');
-        var comment = $("#txtsub_cmt-" + cmtId + "").val();
-        if (jQuery.trim(comment).length > 0) {
-            insertSubComment(comment, cmtId);
-            $("#txtsub_cmt-" + cmtId + "").val("");
-        }
+//     $(document.body).on('click', '.view_reply', function(e) {
 
-    });
-
-    function insertSubComment(comment, cmtid) {
-
-        $.ajax({
-            type: "POST",
-            data: '{"comment":"' + comment + '","cmtID":"' + cmtid + '"}',
-            url: "../BizPro/BizProContentDet.aspx/insertSubComment",
-            contentType: "application/json",
-            dataType: "json",
-            success: function(msg) {
-                $("#commenttextarea").val("");
-                $(".subcmtword_count").text("0");
-                Swal.fire({
-                    position: 'center',
-                    icon: 'success',
-                    toast: true,
-                    title: 'Your reply has been submitted!',
-                    showConfirmButton: false,
-                    timer: 2000
-                })
-            },
-            error: function(xhr, ajaxOptions, thrownError) {
-
-                var obj = jQuery.parseJSON(xhr.responseText);
-                alert(obj.Message);
-            },
-            complete: function() {
-
-            }
-        });
-    }
+//         var cmtId = $(this).attr('data-id');
+//         getSubComment(cmtId);
+//         $(".user_allrply_area-" + cmtId + "").toggle();
 
 
-    $(document.body).on('click', '.sub_reply', function(e) {
+//     });
 
-        var cmtId = $(this).attr('data-id');
-        $(".user_rply_area-" + cmtId + "").toggle();
+//     function getSubComment(cmtid) {
 
-    });
-    getFaq(videoId);
+//         $.ajax({
+//             type: "POST",
+//             data: '{"cmtID":"' + cmtid + '","subType":"B"}',
+//             url: "../BizPro/BizProContentDet.aspx/getSubComment",
+//             contentType: "application/json",
+//             dataType: "json",
+//             success: function(msg) {
 
-    function getFaq(id) {
+//                 /*var obj = jQuery.parseJSON(msg.d);*/
 
-        $.ajax({
-            type: "POST",
-            data: '{"videoID":"' + id + '","subType":"B"}',
-            url: "../BizPro/BizProContentDet.aspx/getFaq",
-            contentType: "application/json",
-            dataType: "json",
-            success: function(msg) {
+//                 $(".user_allrply_area-" + cmtid + "").html(msg.d);
+//             },
+//             error: function(xhr, ajaxOptions, thrownError) {
 
-                /*var obj = jQuery.parseJSON(msg.d);*/
+//                 var obj = jQuery.parseJSON(xhr.responseText);
+//                 alert(obj.Message);
+//             },
+//             complete: function() {
 
-                $(".faq-list").html(msg.d);
+//             }
+//         });
 
-            },
-            error: function(xhr, ajaxOptions, thrownError) {
+//     }
+//     $("#postreply").click(function() {
+//         var comment = $("#commenttextarea").val();
+//         if (comment != "") {
+//             insertComment(comment, videoId);
+//         }
+//     });
 
-                var obj = jQuery.parseJSON(xhr.responseText);
-                alert(obj.Message);
-            },
-            complete: function() {
+//     function insertComment(comment, videoid) {
 
-            }
-        });
+//         $.ajax({
+//             type: "POST",
+//             data: '{"comment":"' + comment + '","videoID":"' + videoid + '","subType":"B"}',
+//             url: "../BizPro/BizProContentDet.aspx/insertComment",
+//             contentType: "application/json",
+//             dataType: "json",
+//             success: function(msg) {
+//                 $("#commenttextarea").val("");
+//                 $("#textcount").text("0");
+//                 Swal.fire({
+//                     position: 'center',
+//                     icon: 'success',
+//                     toast: true,
+//                     title: 'Your comment has been submitted!',
+//                     showConfirmButton: false,
+//                     timer: 3000
+//                 })
+//             },
+//             error: function(xhr, ajaxOptions, thrownError) {
 
-    }
+//                 var obj = jQuery.parseJSON(xhr.responseText);
+//                 alert(obj.Message);
+//             },
+//             complete: function() {
+
+//             }
+//         });
+//     }
+
+//     $(document.body).on('click', '.btn__reply', function(e) {
+
+//         var cmtId = $(this).attr('data-id');
+//         var comment = $("#txtsub_cmt-" + cmtId + "").val();
+//         if (jQuery.trim(comment).length > 0) {
+//             insertSubComment(comment, cmtId);
+//             $("#txtsub_cmt-" + cmtId + "").val("");
+//         }
+
+//     });
+
+//     function insertSubComment(comment, cmtid) {
+
+//         $.ajax({
+//             type: "POST",
+//             data: '{"comment":"' + comment + '","cmtID":"' + cmtid + '"}',
+//             url: "../BizPro/BizProContentDet.aspx/insertSubComment",
+//             contentType: "application/json",
+//             dataType: "json",
+//             success: function(msg) {
+//                 $("#commenttextarea").val("");
+//                 $(".subcmtword_count").text("0");
+//                 Swal.fire({
+//                     position: 'center',
+//                     icon: 'success',
+//                     toast: true,
+//                     title: 'Your reply has been submitted!',
+//                     showConfirmButton: false,
+//                     timer: 2000
+//                 })
+//             },
+//             error: function(xhr, ajaxOptions, thrownError) {
+
+//                 var obj = jQuery.parseJSON(xhr.responseText);
+//                 alert(obj.Message);
+//             },
+//             complete: function() {
+
+//             }
+//         });
+//     }
 
 
-    $(".rating label").click(function() {
-        var rating = parseInt($(this).attr('title').substring(0, 1));
-        $('#hdnrating').val(rating);
-        insertRating(rating);
-    });
-    $("#btnrating").click(function() {
-        getRating();
-    });
+//     $(document.body).on('click', '.sub_reply', function(e) {
 
-    $(".rating label").mouseover(function() {
-        var rating = parseInt($(this).attr('title').substring(0, 1));
-        setRating(rating);
-    });
-    $(".rating label").mouseout(function() {
-        var rating = parseInt($('#hdnrating').val());
-        setRating(rating);
-    });
-});
+//         var cmtId = $(this).attr('data-id');
+//         $(".user_rply_area-" + cmtId + "").toggle();
 
-function setRating(rating) {
-    rating = parseInt(rating);
-    $('.rating label').each(function() {
-        var id = parseInt($(this).attr('title').substring(0, 1));
-        if (id <= rating) {
-            $(this).html('&#10029;').css('color', '#FFD600');
-        } else {
-            $(this).html('☆').css('color', '#333');;
-        }
-    });
-}
+//     });
+//     getFaq(videoId);
 
-function insertRating(rating) {
-    $.ajax({
-        type: "POST",
-        url: "my_topics.aspx/insertRating",
-        contentType: "application/json",
-        data: '{"rating":"' + rating + '"}',
-        dataType: "json",
-        success: function() {
-            setRating(rating);
-            //alert("Thanks For Your Giving Valuable Rating For This Course.");
-            //$('#exampleModalCenter').modal('hide');
-            $('.course_rat').hide();
-            $('.course_rat_thank').show();
-            var sinterval = setInterval(function() {
-                $('#exampleModalCenter').modal('hide');
-                clearInterval(sinterval);
-            }, 5000);
+//     function getFaq(id) {
 
-        },
-        error: function(xhr, ajaxOptions, thrownError) {
-            var obj = jQuery.parseJSON(xhr.responseText);
-            alert(obj.Message);
-        },
-        complete: function() {}
-    });
-}
+//         $.ajax({
+//             type: "POST",
+//             data: '{"videoID":"' + id + '","subType":"B"}',
+//             url: "../BizPro/BizProContentDet.aspx/getFaq",
+//             contentType: "application/json",
+//             dataType: "json",
+//             success: function(msg) {
 
-function CheckRatingPer() {
-    var count = $("#hdnVdopercount").val();
-    $.ajax({
-        type: "POST",
-        url: "my_topics.aspx/getCheckRating",
-        contentType: "application/json",
-        data: '{"percount":"' + count + '"}',
-        dataType: "json",
-        success: function(data) {
-            var obj = data.d;
-            if (obj == "1") {
-                $("#btnrating").show();
-            } else {
-                $("#btnrating").hide();
-            }
-        },
-        error: function(xhr, ajaxOptions, thrownError) {
-            var obj = jQuery.parseJSON(xhr.responseText);
-            alert(obj.Message);
-        },
-        complete: function() {}
-    });
-}
+//                 /*var obj = jQuery.parseJSON(msg.d);*/
 
-function getRating() {
-    var count = parseInt($("#hdnpercount").val());
-    var id = $("#hdnid").val();
-    $.ajax({
-        type: "POST",
-        url: "my_topics.aspx/GetRating",
-        contentType: "application/json",
-        data: '{}',
-        dataType: "json",
-        success: function(data) {
-            var obj = data.d;
-            if (obj != "") {
-                $('#hdnrating').val(obj);
-                setRating(obj);
-                $('.course_rat').show();
-                $('.course_rat_thank').hide();
-                $('#exampleModalCenter').modal('show');
-            } else {
-                $('#hdnrating').val(0);
-                setRating(0);
-                $('.course_rat').show();
-                $('.course_rat_thank').hide();
-                $('#exampleModalCenter').modal('show');
-            }
-        },
-        error: function(xhr, ajaxOptions, thrownError) {
-            var obj = jQuery.parseJSON(xhr.responseText);
-            alert(obj.Message);
-        },
-        complete: function() {}
-    });
-}
+//                 $(".faq-list").html(msg.d);
 
-$(document).ready(function() {
-    $(".total__comment").click(function() {
-        $(".user__cmtWrap").slideToggle("slow");
-    });
-});
+//             },
+//             error: function(xhr, ajaxOptions, thrownError) {
+
+//                 var obj = jQuery.parseJSON(xhr.responseText);
+//                 alert(obj.Message);
+//             },
+//             complete: function() {
+
+//             }
+//         });
+
+//     }
+
+
+//     $(".rating label").click(function() {
+//         var rating = parseInt($(this).attr('title').substring(0, 1));
+//         $('#hdnrating').val(rating);
+//         insertRating(rating);
+//     });
+//     $("#btnrating").click(function() {
+//         getRating();
+//     });
+
+//     $(".rating label").mouseover(function() {
+//         var rating = parseInt($(this).attr('title').substring(0, 1));
+//         setRating(rating);
+//     });
+//     $(".rating label").mouseout(function() {
+//         var rating = parseInt($('#hdnrating').val());
+//         setRating(rating);
+//     });
+// });
+
+// function setRating(rating) {
+//     rating = parseInt(rating);
+//     $('.rating label').each(function() {
+//         var id = parseInt($(this).attr('title').substring(0, 1));
+//         if (id <= rating) {
+//             $(this).html('&#10029;').css('color', '#FFD600');
+//         } else {
+//             $(this).html('☆').css('color', '#333');;
+//         }
+//     });
+// }
+
+// function insertRating(rating) {
+//     $.ajax({
+//         type: "POST",
+//         url: "my_topics.aspx/insertRating",
+//         contentType: "application/json",
+//         data: '{"rating":"' + rating + '"}',
+//         dataType: "json",
+//         success: function() {
+//             setRating(rating);
+//             //alert("Thanks For Your Giving Valuable Rating For This Course.");
+//             //$('#exampleModalCenter').modal('hide');
+//             $('.course_rat').hide();
+//             $('.course_rat_thank').show();
+//             var sinterval = setInterval(function() {
+//                 $('#exampleModalCenter').modal('hide');
+//                 clearInterval(sinterval);
+//             }, 5000);
+
+//         },
+//         error: function(xhr, ajaxOptions, thrownError) {
+//             var obj = jQuery.parseJSON(xhr.responseText);
+//             alert(obj.Message);
+//         },
+//         complete: function() {}
+//     });
+// }
+
+// function CheckRatingPer() {
+//     var count = $("#hdnVdopercount").val();
+//     $.ajax({
+//         type: "POST",
+//         url: "my_topics.aspx/getCheckRating",
+//         contentType: "application/json",
+//         data: '{"percount":"' + count + '"}',
+//         dataType: "json",
+//         success: function(data) {
+//             var obj = data.d;
+//             if (obj == "1") {
+//                 $("#btnrating").show();
+//             } else {
+//                 $("#btnrating").hide();
+//             }
+//         },
+//         error: function(xhr, ajaxOptions, thrownError) {
+//             var obj = jQuery.parseJSON(xhr.responseText);
+//             alert(obj.Message);
+//         },
+//         complete: function() {}
+//     });
+// }
+
+// function getRating() {
+//     var count = parseInt($("#hdnpercount").val());
+//     var id = $("#hdnid").val();
+//     $.ajax({
+//         type: "POST",
+//         url: "my_topics.aspx/GetRating",
+//         contentType: "application/json",
+//         data: '{}',
+//         dataType: "json",
+//         success: function(data) {
+//             var obj = data.d;
+//             if (obj != "") {
+//                 $('#hdnrating').val(obj);
+//                 setRating(obj);
+//                 $('.course_rat').show();
+//                 $('.course_rat_thank').hide();
+//                 $('#exampleModalCenter').modal('show');
+//             } else {
+//                 $('#hdnrating').val(0);
+//                 setRating(0);
+//                 $('.course_rat').show();
+//                 $('.course_rat_thank').hide();
+//                 $('#exampleModalCenter').modal('show');
+//             }
+//         },
+//         error: function(xhr, ajaxOptions, thrownError) {
+//             var obj = jQuery.parseJSON(xhr.responseText);
+//             alert(obj.Message);
+//         },
+//         complete: function() {}
+//     });
+// }
+
+// $(document).ready(function() {
+//     $(".total__comment").click(function() {
+//         $(".user__cmtWrap").slideToggle("slow");
+//     });
+// });
 
 
 async function getCourseDetails(id) {

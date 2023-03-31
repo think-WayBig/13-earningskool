@@ -603,19 +603,21 @@
 
         <!--- browse question section start --->
         <section class="browse_section">
-            <div class="container">
-                <div class="browse_question" style="display:flex;justify-content: center;gap:20px;place-items: center;">
-                    <a href=""><img src="./Biz/img/google-pay.png" alt="" style="height:70px"></a>
-                    <a href=""><img src="./Biz/img/paytm.png" alt="" style="height: 84px"></a>
-                    <a href=""><img src="./Biz/img/phonepe.png" alt="" style="height:103px;object-fit: none;"></a>
-                    <a href=""><img src="./Biz/img/bharatpe-logo.png" alt="" style="height:103px;transform: scale3d(1.27, 1.2, 1.2);"></a>
-                </div>
-                <div class="container">
+            
+                <div class="container" style="padding-top: 40px;">
                     <div class="form-group" style="display:flex;justify-content: center;">
                         <div class="col-sm-6">
-                            <input type="text" id="txn_id" name="txn_id" class="form-control">
+                            <label for="">Your Transaction ID</label>
+                            <input type="text" id="txn_id" name="txn_id" class="form-control" placeholder="Your transaction ID" style="margin-bottom:0;">
                         </div>
                     </div>
+                    <div class="container col-sm-12">
+                        <div class="browse_question" style="display:flex;justify-content: center;gap:20px;place-items: center;">
+                            <a href=""><img src="./Biz/img/google-pay.png" alt="" style="height:70px"></a>
+                            <a href=""><img src="./Biz/img/paytm.png" alt="" style="height: 84px"></a>
+                            <a href=""><img src="./Biz/img/phonepe.png" alt="" style="height:103px;object-fit: none;"></a>
+                            <a href=""><img src="./Biz/img/bharatpe-logo.png" alt="" style="height:103px;transform: scale3d(1.27, 1.2, 1.2);"></a>
+                        </div>
                     <div class="form-group" style="display:flex;justify-content: center;">
                         <div class="col-sm-2 submit-btn" style="padding-top: 0;">
                             <input type="submit" value="Submit" id="submit" onclick="submit()">
@@ -623,6 +625,7 @@
                     </div>
                     <div id="snackbar"></div>
                 </div>
+                
             </div>
         </section>
         <section class="customer-support-section">
@@ -647,6 +650,8 @@
     <input type="hidden" name="ctl00$ContentPlaceHolder1$hdn_ddval" id="hdn_ddval" />
     <link href="./Biz/css/jquery-ui.css" rel="stylesheet" />
     <script src="./Biz/assets/js/common-pages.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
     <!-- <script src="./Biz/js/jquery-ui.js"></script> -->
 
@@ -960,7 +965,7 @@
 
         if (txn_id == "") {
             document.getElementById("txn_id").focus();
-            toast.innerHTML = "Name is required.";
+            toast.innerHTML = "Transaction ID is required.";
             activeToast();
             return;
         }         
@@ -979,10 +984,14 @@
         let res = await response.json();
 
         if (res.message == "success") {
-            toast.innerHTML = "Submission successful.";
-            setTimeout(function () { window.location.href = "./index.html"; }, 1000)
+            Swal.fire({
+                    icon: 'success',
+                    title: 'Congratulations!',
+                    text:'Your transaction ID has been successfully stored. You will be notified shortly once your request is approved.',
+                    showConfirmButton: true,
+                })
+            setTimeout(function () { window.location.href = "./index.html"; }, 5000)
 
-            activeToast();
         }
         if (res.message == "invalid") {
             toast.innerHTML = "Submission failed.";
@@ -1368,6 +1377,8 @@
 
     <script src="./Biz/js/custome_js/afterlogin.js"></script>
     <script src="./Biz/js/custome_js/loadDp.js"></script>
+    <script src="sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">
     <!-- <script src="/biz/js/custome_js/cart.js?v=1.2"></script> -->
     <!-- Ionic Icons -->
 

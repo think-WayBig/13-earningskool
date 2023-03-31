@@ -481,7 +481,7 @@
                                 <div id="div_userprofile" class="dropdown user__dropdown">
                                     <button class="btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
                                         <img id="img_profile"
-                                            onerror="this.onerror=null;this.src=&#39;/pic/pic.png&#39;;"
+                                            onerror="this.onerror=null;this.src='&#39;/pic/pic.png&#39;;'"
                                             src="./Biz/img/pic.png" />
                                         <span class="caret"></span>
                                     </button>
@@ -687,12 +687,12 @@
                                 class='dropdown-toggle cls_category List__title courses__list' type='button'><i
                                     class='fa fa-certificate' aria-hidden='true'></i>&nbsp;My Courses</a>
                             <ul class='dropdown-menu' id='ul30' style='display:block;'>
-                                <li><a href=/Biz/members/course/course_landing?id=4> <span class='pcoded-micon'><i
+                                <!-- <li><a href=/Biz/members/course/course_landing?id=4> <span class='pcoded-micon'><i
                                             class='fa fa-graduation-cap' aria-hidden='true'></i></span><span
                                             class='pcoded-mtext'>Marketing Mastery</span></a></li>
                                 <li><a href=/Biz/members/course/course_landing?id=1> <span class='pcoded-micon'><i
                                             class='fa fa-graduation-cap' aria-hidden='true'></i></span><span
-                                            class='pcoded-mtext'>Branding Mastery</span></a></li>
+                                            class='pcoded-mtext'>Branding Mastery</span></a></li> -->
                             </ul>
                         </li>
                         <li class='my_courses' style='display:none'>
@@ -724,7 +724,7 @@
 
 
 
-                        <li id="ContentPlaceHolder1_li_bcm_aff" class="cls_cat List__title" style="display: none">
+                        <!-- <li id="ContentPlaceHolder1_li_bcm_aff" class="cls_cat List__title" style="display: none">
                             <a href="/Biz/members/ConfirmAffilate" id="ContentPlaceHolder1_link_li_bcm_aff"
                                 class="custom__arrow">
                                 <span class="pcoded-micon"><i class="fa fa-users" aria-hidden="true"></i>&nbsp;
@@ -843,7 +843,7 @@
                                         style="display:block;font-size:25px;"></i>
                                 </span>
                             </a>
-                        </li>
+                        </li> -->
                         <li class="cls_cat" style="display: none;">
                             <hr />
                         </li>
@@ -945,19 +945,16 @@
                                                         <div class="card-block">
                                                             <div id="ContentPlaceHolder1_NestedContentPlaceHolder_documentGrid"
                                                                 class="row">
-                                                                <div class="col-lg-3 col-sm-6 col-xs-12">
+                                                                <!-- <div class="col-lg-3 col-sm-6 col-xs-12">
                                                                     <div class="thumbnail">
-                                                                        <div class="thumb"><a
-                                                                                href="/Biz/members/course/course_landing?id=4"
-                                                                                data-lightbox="8"
-                                                                                data-title=" caption 8"><img
-                                                                                    src="./Biz/img/marketing-mastery.png"
-                                                                                    alt=""
-                                                                                    class="img-fluid img-thumbnail step1"></a>
+                                                                        <div class="thumb">
+                                                                            <a href="/Biz/members/course/course_landing?id=4" data-lightbox="8" data-title=" caption 8">
+                                                                                <img src="./Biz/img/marketing-mastery.png" alt="" class="img-fluid img-thumbnail step1"/>
+                                                                            </a>
                                                                         </div>
-                                                                        <div class="thumbnail__name"><label
-                                                                                class='plan_name'> Marketing
-                                                                                Mastery</label></div>
+                                                                        <div class="thumbnail__name">
+                                                                            <label class='plan_name'> Marketing Mastery</label>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-3 col-sm-6 col-xs-12">
@@ -974,7 +971,7 @@
                                                                                 class='plan_name'> Branding
                                                                                 Mastery</label></div>
                                                                     </div>
-                                                                </div>
+                                                                </div> -->
                                                             </div>
                                                             <div class="upgrade__planBTN" style="display: none;">
                                                                 <input type="submit"
@@ -1686,7 +1683,7 @@
 
         <!-- scroll to top button -->
 
-        <script>
+        <!-- <script>
             $(document).ready(function () {
                 if ($("#hdnstory").val() == 1) {
                     $("#stories").addClass("isview_story");
@@ -1797,10 +1794,10 @@
                 $("#div_update_plan").hide();
 
             })
-        </script>
+        </script> -->
 
 
-        <script>
+        <!-- <script>
             // Set the date we're counting down to
             var offerTime = $("#hdn_offertime").val();
             var countDownDate = new Date(offerTime).getTime();
@@ -1832,7 +1829,7 @@
                     $("#div_update_plan").hide();
                 }
             }, 1000);
-        </script>
+        </script> -->
 
         </form>
 
@@ -1840,6 +1837,7 @@
         <script src="./Biz/assets/js/common-pages.js"></script>
         <script src="./Biz/js/custome_js/checkLogin.js"></script>
         <script src="./Biz/js/custome_js/loadDp.js"></script>
+        <script src="./Biz/js/custome_js/my_course.js"></script>
         <!-- <script src="/biz/js/custome_js/cart.js?v=1.2"></script> -->
         <!-- Ionic Icons -->
 </body>

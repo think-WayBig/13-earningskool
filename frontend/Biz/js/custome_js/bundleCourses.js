@@ -1,7 +1,7 @@
 var dropdown_menu = document.querySelector("#dropdown_menu");
 
 async function getAllCourse(){
-    var allcourses = await fetch('http://localhost:3000/');
+    var allcourses = await fetch('https://api-earningskool.vercel.app/');
     var coursesDetails = await allcourses.json();
     coursesDetails.map((course)=>{
         var list = document.createElement('li');

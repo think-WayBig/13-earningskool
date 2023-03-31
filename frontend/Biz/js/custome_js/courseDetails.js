@@ -19,9 +19,9 @@
           document.querySelector('#detailedDescription').textContent = courseDetails.detailed_description;
           document.querySelector('#courseContent1').textContent = courseDetails.courseContent[0].heading;
           document.querySelector('#courseContent2').textContent = courseDetails.courseContent[1].heading;
-          document.querySelector('#defaultVideo').setAttribute(`src` , `https://player.vimeo.com/video/${courseDetails.courseContent[0].videoid}?title=0&byline=0&portrait=0`)
-          document.querySelector('#video1').setAttribute(`data` , `https://player.vimeo.com/video/${courseDetails.courseContent[0].videoid}?title=0&byline=0&portrait=0`)
-          document.querySelector('#video2').setAttribute(`data` , `https://player.vimeo.com/video/${courseDetails.courseContent[1].videoid}?title=0&byline=0&portrait=0`)
+          // document.querySelector('#defaultVideo').setAttribute(`src` , `https://player.vimeo.com/video/${courseDetails.courseContent[0].videoid}?title=0&byline=0&portrait=0`)
+          // document.querySelector('#video1').setAttribute(`data` , `https://player.vimeo.com/video/${courseDetails.courseContent[0].videoid}?title=0&byline=0&portrait=0`)
+          // document.querySelector('#video2').setAttribute(`data` , `https://player.vimeo.com/video/${courseDetails.courseContent[1].videoid}?title=0&byline=0&portrait=0`)
         //   document.querySelector('#next3CourseContents').textContent = courseDetails.courseContent[2].heading;
 
         const coursecontent = courseDetails.courseContent;

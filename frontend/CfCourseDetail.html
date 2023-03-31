@@ -652,7 +652,7 @@
                             <div style="display:flex;align-items:center;">
                                 <p>SALE</p>
                             </div>
-                            <h3><span class="cls_price">₹699</span></h3>
+                            <h3><span class="cls_price" id="price"></span></h3>
                         </div>
                         <div class="courses_purchase_box buy-now-section addcourse">
                             <!-- <h5>This Course Includes</h5> -->
@@ -685,7 +685,7 @@
                             <h6><i class="fa fa-tablet" aria-hidden="true"></i>Use On Desktop,Tablet & Mobile</h6>
                             <h6><i class="fa fa-clock-o" aria-hidden="true"></i>Full Lifetime Access</h6>
                             <h6><i class="fa fa-certificate" aria-hidden="true"></i>Certificate Of Completion</h6>
-                            <h6><i class="fa fa-file-video-o" aria-hidden="true"></i>44 lessons (4 Hr. 33 Min. )
+                            <h6><i class="fa fa-file-video-o" aria-hidden="true"> <span id="totalTime" style="color: #333; font-weight: 400; font-size: 16px; margin-left: 13px; font-family: 'Poppins', sans-serif !important;"></span></i>
                             </h6>
                             <h6><i class="fa fa-smile-o" aria-hidden="true"></i>Learn at Your Own Pace</h6>
                         </div>
@@ -773,8 +773,8 @@
                                 <div class="lecture-div">
                                     <ul>
                                         <li>Sections 1</li>
-                                        <li>44 Lectures</li>
-                                        <li>4 Hr. 33 Min. </li>
+                                        <li id="lectures">44 Lectures</li>
+                                        <li id="totalHours">4 Hr. 33 Min. </li>
 
                                     </ul>
                                 </div>
@@ -809,7 +809,7 @@
                                                                 id="courseContent1"></a></div>
                                                         <!-- <div class='preview-span' id="video1"><a
                                                                 style='cursor: pointer'> Preview</a></div> -->
-                                                        <div class='time-span'></div>
+                                                        <div class='time-span' id="timespan1"></div>
                                                     </li>
 
                                                     <li>
@@ -818,7 +818,7 @@
                                                                 id="courseContent2"></a></div>
                                                         <!-- <div class='preview-span' id="video2"><a
                                                                 style='cursor: pointer'> Preview</a></div> -->
-                                                        <div class='time-span'></div>
+                                                        <div class='time-span' id="timespan2"></div>
                                                     </li>
 
                                                     <span id="next3ListItems"></span>

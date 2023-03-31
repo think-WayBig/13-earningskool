@@ -16,9 +16,15 @@
           document.querySelector('#title').textContent = courseDetails.title;
           document.querySelector('#shortDescription').textContent = courseDetails.short_description;
           document.querySelector('#shortDescription').textContent = courseDetails.short_description;
+          document.querySelector('#lectures').textContent = `${courseDetails.courses} Lectures`;
+          document.querySelector('#totalHours').textContent = courseDetails.totalHours;
+          document.querySelector('#price').textContent = `₹${courseDetails.price}`;
+          document.querySelector('#totalTime').textContent = `${courseDetails.courses} lessons ${courseDetails.totalHours}`;
           document.querySelector('#detailedDescription').textContent = courseDetails.detailed_description;
           document.querySelector('#courseContent1').textContent = courseDetails.courseContent[0].heading;
           document.querySelector('#courseContent2').textContent = courseDetails.courseContent[1].heading;
+          document.querySelector('#timespan1').textContent = courseDetails.courseContent[1].time;
+          document.querySelector('#timespan2').textContent = courseDetails.courseContent[1].time;
           // document.querySelector('#defaultVideo').setAttribute(`src` , `https://player.vimeo.com/video/${courseDetails.courseContent[0].videoid}?title=0&byline=0&portrait=0`)
           // document.querySelector('#video1').setAttribute(`data` , `https://player.vimeo.com/video/${courseDetails.courseContent[0].videoid}?title=0&byline=0&portrait=0`)
           // document.querySelector('#video2').setAttribute(`data` , `https://player.vimeo.com/video/${courseDetails.courseContent[1].videoid}?title=0&byline=0&portrait=0`)
@@ -32,13 +38,13 @@
 
             const next3ListItems =  document.querySelector("#next3ListItems");
             const expandList =  document.querySelector(".expan-li");
-            function listItem(heading){
+            function listItem(heading, time){
                 var list = document.createElement("li");
                 var divv = document.createElement("div");
                 divv.classList.add('video-sapn');
                 var divv2 = document.createElement("div");
                 divv2.classList.add('time-span');
-                divv2.textContent = "08:49";
+                divv2.textContent = time;
                 var icon = document.createElement("i");
                 icon.classList.add('fa' ,'fa-play-circle');
                 var atag= document.createElement("a");
@@ -49,13 +55,13 @@
                 divv.append(icon,atag);
                 next3ListItems.append(list);
             }
-            function expandListItem(heading){
+            function expandListItem(heading, time){
                 var list = document.createElement("li");
                 var divv = document.createElement("div");
                 divv.classList.add('video-sapn');
                 var divv2 = document.createElement("div");
                 divv2.classList.add('time-span');
-                divv2.textContent = "08:49";
+                divv2.textContent = time;
                 var icon = document.createElement("i");
                 icon.classList.add('fa' ,'fa-play-circle');
                 var atag= document.createElement("a");
@@ -68,11 +74,11 @@
             }
 
             next3CourseContent.forEach((content)=> {
-                listItem(content.heading)
+                listItem(content.heading, content.time)
 
             });
             expandli.forEach((content)=> {
-                expandListItem(content.heading)
+                expandListItem(content.heading, content.time)
                 
             });
         }

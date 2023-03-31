@@ -2,11 +2,11 @@ let user_email = localStorage.getItem('User');
 
 
 async function getMyCourse(){
-    const userDetail = await fetch(`http://localhost:3000/getUser/${user_email}`);
+    const userDetail = await fetch(`https://api-earningskool.vercel.app/getUser/${user_email}`);
     const userData = await userDetail.json();
     const mycourse = userData.message.myCourses;
     mycourse.map(async (course)=>{
-        const getCourseDetails = await fetch(`http://localhost:3000/courseDetail/${course.course_id}`);
+        const getCourseDetails = await fetch(`https://api-earningskool.vercel.app/courseDetail/${course.course_id}`);
         const courseData = await getCourseDetails.json();
         console.log(courseData);
 

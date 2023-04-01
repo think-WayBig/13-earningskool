@@ -1,4 +1,7 @@
 const express = require("express");
+const mongoose = require("mongoose");
+const ObjectId = mongoose.Types.ObjectId;
+const db = require("./mongooseConnection");
 var cors = require("cors");
 const bodyparser = require("body-parser");
 const port = 3000;
@@ -41,6 +44,15 @@ app.get("/certificate_request", async (req, res) => {
      
 });
 
+app.get('/modules/:_id', async (req, res) => {
+  const module = await db.collection('module_1').findOne({_id: ObjectId(req.params._id)});
+  console.log(module)
+  if (!module) {
+    return res.status(404).send('Module not found');
+  }
+  res.send(module);
+});
+
 app.get('/:referralCode', async (req, res) => {
   const referral = await users_collection.findOne({ referralCode: req.params.referralCode });
   if (!referral) {
@@ -48,6 +60,8 @@ app.get('/:referralCode', async (req, res) => {
   }
   res.send(referral);
 });
+
+
 
 app.post("/register", async (req, res) => {
   // let req_userData = new users_collection(req.body);

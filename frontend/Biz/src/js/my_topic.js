@@ -348,7 +348,7 @@
 
 
 async function getCourseDetails(id) {
-    const response = await fetch(`https://api-earningskool.vercel.app/courseDetail/${id}`);
+    const response = await fetch(`https://api-earningskool.vercel.app/modules/${id}`);
     const data = await response.json();
     return data;
   }
@@ -364,7 +364,7 @@ async function getCourseDetails(id) {
       // Update the HTML with the course details
       document.querySelector('#ContentPlaceHolder1_NestedContentPlaceHolder_lblCourseTitle').textContent = courseDetails.title;
       var iframesrc = document.querySelector('#ContentPlaceHolder1_NestedContentPlaceHolder_videoFrame');
-      iframesrc.setAttribute(`src` , `https://player.vimeo.com/video/${courseDetails.courseContent[0].videoid}?title=0&byline=0&portrait=0`) ;
+      iframesrc.setAttribute(`src` , `${courseDetails.content[0].video}`) ;
      document.querySelector('#ContentPlaceHolder1_NestedContentPlaceHolder_lblTitle').textContent = courseDetails.title;
 
     const topicListView =  document.querySelector("#topicListView");
@@ -390,7 +390,7 @@ async function getCourseDetails(id) {
             
             atag.textContent= heading;
             atag.onclick= function(){
-                iframesrc.setAttribute('src', `https://player.vimeo.com/video/${videosrc}?title=0&byline=0&portrait=0`);
+                iframesrc.setAttribute('src', `${videosrc}?title=0&byline=0&portrait=0`);
             }
 
             h3.appendChild(span);
@@ -399,8 +399,8 @@ async function getCourseDetails(id) {
             topicListView.append(divv);
         }
 
-        courseDetails.courseContent.forEach((content , index)=> {
-            listItem(content.heading , index+1 , content.videoid)
+        courseDetails.content.forEach((content , index)=> {
+            listItem(content.txt , index+1 , content.video)
 
         });
     

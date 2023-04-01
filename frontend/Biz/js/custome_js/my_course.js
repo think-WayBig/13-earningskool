@@ -5,34 +5,41 @@ async function getMyCourse(){
     const userDetail = await fetch(`https://api-earningskool.vercel.app/getUser/${user_email}`);
     const userData = await userDetail.json();
     const mycourse = userData.message.myCourses;
-    mycourse.map(async (course)=>{
+    mycourse.forEach(async (course)=>{
         const getCourseDetails = await fetch(`https://api-earningskool.vercel.app/courseDetail/${course.course_id}`);
         const courseData = await getCourseDetails.json();
-        console.log(courseData);
+        courseData.modules.forEach(async(module)=>{
+            const getModules = await fetch(`https://api-earningskool.vercel.app/modules/${module.module_id}`);
+            const modulesData = await getModules.json();
+                // console.log(modulesData)
+            // Create the necessary DOM elements
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            const span1 = document.createElement('span');
+            const i = document.createElement('i');
+            const span2 = document.createElement('span');
 
-        // Create the necessary DOM elements
-        const li = document.createElement('li');
-        const a = document.createElement('a');
-        const span1 = document.createElement('span');
-        const i = document.createElement('i');
-        const span2 = document.createElement('span');
+            // Add attributes and classes to the elements
+            a.setAttribute('href', `https://www.earningskool.com/my_topics.html?id=${modulesData._id}`);
+            span1.setAttribute('class', 'pcoded-micon');
+            i.setAttribute('class', 'fa fa-graduation-cap');
+            i.setAttribute('aria-hidden', 'true');
+            span2.setAttribute('class', 'pcoded-mtext');
+            span2.textContent = modulesData.title;
 
-        // Add attributes and classes to the elements
-        a.setAttribute('href', `https://www.earningskool.com/my_topics.html?id=${courseData._id}`);
-        span1.setAttribute('class', 'pcoded-micon');
-        i.setAttribute('class', 'fa fa-graduation-cap');
-        i.setAttribute('aria-hidden', 'true');
-        span2.setAttribute('class', 'pcoded-mtext');
-        span2.textContent = courseData.title;
+            // Build the DOM tree
+            span1.appendChild(i);
+            a.append(span1,span2);
+            li.appendChild(a);
 
-        // Build the DOM tree
-        span1.appendChild(i);
-        a.append(span1,span2);
-        li.appendChild(a);
+            // Add the dynamic component to the page
+            let mycourselist = document.querySelector("#ul30");
+            mycourselist.appendChild(li);
+           
+        
 
-        // Add the dynamic component to the page
-        let mycourselist = document.querySelector("#ul30");
-        mycourselist.appendChild(li);
+        
+        
 
 
         // create a parent element to hold the component
@@ -52,7 +59,7 @@ async function getMyCourse(){
 
         // create the link element for the thumbnail
         const linkEl = document.createElement('a');
-        linkEl.href = `https://www.earningskool.com/my_topics.html?id=${courseData._id}`;
+        linkEl.href = `https://www.earningskool.com/my_topics.html?id=${modulesData._id}`;
         linkEl.setAttribute('data-lightbox', '8');
         linkEl.setAttribute('data-title', 'caption 8');
 
@@ -78,7 +85,7 @@ async function getMyCourse(){
         // create the plan name label element
         const planNameEl = document.createElement('label');
         planNameEl.className = 'plan_name';
-        planNameEl.textContent = courseData.title;
+        planNameEl.textContent = modulesData.title;
 
         // append the plan name label to the thumbnail name element
         thumbnailNameEl.appendChild(planNameEl);
@@ -93,7 +100,8 @@ async function getMyCourse(){
         parentEl.appendChild(componentEl);
 
     })
-    console.log(userData);
+})
+    // console.log(userData);
 }
 
 getMyCourse();

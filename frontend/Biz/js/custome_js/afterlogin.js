@@ -16,7 +16,7 @@ async function checkCoursePurchased(){
             e.style.display = 'block';
         })
         affiliate_applynowlink.forEach((e)=>{
-            e.setAttribute('href','./CfCourseDetail.html?course=640343dc8feaa85a3d7f9316');
+            e.setAttribute('href','./CfCourseDetail.html?course=6426cea812f49a9c236dbc5a');
         })
     }
 }

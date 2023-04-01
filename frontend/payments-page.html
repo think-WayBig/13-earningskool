@@ -603,22 +603,23 @@
         <section class="browse_section">
             
                 <div class="container" style="padding-top: 40px;">
-                    <div class="form-group" style="display:flex;justify-content: center;">
-                        <div class="col-sm-6">
-                            <label for="">Your Transaction ID</label>
-                            <input type="text" id="txn_id" name="txn_id" class="form-control" placeholder="Your transaction ID" style="margin-bottom:0;">
+                    
+                    <div class="container col-12" style="display: flex; flex-direction: column;">
+                        <div class="form-group" style="display:flex;justify-content: center;">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                <label for="">Your Transaction ID</label>
+                                <input type="text" id="txn_id" name="txn_id" class="form-control" placeholder="Your transaction ID" style="margin-bottom:0;">
+                            </div>
                         </div>
-                    </div>
-                    <div class="container col-sm-12">
-                        <div class="browse_question" style="display:flex;justify-content: center;gap:20px;place-items: center;">
-                            <a href=""><img src="./Biz/img/google-pay.png" alt="" style="height:70px"></a>
-                            <a href=""><img src="./Biz/img/paytm.png" alt="" style="height: 84px"></a>
-                            <a href=""><img src="./Biz/img/phonepe.png" alt="" style="height:103px;object-fit: none;"></a>
-                            <a href=""><img src="./Biz/img/bharatpe-logo.png" alt="" style="height:103px;transform: scale3d(1.27, 1.2, 1.2);"></a>
+                        <div class="browse_question" style="display:flex;justify-content: center;gap:20px;place-items: center;flex-wrap: wrap; padding:15px 0px 30px">
+                            <a href="" style="padding: 0px 33px; border-radius: 50px; border: 2px solid #726f6f;"><img src="./Biz/img/google-pay.png" alt="" style="height:52px"></a>
+                            <a href="" style="padding: 0px 33px; border-radius: 50px; border: 2px solid #726f6f;"><img src="./Biz/img/paytm.png" alt="" style="height: 52px; transform: scale3d(1.2, 1.2, 1.2);"></a>
+                            <a href="" style="padding: 0px 33px; border-radius: 50px; border: 2px solid #726f6f;"><img src="./Biz/img/phonepe.png" alt="" style="height:52px; transform: scale3d(2.2, 2.2, 2.2);"></a>
+                            <a href="" style="padding: 0px 33px; border-radius: 50px; border: 2px solid #726f6f;"><img src="./Biz/img/bharatpe-logo.png" alt="" style="height:52px;transform: scale3d(2.2, 2.2, 2.2);"></a>
                         </div>
                     <div class="form-group" style="display:flex;justify-content: center;">
-                        <div class="col-sm-2 submit-btn" style="padding-top: 0;">
-                            <input type="submit" value="Submit" id="submit" onclick="submit()">
+                        <div class="col-sm-3 submit-btn" style="padding-top: 0;">
+                            <input type="submit" value="Submit" id="submit" onclick="submit()" style="width: 150px;border-radius: 6px;">
                         </div>
                     </div>
                     <div id="snackbar"></div>

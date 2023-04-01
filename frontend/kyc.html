@@ -1039,17 +1039,17 @@
                                                                                 <div class="form-group">
                                                                                     <div class="col-md-6 col-sm-12">
                                                                                         <label class="col-form-label">Name<span style="color: red;">*</span></label>
-                                                                                        <input name="name" type="text" id="user_name" class="form-control" required>
+                                                                                        <input name="name" type="text" id="user_name" class="form-control" readonly required style="cursor: not-allowed;">
                                                                                         
                                                                                     </div>
                                                                                     <div class="col-md-6 col-sm-12">
                                                                                         <label class="col-form-label">Email<span style="color: red;">*</span></label>
-                                                                                        <input name="email" type="email" id="email" class="form-control" required>
+                                                                                        <input name="email" type="email" id="email" class="form-control" readonly required style="cursor: not-allowed;">
                                                                                         
                                                                                     </div>
                                                                                     <div class="col-md-6 col-sm-12">
                                                                                         <label class="col-form-label">Mobile No<span style="color: red;">*</span></label>
-                                                                                        <input name="phone" type="text" id="phone" class="form-control" required>
+                                                                                        <input name="phone" type="text" id="phone" class="form-control" readonly required style="cursor: not-allowed;">
                                                                                         
                                                                                     </div>
                                                                                     <div class="col-md-6 col-sm-12">
@@ -2063,7 +2063,16 @@
                     other_bank_name.style.display = "block";
                 }
             }
-
+            var user = localStorage.getItem('User');
+            async function getUserDetails(){
+                const getUserDetails = await fetch(`https://api-earningskool.vercel.app/getUser/${user}`);
+                const data = await getUserDetails.json();
+                console.log(data);
+                document.querySelector("#user_name").value = data.message.name;
+                document.querySelector("#email").value = data.message.email;
+                document.querySelector("#phone").value = data.message.phone;
+            }
+            getUserDetails();
             async function submit(){
             let user_name = document.querySelector("#user_name").value;
             let user_email = document.querySelector("#email").value;

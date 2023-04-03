@@ -12,6 +12,10 @@ const course_payment_schema = new mongoose.Schema({
   user_email:{
     type: String,
     required: true,
+  },
+  amount_paid:{
+    type: Number,
+    required: true,
   }
   
 });

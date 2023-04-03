@@ -17,6 +17,10 @@ async function fetchUserDetails() {
     document.querySelector("#name").textContent = data.user.name;
     document.querySelector("#welcomeUser").textContent = `Welcome ${data.user.name}`;
     document.querySelector("#email").textContent = data.user.email;
+    if(data.user.total_income){
+      document.querySelector("#ContentPlaceHolder1_NestedContentPlaceHolder_lbltotalearning").textContent = data.user.total_income;
+      document.querySelector("#total_income").textContent = `₹${data.user.total_income}`;
+    }
 
     
 
@@ -32,6 +36,7 @@ async function fetchUserDetails() {
 
     const usersList = document.querySelector("#usersList");
     res.users.forEach((user) => {
+      console.log(user);
         var mainDiv = document.createElement("div");
         mainDiv.classList.add("single_user_pil", "d-flex" ,"align-items-center", "justify-content-between");
        
@@ -51,11 +56,16 @@ async function fetchUserDetails() {
 
         var SecondChildDiv = document.createElement("div");
         SecondChildDiv.classList.add("user_info");
-        SecondChildDiv.textContent= "+₹2,000";
+        // SecondChildDiv.textContent= "+₹2,000";
+
 
         var span2 = document.createElement('span');
         span2.classList.add("timing");
-        span2.textContent="Mar 30 2021";
+        data.user.earnings.forEach((earnings)=>{
+          console.log(earnings);
+          SecondChildDiv.textContent= `+₹${earnings.commission_amount}`;
+          span2.textContent=`${earnings.date}`;
+        })
 
         var br = document.createElement("br");
 

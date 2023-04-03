@@ -25,7 +25,10 @@ const courses_schema = new mongoose.Schema({
     { 
         heading :{type: String, required: true},
         videoid :{type: Number, required: true}
-    }]
+    }],
+    price:{
+      type: Number,
+    }
   
 });
 

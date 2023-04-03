@@ -623,10 +623,81 @@
             <div class="container" style="padding-top: 40px;">
                 <h4 align="center">Pay using the QR Code or UPI ID provided below and enter the Transaction ID in the
                     input field below.</h4>
-                <div style="display: grid;justify-content: center;text-align: center;">
+                <div style="display: grid;justify-content: center;text-align: center;" id="payment_summary">
                     <img src="./biz/img/payqr.jpg" width="350px" />
                     <h3><b>UPI ID:</b> ppnmja01@ybl</h3>
                     <h3><b>Phone Number:</b> 9024027707</h3>
+
+                    <script>
+                        async function getCourseDetails(){
+                            const urlParams = new URLSearchParams(window.location.search);
+                            const id = urlParams.get('id');
+                            const course = await fetch(`https://api-earningskool.vercel.app/courseDetail/${id}`);
+                            const courseDetails = await course.json();
+
+                            const email = localStorage.getItem('User');
+                            const getUserDetails = await fetch(`https://api-earningskool.vercel.app/getUser/${email}`);
+                            const userDetails = await getUserDetails.json();
+
+                            if(email){
+                                if(userDetails.message.referredByCode !== ""){
+                                    var payment_summary_div = document.getElementById("payment_summary");
+                                    var courseType = document.getElementById("courseType");
+                                    var h3_1 = document.createElement("h3");
+                                    // var h3_2 = document.createElement("h3");
+                                    // var h3_3 = document.createElement("h3");
+
+                                    var b_1 = document.createElement("b");
+                                    b_1.textContent = "Payable Amount: ";
+                                    // var b_2 = document.createElement("b");
+                                    // b_2.textContent = "Discount Amount:";
+                                    // var b_3 = document.createElement("b");
+                                    // b_3.textContent = "Payable Amount:";
+
+                                    var span_1 = document.createElement("span");
+                                    span_1.id = "payable_amount";
+                                    if(courseType.innerHTML == "Silver"){
+                                        span_1.textContent = "₹1399";
+                                    }
+                                    if(courseType.innerHTML == "Gold"){
+                                        span_1.textContent = "₹3799";
+                                    }
+                                    if(courseType.innerHTML == "Diamond"){
+                                        span_1.textContent = "₹9499";
+                                    }
+                                    // var span_2 = document.createElement("span");
+                                    // span_2.textContent = "10%";
+                                    // var span_3 = document.createElement("span");
+                                    // const discountAmount = courseDetails.price * 0.1;
+                                    // const discountedCourseFee = courseDetails.price - discountAmount;
+                                    // span_3.textContent = Math.round(discountedCourseFee);
+
+                                    h3_1.append(b_1 , span_1);
+                                    // h3_2.append(b_2 , span_2);
+                                    // h3_3.append(b_3 , span_3);
+                                    payment_summary_div.append(h3_1);
+                                }
+                                else if(userDetails.message.referredByCode == ""){
+                                    var payment_summary_div = document.getElementById("payment_summary");
+                                    var h3_1 = document.createElement("h3");
+
+                                    var b_1 = document.createElement("b");
+                                    b_1.textContent = "Payable Amount: ";
+
+                                    var span_1 = document.createElement("span");
+                                    span_1.id = "payable_amount";
+                                    span_1.textContent = `₹${courseDetails.price}`;
+
+                                    h3_1.append(b_1, span_1);
+                                    payment_summary_div.append(h3_1);
+                                }
+                            }
+                            else{
+
+                            }
+                        }
+                        getCourseDetails();
+                    </script>
                 </div>
             </div>
         </section>
@@ -1004,6 +1075,7 @@
         async function submit() {
 
             var txn_id = document.getElementById("txn_id").value;
+            var payable_amount = document.getElementById("payable_amount").innerHTML.slice(1);
 
             const urlParams = new URLSearchParams(window.location.search);
             const course_id = urlParams.get('id');
@@ -1016,7 +1088,7 @@
                 return;
             }
 
-            const response = await fetch("https://api-earningskool.vercel.app/payment_request", {
+            const response = await fetch("http://localhost:3000/payment_request", {
                 method: "POST",
                 headers: {
                     Accept: "application/json",
@@ -1025,7 +1097,8 @@
                 body: JSON.stringify({
                     txn_id,
                     course_id,
-                    user_email
+                    user_email,
+                    amount_paid:payable_amount
                 }),
             });
 

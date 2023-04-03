@@ -61,8 +61,20 @@ const users_schema = new mongoose.Schema({
   myCourses:[
     { 
         course_id :{type: String, required: true,unique: true},
+        amount_paid:{type: Number, required: true},
         certificate : {type: Boolean, default: false},
-    }]
+    }],
+  total_income:{
+    type: Number,
+  }, 
+  earnings:[
+    {
+      user_email :{type: String, required: true},
+      commission_amount :{type: Number, required: true},
+      date : {type: String , default:moment().format('MMM DD YYYY')},
+      time : {type: String , default:moment().format('HH:mm:ss')},
+    }
+  ]
 });
 
 const users_collection = new mongoose.model("users_collection", users_schema);

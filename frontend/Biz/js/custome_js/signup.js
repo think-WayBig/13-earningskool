@@ -49,12 +49,13 @@ async function registration() {
   var stateselect = document.getElementById("dd_state");
   var stateoptionnumber = (stateselect.value) - 1;
   var state = stateselect.options[stateoptionnumber].text;
-  var referredByCode = document.getElementById("referredByCode").value;
+  var referredByCode = document.getElementById("referredByCode");
   var chktandc = document.getElementById("chktandc");
   var chkrefund = document.getElementById("chkrefund");
   
 
   const referralCode = name.slice(0, 3) + phone.slice(-4);
+  
 
   if (name == "") {
     document.getElementById("txtfullname").focus();
@@ -138,7 +139,7 @@ async function registration() {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      name, email, confirmemail, phone, pass, state, referredByCode, referralCode
+      name, email, confirmemail, phone, pass, state, referredByCode:referredByCode.value, referralCode
     }),
   });
 
@@ -165,6 +166,31 @@ async function registration() {
   }
   console.log(res);
 }
+
+
+var referredByCode = document.getElementById("referredByCode");
+
+async function checkReferralCode(){
+  const userDetails = await fetch(`https://api-earningskool.vercel.app/${referredByCode.value}`);
+  const user = await userDetails.json();
+  if(user.message == 'Invalid referral code'){
+    referredByCode.focus();
+    toast.innerHTML = "Invalid referral code";
+    activeToast();
+  }
+  else if(referredByCode.value === ""){
+    referredByCode.focus();
+    toast.innerHTML = "Please enter a referral code";
+    activeToast();
+  }
+  else{
+    toast.innerHTML = "Referral code applied successfully";
+    // referredByCode.setAttribute('readonly', 'true');
+    // referredByCode.style.cursor = 'not-allowed';
+    activeToast();
+  }
+}
+
 function activeToast() {
   toast.className = "show";
   setTimeout(function () {

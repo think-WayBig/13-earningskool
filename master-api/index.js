@@ -335,13 +335,46 @@ app.put("/approvedCourse/:email", async (req, res) => {
   // let req_userData = new users_collection(req.body);
   let userEmail = req.body.email;
   let mycourses = req.body.course_id;
+  let amount_paid = req.body.amount_paid;
   console.log(userEmail);
   console.log(mycourses);
 
   try {
     
-    let req_course_payment_data = await users_collection.findOneAndUpdate({email : userEmail} ,{ $addToSet: {myCourses:{course_id: mycourses, certificate: false}} } ,{ returnOriginal: false, upsert: true });
+    let req_course_payment_data = await users_collection.findOneAndUpdate({email : userEmail} ,{ $addToSet: {myCourses:{course_id: mycourses, certificate: false, amount_paid: amount_paid}} } ,{ returnOriginal: false, upsert: true });
     console.log(req_course_payment_data);
+
+    let user = await users_collection.findOne({ email: userEmail });
+    // retrieve course package of purchased course
+    let purchasedCourse = await courseDetails.findOne({ _id: mycourses });
+    console.log(purchasedCourse);
+
+    if (user.referredByCode) {
+      let commissionPercentage = 0;
+      if (purchasedCourse.title == "Silver Package") {
+        commissionPercentage = 0.7;
+      } else if (purchasedCourse.title == "Gold Package") {
+        commissionPercentage = 0.85;
+      } else if (purchasedCourse.title == "Diamond Package") {
+        commissionPercentage = 0.9;
+      }
+      console.log(commissionPercentage);
+
+      let courseDetails = user.myCourses.find((course) => course.course_id === mycourses);
+      console.log(courseDetails.amount_paid);
+
+      let commissionAmount = Math.round(courseDetails.amount_paid * commissionPercentage);
+      console.log(commissionAmount);
+
+
+      let referredByCodeUser = await users_collection.findOneAndUpdate(
+        { referralCode: user.referredByCode },
+        { $inc: {total_income: commissionAmount}, $addToSet: { earnings:{user_email: userEmail, commission_amount: commissionAmount} } },
+        { returnOriginal: false, upsert: true }
+      );
+      console.log(referredByCodeUser);
+    }
+
     res.status(202).send({
       "message": "success",
     });

@@ -431,7 +431,7 @@
                 var course_id = user.course_id;
                 var txn_id = user.txn_id;
                 var amount_paid = user.amount_paid;
-                let response = await fetch(`http://localhost:3000/approvedCourse/${email}`, {
+                let response = await fetch(`https://api-earningskool.vercel.app/approvedCourse/${email}`, {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({email:email,

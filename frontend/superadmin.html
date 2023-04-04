@@ -172,6 +172,25 @@
             transition: all 0.3s;
         }
 
+        /*-----------table style-----------*/
+
+        table{
+            border : 0px;
+        }
+        tr{
+            background-color: #F5F5FF;
+            margin-top: 10px;
+        }
+        th{
+            border: 0px;
+            font-size: 14px;
+        }
+        td{
+            border: 0px;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
         /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
@@ -303,8 +322,25 @@
                 </div>
             </nav>
 
-            <h2>Active Users Joined Earningskool</h2>
-
+            <h2 class="mb-4">Active Users Joined Earningskool</h2>
+            <div>
+                <table class="table" cellspacing="0" rules="all" border="1" id="simpletable" style="font-weight:bold;border-collapse:collapse;">
+                    <thead>
+                        <tr>
+                            <!-- <th scope="col">
+                                View
+                            </th> -->
+                            <th scope="col">Sr. No.</th>
+                            <th scope="col">User ID</th>
+                            <th scope="col">User Email</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">Plan</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usersList">                 
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
@@ -351,6 +387,57 @@
         }
 
         loginAllow();
+
+        async function fetchCollectionData() {
+        const response = await fetch('https://api-earningskool.vercel.app/users');
+        const data = await response.json();
+
+        const usersList = document.querySelector("#usersList");
+        for (const [index, user] of data.entries()) {
+            var srno = 1;
+            var tr = document.createElement("tr");
+
+            var td1 = document.createElement("td");
+            td1.textContent = index + 1;
+
+            var td2 = document.createElement("td");
+            td2.textContent = user._id;
+
+            var td3 = document.createElement("td");
+            td3.textContent = user.email;
+
+            var td4 = document.createElement("td");
+            td4.textContent = user.phone;
+            if(!user.phone){
+                 td4.textContent = "-";
+            }
+
+            var td5 = document.createElement("td");
+
+            if (user.myCourses.length !== 0) {
+            const courseDetails = await fetch(`https://api-earningskool.vercel.app/courseDetail/${user.myCourses[0].course_id}`);
+            const course = await courseDetails.json();
+            td5.textContent = course.title;
+            } else if (user.myCourses.length === 0) {
+            try {
+                const courseDetails = await fetch(`https://api-earningskool.vercel.app/courseDetail/400`);
+                const course = await courseDetails.json();
+                td5.textContent = course.title;
+            } catch (error) {
+                td5.textContent = "null";
+                td5.style.color = "red";
+            }
+            }
+
+            tr.append(td1, td2, td3, td4, td5);
+            usersList.append(tr);
+        }
+        return data;
+        }
+
+        fetchCollectionData();
+
+
 
         function logout() {
             localStorage.removeItem('AdminId');

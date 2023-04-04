@@ -94,7 +94,7 @@ async function registration() {
     return;
   } else if (!validatePassword(pass)) {
     document.getElementById("txtPassword").focus();
-    toast.innerHTML = "Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one digit, and one special character (@$!%*?&).";
+    toast.innerHTML = "Password is not Valid";
     activeToast();
     return;
   } else if (state == "Select State") {

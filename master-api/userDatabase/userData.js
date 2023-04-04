@@ -66,6 +66,7 @@ const users_schema = new mongoose.Schema({
     }],
   total_income:{
     type: Number,
+    default: 0
   }, 
   earnings:[
     {
@@ -74,7 +75,24 @@ const users_schema = new mongoose.Schema({
       date : {type: String , default:moment().format('MMM DD YYYY')},
       time : {type: String , default:moment().format('HH:mm:ss')},
     }
-  ]
+  ],
+  today_earnings:{
+    type: Number,
+    default:0
+  },
+  weekly_earnings: {
+    type: Number,
+    default: 0
+  },
+  monthly_earnings: {
+    type: Number,
+    default: 0
+  },
+  yearly_earnings:{
+    type: Number,
+    default:0
+  },
+
 });
 
 const users_collection = new mongoose.model("users_collection", users_schema);

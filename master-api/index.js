@@ -12,6 +12,8 @@ const certificate_request_details = require("./RequestCertificate/certificateReq
 require("./mongooseConnection");
 let path = require('path');
 const kyc_details = require("./KYC_Details/kycDetails");
+const cron = require('node-cron');
+const moment = require('moment');
 
 const app = express();
 
@@ -51,6 +53,17 @@ app.get('/modules/:_id', async (req, res) => {
     return res.status(404).send('Module not found');
   }
   res.send(module);
+});
+
+app.get("/users", (req, res) => {
+  users_collection.find((err, data) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+    else {
+      res.status(200).send(data);
+    }
+  })
 });
 
 app.get('/:referralCode', async (req, res) => {
@@ -151,6 +164,7 @@ app.get("/", (req, res) => {
   })
 });
 
+
 // app.get("/topic/:id",(req, res) => {
 //   console.log(req.params.id);
 //   courseDetails.findById(req.params.id).then((data)=>{
@@ -184,10 +198,10 @@ app.get('/courseDetail/:course', async (req, res) => {
 
 app.post('/affiliate', async (req, res) => {
   const { email, referralCode } = req.body;
-
+  
   // Find the user with the matching email address
   const user = await users_collection.findOne({ email });
-
+  
   if (!user) {
     // Handle user not found
     return res.status(404).send('User not found');
@@ -206,7 +220,7 @@ app.post('/affiliate', async (req, res) => {
 
 app.post('/user_leads', async (req, res) => {
   const { referralCode } = req.body;
-
+  
   // Find the users who have used the referral code
   const users = await users_collection.find({ referredByCode: referralCode, myCourses: { $elemMatch: { course_id: { $exists: true } } } });
 
@@ -366,10 +380,63 @@ app.put("/approvedCourse/:email", async (req, res) => {
       let commissionAmount = Math.round(courseDetails.amount_paid * commissionPercentage);
       console.log(commissionAmount);
 
+      // Run at the start of each day (at midnight)
+      cron.schedule('0 0 * * *', async () => {
+        try {
+          // Update today's earnings for all users
+          const result = await users_collection.updateMany({}, {
+            $set: {
+              today_earnings: 0
+            }
+          });
+          console.log(`${moment().format('MMM DD YYYY')} - Today's earnings reset for ${result.nModified} users.`);
+        } catch (error) {
+          console.error(`${moment().format('MMM DD YYYY')} - Error resetting today's earnings: ${error}`);
+        }
+      });
+
+      // run every week on Sunday at midnight
+      cron.schedule("0 0 * * 0", async () => {
+        try {
+          // update all users' this week earnings field to 0
+          await users_collection.updateMany({}, { $set: { weekly_earnings: 0 } });
+          console.log("This week earnings reset.");
+        } catch (err) {
+          console.error(err);
+        }
+      });
+
+      // run on the first day of every month at midnight
+      cron.schedule("0 0 1 * *", async () => {
+        try {
+          // update all users' this month earnings field to 0
+          await users_collection.updateMany({}, { $set: { monthly_earnings: 0 } });
+          console.log("This month earnings reset.");
+        } catch (err) {
+          console.error(err);
+        }
+      });
+
+      // Run at the start of each year (on January 1st)
+      cron.schedule('0 0 1 1 *', async () => {
+        try {
+          // Update this year's earnings for all users
+          const result = await users_collection.updateMany({}, {
+            $set: {
+              yearly_earnings: 0
+            }
+          });
+          console.log(`${moment().format('YYYY')} - This year's earnings reset for ${result.nModified} users.`);
+        } catch (error) {
+          console.error(`${moment().format('YYYY')} - Error resetting this year's earnings: ${error}`);
+        }
+      });
+
+
 
       let referredByCodeUser = await users_collection.findOneAndUpdate(
         { referralCode: user.referredByCode },
-        { $inc: {total_income: commissionAmount}, $addToSet: { earnings:{user_email: userEmail, commission_amount: commissionAmount} } },
+        { $inc: {total_income: commissionAmount, today_earnings: commissionAmount, weekly_earnings : commissionAmount, monthly_earnings : commissionAmount, yearly_earnings : commissionAmount}, $addToSet: { earnings:{user_email: userEmail, commission_amount: commissionAmount} } },
         { returnOriginal: false, upsert: true }
       );
       console.log(referredByCodeUser);

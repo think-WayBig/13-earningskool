@@ -461,6 +461,20 @@
             btn2.style.background = "#ff011a";
             btn2.style.padding="2px 15px";
             btn2.textContent = 'Reject';
+            btn2.addEventListener("click", async function(){
+                var email = user.user_email;
+                var course_id = user.course_id;
+                var txn_id = user.txn_id;
+                var amount_paid = user.amount_paid;
+                    let resp = await fetch(`https://api-earningskool.vercel.app/payment_request/${course_id}/${email}/${txn_id}`,{
+                        method:'DELETE',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({email:email,
+                                              course_id:course_id,
+                                              txn_id: txn_id}),
+                    });
+                    window.location.reload();
+            })
 
             td7.append(btn1);
             td8.append(btn2);

@@ -172,20 +172,23 @@
             transition: all 0.3s;
         }
 
-    /*-----------table style-----------*/
+        /*-----------table style-----------*/
 
-    table{
-            border : 0px;
+        table {
+            border: 0px;
         }
-        tr{
+
+        tr {
             background-color: #F5F5FF;
             margin-top: 10px;
         }
-        th{
+
+        th {
             border: 0px;
             font-size: 14px;
         }
-        td{
+
+        td {
             border: 0px;
             font-size: 14px;
             font-weight: 400;
@@ -245,10 +248,13 @@
                         </li>
                     </ul>
                 </li>
-                <li>
+                <li class="active">
                     <a href="./superadmin.html">Users Joined</a>
                 </li>
-                <li class="active">
+                <li>
+                    <a href="./approve-requests.html">Approve Requests</a>
+                </li>
+                <li>
                     <a href="./certificates.html">Certificate Requests</a>
                 </li>
                 <!-- <li>
@@ -309,7 +315,8 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto" style="text-align: right;">
                             <li class="nav-item">
-                                <a class="nav-link" href="./superadmin.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Users</a>
+                                <a class="nav-link"
+                                    href="./superadmin.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Users</a>
                             </li>
                             <li class="nav-item">
                                 <a onclick="logout()" class="nav-link" style="color: red;" href="#">Logout ⚠</a>
@@ -321,7 +328,8 @@
 
             <h2 class="mb-4">Certificate Requests</h2>
             <div class="col-lg-10">
-                <table class="table" cellspacing="0" rules="all" border="1" id="simpletable" style="font-weight:bold;border-collapse:collapse;">
+                <table class="table" cellspacing="0" rules="all" border="1" id="simpletable"
+                    style="font-weight:bold;border-collapse:collapse;">
                     <thead>
                         <tr>
                             <!-- <th scope="col">
@@ -333,7 +341,7 @@
                             <th scope="col"></th>
                         </tr>
                     </thead>
-                    <tbody id="certificateRequestList">                 
+                    <tbody id="certificateRequestList">
                     </tbody>
                 </table>
             </div>
@@ -363,7 +371,9 @@
 
     <script>
         function loginAllow() {
-            if (localStorage.getItem('AdminId') == undefined || localStorage.getItem('AdminId') != 'admin@earningskool' || localStorage.getItem('AdminPass') == undefined || localStorage.getItem('AdminPass') != 'pass@eaningskool.com')  {
+            if (localStorage.getItem('AdminId') == undefined || localStorage.getItem('AdminId') !=
+                'admin@earningskool' || localStorage.getItem('AdminPass') == undefined || localStorage.getItem(
+                    'AdminPass') != 'pass@eaningskool.com') {
                 var a = prompt('Username');
                 if (a != 'admin@earningskool') {
                     alert('Invalid username');
@@ -385,60 +395,69 @@
         loginAllow();
 
         async function fetchCollectionData() {
-        const response = await fetch('https://api-earningskool.vercel.app/certificate_request');
-        const data = await response.json();
+            const response = await fetch('https://api-earningskool.vercel.app/certificate_request');
+            const data = await response.json();
 
-        const certificateRequestList = document.querySelector("#certificateRequestList");
-        data.forEach((user,index) => {
-            var srno = 1;
-            var tr = document.createElement("tr");
+            const certificateRequestList = document.querySelector("#certificateRequestList");
+            data.forEach((user, index) => {
+                var srno = 1;
+                var tr = document.createElement("tr");
 
-            var td2 = document.createElement("td");
-            td2.textContent = index+1;
+                var td2 = document.createElement("td");
+                td2.textContent = index + 1;
 
-            var td3 = document.createElement("td");
-            td3.textContent = user.course_id;
+                var td3 = document.createElement("td");
+                td3.textContent = user.course_id;
 
-            var td4 = document.createElement("td");
-            td4.textContent = user.user_email;
+                var td4 = document.createElement("td");
+                td4.textContent = user.user_email;
 
-            var td6 = document.createElement("td");
-            var btn1 = document.createElement("button");
-            btn1.classList.add("btn", "btn-sm")
-            btn1.style.background = "#6d7fcc";
-            btn1.style.color = "#fff";
-            btn1.style.padding="2px 15px";
-            btn1.textContent = 'Certificate Sent';
-            btn1.addEventListener("click", async function(){
-                var email = user.user_email;
-                var course_id = user.course_id;
-                let response = await fetch(`https://api-earningskool.vercel.app/certificateSend/${email}`, {
-                    method: 'PUT',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({email:email,
-                                          course_id:course_id}),
-                });
-                let data = await response.json();
-                console.log(data);
-                if (data.message == "success") {
-                    let resp = await fetch(`https://api-earningskool.vercel.app/certificate_request/${course_id}/${email}`,{
-                        method:'DELETE',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({email:email,
-                                              course_id:course_id}),
-                    });
-                    window.location.reload();
-                }
-                else{
-                    window.location.reload();
-                }
-            })
+                var td6 = document.createElement("td");
+                var btn1 = document.createElement("button");
+                btn1.classList.add("btn", "btn-sm")
+                btn1.style.background = "#6d7fcc";
+                btn1.style.color = "#fff";
+                btn1.style.padding = "2px 15px";
+                btn1.textContent = 'Certificate Sent';
+                btn1.addEventListener("click", async function () {
+                    var email = user.user_email;
+                    var course_id = user.course_id;
+                    let response = await fetch(
+                        `https://api-earningskool.vercel.app/certificateSend/${email}`, {
+                            method: 'PUT',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                email: email,
+                                course_id: course_id
+                            }),
+                        });
+                    let data = await response.json();
+                    console.log(data);
+                    if (data.message == "success") {
+                        let resp = await fetch(
+                            `https://api-earningskool.vercel.app/certificate_request/${course_id}/${email}`, {
+                                method: 'DELETE',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({
+                                    email: email,
+                                    course_id: course_id
+                                }),
+                            });
+                        window.location.reload();
+                    } else {
+                        window.location.reload();
+                    }
+                })
 
-            td6.append(btn1);
-            tr.append(td2,td3,td4,td6);
-            certificateRequestList.append(tr);
-        });
-        return data;
+                td6.append(btn1);
+                tr.append(td2, td3, td4, td6);
+                certificateRequestList.append(tr);
+            });
+            return data;
         }
 
         fetchCollectionData();

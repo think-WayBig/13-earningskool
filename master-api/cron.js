@@ -1,9 +1,13 @@
 const cron = require("node-cron");
 const users_collection = require("./userDatabase/userData");
+const moment = require('moment');
 
+// cron.schedule('* * * * *', async () => {
+//     console.log('This will run every minute');
+//   });
 
 // Run at the start of each day (at midnight)
-cron.schedule('0 0 * * *', async () => {
+const resetTodayEarningsJob = cron.schedule('0 0 * * *', async () => {
     try {
       // Update today's earnings for all users
       const result = await users_collection.updateMany({}, {
@@ -18,7 +22,7 @@ cron.schedule('0 0 * * *', async () => {
   });
 
   // run every week on Sunday at midnight
-  cron.schedule("0 0 * * 0", async () => {
+const resetWeeklyEarningsJob = cron.schedule("0 0 * * 0", async () => {
     try {
       // update all users' this week earnings field to 0
       await users_collection.updateMany({}, { $set: { weekly_earnings: 0 } });
@@ -29,7 +33,7 @@ cron.schedule('0 0 * * *', async () => {
   });
 
   // run on the first day of every month at midnight
-  cron.schedule("0 0 1 * *", async () => {
+const resetMonthlyEarningsJob = cron.schedule("0 0 1 * *", async () => {
     try {
       // update all users' this month earnings field to 0
       await users_collection.updateMany({}, { $set: { monthly_earnings: 0 } });
@@ -40,7 +44,7 @@ cron.schedule('0 0 * * *', async () => {
   });
 
   // Run at the start of each year (on January 1st)
-  cron.schedule('0 0 1 1 *', async () => {
+const resetYearlyEarningsJob = cron.schedule('0 0 1 1 *', async () => {
     try {
       // Update this year's earnings for all users
       const result = await users_collection.updateMany({}, {
@@ -53,5 +57,10 @@ cron.schedule('0 0 * * *', async () => {
       console.error(`${moment().format('YYYY')} - Error resetting this year's earnings: ${error}`);
     }
   });
+
+resetTodayEarningsJob.start();
+resetWeeklyEarningsJob.start();
+resetMonthlyEarningsJob.start();
+resetYearlyEarningsJob.start();
 
 module.exports = cron;

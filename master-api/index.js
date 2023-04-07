@@ -12,8 +12,13 @@ const certificate_request_details = require("./RequestCertificate/certificateReq
 require("./mongooseConnection");
 let path = require('path');
 const kyc_details = require("./KYC_Details/kycDetails");
-const cron = require('./cron');
-const moment = require('moment');
+const { resetTodayEarningsJob, resetWeeklyEarningsJob, resetMonthlyEarningsJob, resetYearlyEarningsJob } = require('./cron');
+
+resetTodayEarningsJob.start();
+resetWeeklyEarningsJob.start();
+resetMonthlyEarningsJob.start();
+resetYearlyEarningsJob.start();
+
 
 const app = express();
 

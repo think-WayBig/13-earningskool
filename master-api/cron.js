@@ -15,7 +15,7 @@ const resetTodayEarningsJob = cron.schedule('* * * * *', async () => {
           today_earnings: 0
         }
       });
-      console.log(`${moment().format('MMM DD YYYY')} - Today's earnings reset for ${result.nModified} users.`);
+      console.log(`${moment().format('MMM DD YYYY')} - Today's earnings reset for all users.`);
     } catch (error) {
       console.error(`${moment().format('MMM DD YYYY')} - Error resetting today's earnings: ${error}`);
     }
@@ -63,4 +63,9 @@ resetWeeklyEarningsJob.start();
 resetMonthlyEarningsJob.start();
 resetYearlyEarningsJob.start();
 
-module.exports = cron;
+module.exports = {
+  resetTodayEarningsJob,
+  resetWeeklyEarningsJob,
+  resetMonthlyEarningsJob,
+  resetYearlyEarningsJob
+};

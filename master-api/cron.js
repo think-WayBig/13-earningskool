@@ -7,7 +7,7 @@ const moment = require('moment');
 //   });
 
 // Run at the start of each day (at midnight)
-const resetTodayEarningsJob = cron.schedule('0 0 * * *', async () => {
+const resetTodayEarningsJob = cron.schedule('* * * * *', async () => {
     try {
       // Update today's earnings for all users
       const result = await users_collection.updateMany({}, {

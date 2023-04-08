@@ -12,8 +12,13 @@ const certificate_request_details = require("./RequestCertificate/certificateReq
 require("./mongooseConnection");
 let path = require('path');
 const kyc_details = require("./KYC_Details/kycDetails");
-const cron = require('node-cron');
-const moment = require('moment');
+const { resetTodayEarningsJob, resetWeeklyEarningsJob, resetMonthlyEarningsJob, resetYearlyEarningsJob } = require('./cron');
+
+resetTodayEarningsJob.start();
+resetWeeklyEarningsJob.start();
+resetMonthlyEarningsJob.start();
+resetYearlyEarningsJob.start();
+
 
 const app = express();
 
@@ -363,84 +368,68 @@ app.put("/approvedCourse/:email", async (req, res) => {
     let purchasedCourse = await courseDetails.findOne({ _id: mycourses });
     console.log(purchasedCourse);
 
+    // if (user.referredByCode) {
+    //   let commissionPercentage = 0;
+    //   if (purchasedCourse.title == "Silver Package") {
+    //     commissionPercentage = 0.7;
+    //   } else if (purchasedCourse.title == "Gold Package") {
+    //     commissionPercentage = 0.85;
+    //   } else if (purchasedCourse.title == "Diamond Package") {
+    //     commissionPercentage = 0.9;
+    //   }
+    //   console.log(commissionPercentage);
+
+    //   let courseDetails = user.myCourses.find((course) => course.course_id === mycourses);
+    //   console.log(courseDetails.amount_paid);
+
+    //   let commissionAmount = Math.round(courseDetails.amount_paid * commissionPercentage);
+    //   console.log(commissionAmount);
+
+      
+    //   let referredByCodeUser = await users_collection.findOneAndUpdate(
+    //     { referralCode: user.referredByCode },
+    //     { $inc: {total_income: commissionAmount, today_earnings: commissionAmount, weekly_earnings : commissionAmount, monthly_earnings : commissionAmount, yearly_earnings : commissionAmount}, $addToSet: { earnings:{user_email: userEmail, commission_amount: commissionAmount} } },
+    //     { returnOriginal: false, upsert: true }
+    //   );
+    //   console.log(referredByCodeUser);
+    // }
     if (user.referredByCode) {
       let commissionPercentage = 0;
-      if (purchasedCourse.title == "Silver Package") {
-        commissionPercentage = 0.7;
-      } else if (purchasedCourse.title == "Gold Package") {
-        commissionPercentage = 0.85;
-      } else if (purchasedCourse.title == "Diamond Package") {
-        commissionPercentage = 0.9;
+      let referredByUser = await users_collection.findOne({ referralCode: user.referredByCode });
+      let referredByUserCourse = referredByUser.myCourses.find(course => course.course_id === "6426cede12f49a9c236dbc5c" || course.course_id === "6426ced612f49a9c236dbc5b" || course.course_id === "6426cea812f49a9c236dbc5a");
+      if (referredByUserCourse) {
+        let course = await courseDetails.findOne({ _id: referredByUserCourse.course_id });
+        switch (course.title) {
+          case "Silver Package":
+            commissionPercentage = 0.7;
+            break;
+          case "Gold Package":
+            commissionPercentage = 0.85;
+            break;
+          case "Diamond Package":
+            commissionPercentage = 0.9;
+            break;
+          default:
+            commissionPercentage = 0.7;
+        }
+        console.log(commissionPercentage);
+    
+        let courseDetail = user.myCourses.find((course) => course.course_id === mycourses);
+        console.log(courseDetail.amount_paid);
+    
+        let commissionAmount = Math.round(courseDetail.amount_paid * commissionPercentage);
+        console.log(commissionAmount);
+    
+        let referredByCodeUser = await users_collection.findOneAndUpdate(
+          { referralCode: user.referredByCode },
+          { $inc: {total_income: commissionAmount, today_earnings: commissionAmount, weekly_earnings : commissionAmount, monthly_earnings : commissionAmount, yearly_earnings : commissionAmount}, $addToSet: { earnings:{user_email: userEmail, commission_amount: commissionAmount} } },
+          { returnOriginal: false, upsert: true }
+        );
+        console.log(referredByCodeUser);
       }
-      console.log(commissionPercentage);
-
-      let courseDetails = user.myCourses.find((course) => course.course_id === mycourses);
-      console.log(courseDetails.amount_paid);
-
-      let commissionAmount = Math.round(courseDetails.amount_paid * commissionPercentage);
-      console.log(commissionAmount);
-
-      // Run at the start of each day (at midnight)
-      cron.schedule('0 0 * * *', async () => {
-        try {
-          // Update today's earnings for all users
-          const result = await users_collection.updateMany({}, {
-            $set: {
-              today_earnings: 0
-            }
-          });
-          console.log(`${moment().format('MMM DD YYYY')} - Today's earnings reset for ${result.nModified} users.`);
-        } catch (error) {
-          console.error(`${moment().format('MMM DD YYYY')} - Error resetting today's earnings: ${error}`);
-        }
-      });
-
-      // run every week on Sunday at midnight
-      cron.schedule("0 0 * * 0", async () => {
-        try {
-          // update all users' this week earnings field to 0
-          await users_collection.updateMany({}, { $set: { weekly_earnings: 0 } });
-          console.log("This week earnings reset.");
-        } catch (err) {
-          console.error(err);
-        }
-      });
-
-      // run on the first day of every month at midnight
-      cron.schedule("0 0 1 * *", async () => {
-        try {
-          // update all users' this month earnings field to 0
-          await users_collection.updateMany({}, { $set: { monthly_earnings: 0 } });
-          console.log("This month earnings reset.");
-        } catch (err) {
-          console.error(err);
-        }
-      });
-
-      // Run at the start of each year (on January 1st)
-      cron.schedule('0 0 1 1 *', async () => {
-        try {
-          // Update this year's earnings for all users
-          const result = await users_collection.updateMany({}, {
-            $set: {
-              yearly_earnings: 0
-            }
-          });
-          console.log(`${moment().format('YYYY')} - This year's earnings reset for ${result.nModified} users.`);
-        } catch (error) {
-          console.error(`${moment().format('YYYY')} - Error resetting this year's earnings: ${error}`);
-        }
-      });
-
-
-
-      let referredByCodeUser = await users_collection.findOneAndUpdate(
-        { referralCode: user.referredByCode },
-        { $inc: {total_income: commissionAmount, today_earnings: commissionAmount, weekly_earnings : commissionAmount, monthly_earnings : commissionAmount, yearly_earnings : commissionAmount}, $addToSet: { earnings:{user_email: userEmail, commission_amount: commissionAmount} } },
-        { returnOriginal: false, upsert: true }
-      );
-      console.log(referredByCodeUser);
     }
+    
+    
 
     res.status(202).send({
       "message": "success",

@@ -348,66 +348,69 @@
 
 
 async function getCourseDetails(id) {
-    const response = await fetch(`https://api-earningskool.vercel.app/modules/${id}`);
-    const data = await response.json();
-    return data;
-  }
-  
-  async function showCourseDetails() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const course = urlParams.get('id');
-  
-    try {
-      const courseDetails = await getCourseDetails(course);
-      
-  
-      // Update the HTML with the course details
-      document.querySelector('#ContentPlaceHolder1_NestedContentPlaceHolder_lblCourseTitle').textContent = courseDetails.title;
-      var iframesrc = document.querySelector('#ContentPlaceHolder1_NestedContentPlaceHolder_videoFrame');
-      iframesrc.setAttribute(`src` , `${courseDetails.content[0].video}`) ;
-     document.querySelector('#ContentPlaceHolder1_NestedContentPlaceHolder_lblTitle').textContent = courseDetails.title;
+  const response = await fetch(`https://api-earningskool.vercel.app/modules/${id}`);
+  const data = await response.json();
+  return data;
+}
 
-    const topicListView =  document.querySelector("#topicListView");
-        function listItem(heading, srNo , videosrc){
-            var divv = document.createElement("div");
-            divv.classList.add('video__item');
+async function showCourseDetails() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const course = urlParams.get('id');
 
-            var h3 = document.createElement("h3");
-            h3.classList.add('sr__number');
+  try {
+    const courseDetails = await getCourseDetails(course);
 
-            var span = document.createElement("span");
-            span.textContent= `${srNo}.`;
+    // Update the HTML with the course details
+    document.querySelector('#ContentPlaceHolder1_NestedContentPlaceHolder_lblCourseTitle').textContent = courseDetails.title;
+    var iframesrc = document.querySelector('#ContentPlaceHolder1_NestedContentPlaceHolder_videoFrame');
+    iframesrc.setAttribute(`src`, `${courseDetails.content[0].video}`);
+    document.querySelector('#ContentPlaceHolder1_NestedContentPlaceHolder_lblTitle').textContent = courseDetails.title;
 
-            var img = document.createElement("img");
-            img.src = './Biz/img/play-button.png';
+    let firstVid = courseDetails.content[0].video;
 
-            var divv2 = document.createElement("div");
-            divv2.classList.add('detail__video');
+    iframesrc.src = "https://www.youtube-nocookie.com/embed/" + firstVid.slice(firstVid.search('be/') + 3) + '?title=0&byline=0&portrait=0&modestbranding=1&rel=0';
 
-            
-            var atag= document.createElement("a");
-            atag.classList.add("paraGraphtext", "item__name");
-            
-            atag.textContent= heading;
-            atag.onclick= function(){
-                iframesrc.setAttribute('src', `${videosrc}?title=0&byline=0&portrait=0`);
-            }
+    const topicListView = document.querySelector("#topicListView");
+    function listItem(heading, srNo, videosrc) {
+      var divv = document.createElement("div");
+      divv.classList.add('video__item');
 
-            h3.appendChild(span);
-            divv2.append(atag);
-            divv.append(h3, img, divv2);
-            topicListView.append(divv);
-        }
+      var h3 = document.createElement("h3");
+      h3.classList.add('sr__number');
 
-        courseDetails.content.forEach((content , index)=> {
-            listItem(content.txt , index+1 , content.video)
+      var span = document.createElement("span");
+      span.textContent = `${srNo}.`;
 
-        });
-    
-      
-    } catch (error) {
-      console.error('Error retrieving course details:', error);
+      var img = document.createElement("img");
+      img.src = './Biz/img/play-button.png';
+
+      var divv2 = document.createElement("div");
+      divv2.classList.add('detail__video');
+
+
+      var atag = document.createElement("a");
+      atag.classList.add("paraGraphtext", "item__name");
+
+      atag.textContent = heading;
+      atag.onclick = function () {
+        iframesrc.setAttribute('src', `${videosrc}?title=0&byline=0&portrait=0&modestbranding=1&rel=0`);
+      }
+
+      h3.appendChild(span);
+      divv2.append(atag);
+      divv.append(h3, img, divv2);
+      topicListView.append(divv);
     }
+
+    courseDetails.content.forEach((content, index) => {
+      let videoSrc = content.video;
+      listItem(content.txt, index + 1, "https://www.youtube-nocookie.com/embed/" + videoSrc.slice(videoSrc.search('be/') + 3))
+    });
+
+
+  } catch (error) {
+    console.error('Error retrieving course details:', error);
   }
-  
-  showCourseDetails();
+}
+
+showCourseDetails();

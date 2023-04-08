@@ -429,12 +429,9 @@ app.put("/approvedCourse/:email", async (req, res) => {
       }
     }
     
-    
-
     res.status(202).send({
       "message": "success",
     });
-
 
   } catch (err) {
     res.send({

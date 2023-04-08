@@ -16,15 +16,15 @@ const courses_schema = new mongoose.Schema({
   courseContent:[
     { 
         heading :{type: String, required: true},
-        videoid :{type: Number, required: true}
+        videoid :{type: String, required: true}
     },
     { 
         heading :{type: String, required: true},
-        videoid :{type: Number, required: true}
+        videoid :{type: String, required: true}
     },
     { 
         heading :{type: String, required: true},
-        videoid :{type: Number, required: true}
+        videoid :{type: String, required: true}
     }],
     price:{
       type: Number,

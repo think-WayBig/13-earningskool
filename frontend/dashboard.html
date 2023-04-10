@@ -17,9 +17,14 @@
         rel="stylesheet" />
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>
-        Earningskool.com
+        Dashboard | Earningskool.com
     </title>
 
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./Biz/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./Biz/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./Biz/img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="./Biz/img/favicons/site.webmanifest">
 
     <!-- story styles -->
     <link rel="stylesheet" href="/Biz/css/dist/skins/style.css?v=1.1" />
@@ -375,7 +380,7 @@
                                             </li>
                                         </ul>
                                     </li> -->
-                                    
+
 
 
 
@@ -459,9 +464,11 @@
                                         <li id="li_myprofile"><a href="member_profile.html"><i class="fa fa-user"
                                                     aria-hidden="true"></i>&nbsp; My Profile</a>
                                         </li>
-                                        <li id="li_mycourse" class="checkCoursePurchase"><a href="my_course.html"><i class="fa fa-graduation-cap"
-                                                    aria-hidden="true"></i>&nbsp;My Courses</a></li>
-                                        <li id="li_certificate" class="checkCoursePurchase"><a href="./request-certificate.html"><i class="fa fa-certificate"
+                                        <li id="li_mycourse" class="checkCoursePurchase"><a href="my_course.html"><i
+                                                    class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp;My
+                                                Courses</a></li>
+                                        <li id="li_certificate" class="checkCoursePurchase"><a
+                                                href="./request-certificate.html"><i class="fa fa-certificate"
                                                     aria-hidden="true"></i>&nbsp;Certificates</a></li>
                                         <li id="li_prime"></li>
                                         <li id="li_subtoprime"><a href="/Biz/members/prime/PrimePurchase"
@@ -471,8 +478,9 @@
                                                 href="https://www.facebook.com/groups/Earningskoollearnerscommunity"
                                                 target="_blank"><i class="fa fa-user-circle-o"
                                                     aria-hidden="true"></i>&nbsp;Learner's Community</a></li>
-                                        <li id="li_aff_pnl" class="checkCoursePurchase"><a href="dashboard.html"><i class="fa fa-users"
-                                                    aria-hidden="true"></i>&nbsp;Affiliate Panel</a></li>
+                                        <li id="li_aff_pnl" class="checkCoursePurchase"><a href="dashboard.html"><i
+                                                    class="fa fa-users" aria-hidden="true"></i>&nbsp;Affiliate Panel</a>
+                                        </li>
                                         <li>
                                             <hr />
                                         </li>
@@ -961,7 +969,8 @@
 
                                             </div>
                                         </div>
-                                        <h1 class="welcome__usre" style="text-transform: capitalize;" id="welcomeUser"><span id="wlcm"></span></h1>
+                                        <h1 class="welcome__usre" style="text-transform: capitalize;" id="welcomeUser">
+                                            <span id="wlcm"></span></h1>
                                         <!-- Page-header end -->
 
 
@@ -1190,7 +1199,7 @@
 
                                         <div class="page-body">
                                             <div class="row row-new">
-                                                <div class="col-md-8 col-sm-8 col-xs-12">
+                                                <!-- <div class="col-md-8 col-sm-8 col-xs-12">
                                                     <div class="white_card stock__detail ">
                                                         <div class="chart__header">
                                                             <h2>Sales Detail</h2>
@@ -1221,7 +1230,7 @@
                                                         </div>
 
                                                     </div>
-                                                </div>
+                                                </div> -->
                                                 <div class="col-md-4 col-sm-4 col-xs-12">
                                                     <div class="white_card user_crm_wrapper user_amt_list">
                                                         <div class="card__UsreDeatil">
@@ -1236,7 +1245,9 @@
 
                                                                         <script>
                                                                             function load_img() {
-                                                                                document.getElementById("usre__img2").src = localStorage.getItem("userDp")
+                                                                                document.getElementById("usre__img2")
+                                                                                    .src = localStorage.getItem(
+                                                                                        "userDp")
                                                                             }
                                                                             load_img();
                                                                         </script>
@@ -1380,8 +1391,7 @@
                                                                                         <i class="fa fa-ellipsis-h f_s_11 white_text"
                                                                                             aria-hidden="true"></i></span>
                                                                                     <div class="dropdown-content">
-                                                                                        <a
-                                                                                            href="user_leads.html">View
+                                                                                        <a href="user_leads.html">View
                                                                                             All</a>
                                                                                     </div>
                                                                                 </div>
@@ -1412,7 +1422,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                                <!-- <div class="col-md-4 col-sm-4 col-xs-12">
                                                     <div class="white_card card_height_100 mb_30 zoom_none">
                                                         <div class="white_card_header">
                                                             <div class="box_header m-0">
@@ -1486,7 +1496,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> -->
 
                                                 <div class="col-md-4 col-sm-4 col-xs-12">
                                                     <div
@@ -1516,7 +1526,7 @@
                                                                                 </div>
                                                                                 <div>
                                                                                     <h5 id="total_income">₹0</h5>
-                                                                                    <span>Branding Mastery</span>
+                                                                                    <span>Silver Package</span>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -1536,19 +1546,19 @@
 
 
 
-                                                            <div class="resize-triggers">
+                                                            <!-- <div class="resize-triggers">
                                                                 <div class="expand-trigger">
                                                                     <div style="width: 380px; height: 271px;"></div>
                                                                 </div>
                                                                 <div class="contract-trigger"></div>
-                                                            </div>
+                                                            </div> -->
                                                         </div>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                                     <div class="white_card card_height_100 mb_30 zoom_none">
-                                                        <div class="user_crm_wrapper">
+                                                        <!-- <div class="user_crm_wrapper">
                                                             <a href="ViewPrime">
                                                                 <div class="crm_reports_bnner">
                                                                     <div class="row justify-content-end ">
@@ -1566,7 +1576,7 @@
                                                                     </div>
                                                                 </div>
                                                             </a>
-                                                        </div>
+                                                        </div> -->
                                                         <div class="white_card_header">
                                                             <div class="box_header m-0">
                                                                 <div class="main-title">
@@ -1748,10 +1758,10 @@
                                                         <div class="white_card_body ">
                                                             <div class="row min_height_oveflow">
                                                                 <div class="col-lg-3 mb_30" id="this_week_earnings">
-                                                                    <h3 class="sales__title">This Week Earnings 
+                                                                    <h3 class="sales__title">This Week Earnings
                                                                         <!-- (<span id="ContentPlaceHolder1_NestedContentPlaceHolder_lbl_thikweek">13
                                                                             - 19 Mar</span>) -->
-                                                                        </h3>
+                                                                    </h3>
                                                                     <!-- <div class="single_user_pil d-flex align-items-center justify-content-between">
                                                                         <div class="user_pils_thumb d-flex align-items-center">
                                                                             <img class="img-radius" src="../../pic/Sakthig682@gmail.com.jpg" style="width: 34px; height: 34px; border-radius: 20px;" />
@@ -1789,7 +1799,7 @@
                                                                     <h3 class="sales__title">This Month Earnings
                                                                         <!-- (<span id="ContentPlaceHolder1_NestedContentPlaceHolder_lbl_thikmonth">1
                                                                             - 31 Mar</span>) -->
-                                                                        </h3>
+                                                                    </h3>
 
                                                                     <!-- <div
                                                                         class="single_user_pil d-flex align-items-center justify-content-between">
@@ -2558,7 +2568,8 @@
                                 <h4>Useful Links</h4>
                                 <ul>
                                     <li><a href="aboutus.html">About Us</a></li>
-                                    <li><a href="BecomeAnAffiliate.html" class="userlog become_an_affiliate">Become An Affiliate</a></li>
+                                    <li><a href="BecomeAnAffiliate.html" class="userlog become_an_affiliate">Become An
+                                            Affiliate</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -3062,7 +3073,7 @@
         <script src="./Biz/js/custome_js/afterlogin.js"></script>
         <script src="./Biz/js/custome_js/checkLogin.js"></script>
         <script src="./Biz/js/custome_js/loadDp.js"></script>
-<script src="./Biz/js/custome_js/bundleCourses.js"></script>
+        <script src="./Biz/js/custome_js/bundleCourses.js"></script>
 
         <!-- Ionic Icons -->
 </body>

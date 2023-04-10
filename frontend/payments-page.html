@@ -17,9 +17,14 @@
         rel="stylesheet" />
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>
-        Earningskool.com
+        Complete your Payment | Earningskool.com
     </title>
 
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./Biz/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./Biz/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./Biz/img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="./Biz/img/favicons/site.webmanifest">
 
     <!-- story styles -->
     <link rel="stylesheet" href="./Biz/css/dist/skins/style.css?v=1.1" />
@@ -629,18 +634,19 @@
                     <h3><b>Phone Number:</b> 9024027707</h3>
 
                     <script>
-                        async function getCourseDetails(){
+                        async function getCourseDetails() {
                             const urlParams = new URLSearchParams(window.location.search);
                             const id = urlParams.get('id');
                             const course = await fetch(`https://api-earningskool.vercel.app/courseDetail/${id}`);
                             const courseDetails = await course.json();
 
                             const email = localStorage.getItem('User');
-                            const getUserDetails = await fetch(`https://api-earningskool.vercel.app/getUser/${email}`);
+                            const getUserDetails = await fetch(
+                                `https://api-earningskool.vercel.app/getUser/${email}`);
                             const userDetails = await getUserDetails.json();
 
-                            if(email){
-                                if(userDetails.message.referredByCode !== ""){
+                            if (email) {
+                                if (userDetails.message.referredByCode !== "") {
                                     var payment_summary_div = document.getElementById("payment_summary");
                                     var courseType = document.getElementById("courseType");
                                     var h3_1 = document.createElement("h3");
@@ -656,13 +662,13 @@
 
                                     var span_1 = document.createElement("span");
                                     span_1.id = "payable_amount";
-                                    if(courseType.innerHTML == "Silver"){
+                                    if (courseType.innerHTML == "Silver") {
                                         span_1.textContent = "₹1399";
                                     }
-                                    if(courseType.innerHTML == "Gold"){
+                                    if (courseType.innerHTML == "Gold") {
                                         span_1.textContent = "₹3799";
                                     }
-                                    if(courseType.innerHTML == "Diamond"){
+                                    if (courseType.innerHTML == "Diamond") {
                                         span_1.textContent = "₹9499";
                                     }
                                     // var span_2 = document.createElement("span");
@@ -672,12 +678,11 @@
                                     // const discountedCourseFee = courseDetails.price - discountAmount;
                                     // span_3.textContent = Math.round(discountedCourseFee);
 
-                                    h3_1.append(b_1 , span_1);
+                                    h3_1.append(b_1, span_1);
                                     // h3_2.append(b_2 , span_2);
                                     // h3_3.append(b_3 , span_3);
                                     payment_summary_div.append(h3_1);
-                                }
-                                else if(userDetails.message.referredByCode == ""){
+                                } else if (userDetails.message.referredByCode == "") {
                                     var payment_summary_div = document.getElementById("payment_summary");
                                     var h3_1 = document.createElement("h3");
 
@@ -691,8 +696,7 @@
                                     h3_1.append(b_1, span_1);
                                     payment_summary_div.append(h3_1);
                                 }
-                            }
-                            else{
+                            } else {
 
                             }
                         }
@@ -1098,7 +1102,7 @@
                     txn_id,
                     course_id,
                     user_email,
-                    amount_paid:payable_amount
+                    amount_paid: payable_amount
                 }),
             });
 

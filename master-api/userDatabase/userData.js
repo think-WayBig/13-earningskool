@@ -60,7 +60,7 @@ const users_schema = new mongoose.Schema({
   },
   myCourses:[
     { 
-        course_id :{type: String, required: true,unique: true},
+        course_id :{type: String, required: true},
         amount_paid:{type: Number, required: true},
         certificate : {type: Boolean, default: false},
     }],

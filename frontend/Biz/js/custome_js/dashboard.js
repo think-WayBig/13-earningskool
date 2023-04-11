@@ -41,6 +41,142 @@ async function fetchUserDetails() {
     const res = await resp.json();
     // console.log(res);
 
+    const pieChartData = []; // Array to hold data for Highcharts pie chart
+const courseIds = []; // Array to hold unique course ids
+
+// Loop through each user
+res.users.forEach(async (user) => {
+    // Loop through each enrolled course
+    user.myCourses.forEach(async (course) => {
+        const courseId = course.course_id;
+        // Check if course id is not already in the array, add it and set its count to 1
+        if (!courseIds.includes(courseId)) {
+            courseIds.push(courseId);
+            pieChartData.push({ courseId: courseId, count: 1 });
+        } else {
+            // If course id is already in the array, increment its count by 1
+            const index = courseIds.indexOf(courseId);
+            pieChartData[index].count += 1;
+        }
+    });
+});
+
+// Wait for all the asynchronous fetch requests to resolve
+await Promise.all(courseIds.map(async (courseId) => {
+    const coursesDetails = await fetch(`https://api-earningskool.vercel.app/courseDetail/${courseId}`);
+    const course = await coursesDetails.json();
+    const index = courseIds.indexOf(courseId);
+    pieChartData[index].courseTitle = course.title; // Set course title in pieChartData array
+}));
+
+const totalCourses = courseIds.length; // Calculate total number of unique courses
+
+// Create Highcharts pie chart with dynamic series data
+Highcharts.setOptions({
+  colors: ['#ff783d', '#6d81f5', '#0dc8de', '#fd3c97', '#c63077']
+});
+Highcharts.chart('piacontainer', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+    },
+    title: {
+        text: 'Sale Composition'
+    },
+    tooltip: {
+        pointFormat: '{point.courseTitle}: <b>{point.percentage:.1f}%</b>' // Use course title as the series name in the tooltip
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: false
+            },
+            showInLegend: true
+        }
+    },
+    series: [{
+        name: 'Composition', // Set a default series name
+        colorByPoint: true,
+        data: pieChartData.map(data => ({
+            name: data.courseTitle, // Set course title as the name of the data point
+            y: data.count, // Set count as the value of the data point
+            percentage: data.count / totalCourses * 100 // Calculate percentage based on total number of unique courses
+        }))
+    }]
+});
+    // const pieChartData = []; // Array to hold data for Highcharts pie chart
+    // const coursesTitle = []; // Array to hold unique course ids
+
+    // res.users.forEach(async (user)=>{
+    //   user.myCourses.forEach(async (course)=>{
+    //     const coursesDetails = await fetch(`https://api-earningskool.vercel.app/courseDetail/${course.course_id}`);
+    //     const courses = await coursesDetails.json();
+    //     const courseTitle = courses.title;
+    //     console.log(courseTitle);
+    //     if(!coursesTitle.includes(courseTitle)){
+    //       coursesTitle.push(courseTitle);
+    //       pieChartData.push({course : courseTitle, count:1});
+    //     }else{
+    //       const index =  coursesTitle.indexOf(courseTitle);
+    //       pieChartData[index].count += 1;
+    //     }
+    //   })
+    // })
+
+    // // Wait for all the asynchronous fetch requests to resolve
+    // await Promise.all(coursesTitle.map(async (courseTitle) => {
+    //   const coursesDetails = await fetch(`https://api-earningskool.vercel.app/courseDetail/${courseId}`);
+    //   const course = await coursesDetails.json();
+    //   const index = coursesTitle.indexOf(courseTitle);
+    //   pieChartData[index].courseTitle = course.title; // Set course title in pieChartData array
+    // }));
+
+    // const totalCourses = coursesTitle.length;
+    // console.log(totalCourses);
+    // console.log(pieChartData);
+    // // Create Highcharts pie chart with dynamic series data
+    // Highcharts.setOptions({
+    //   colors: ['#ff783d', '#6d81f5', '#0dc8de', '#fd3c97', '#c63077']
+    // });
+
+    // Highcharts.chart('piacontainer', {
+    //   chart: {
+    //       plotBackgroundColor: null,
+    //       plotBorderWidth: null,
+    //       plotShadow: false,
+    //       type: 'pie'
+    //   },
+    //   title: {
+    //       text: 'Sale Composition'
+    //   },
+    //   tooltip: {
+    //       pointFormat: '{data.name}: <b>{point.percentage:.1f}%</b>' // Use course title as the series name in the tooltip
+    //   },
+    //   plotOptions: {
+    //       pie: {
+    //           allowPointSelect: true,
+    //           cursor: 'pointer',
+    //           dataLabels: {
+    //               enabled: false
+    //           },
+    //           showInLegend: true
+    //       }
+    //   },
+    //   series: [{
+    //       name: 'Composition', // Set a default series name
+    //       colorByPoint: true,
+    //       data: pieChartData.map(data => ({
+    //           name: data.course, // Set course id as the name of the data point
+    //           y: data.count, // Set count as the value of the data point
+    //           percentage: data.count / totalCourses * 100 // Calculate percentage based on total number of unique courses
+    //       }))
+    //   }]
+    // });
+
     const usersList = document.querySelector("#usersList");
     var userTemp = 0;
     const stateCounts = {};

@@ -43,6 +43,9 @@ function logout() {
     localStorage.removeItem('User');
     localStorage.removeItem('rcode');
     localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('userDp');
+    localStorage.removeItem('interest');
+    localStorage.removeItem('flag_for_tour');
 }
 
 

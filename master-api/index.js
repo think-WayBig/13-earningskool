@@ -365,8 +365,39 @@ app.put("/approvedCourse/:email", async (req, res) => {
 
     let user = await users_collection.findOne({ email: userEmail });
     // retrieve course package of purchased course
-    let purchasedCourse = await courseDetails.findOne({ _id: mycourses });
-    console.log(purchasedCourse);
+    // let purchasedCourse = await courseDetails.findOne({ _id: mycourses });
+    // console.log(purchasedCourse);
+
+    // if (user) {
+    //   let referredByUser = await users_collection.findOne({ referralCode: user.referredByCode });
+    //   if (referredByUser && referredByUser.myCourses.find(course => course.course_id == mycourses)) {
+    //     // ReferredByUser already has the course, but allow referralUser to buy it
+    //     console.log("ReferredByUser already has the course");
+    //     await user.updateOne(
+    //       { $addToSet: { myCourses: { course_id: mycourses, certificate: false, amount_paid: amount_paid } } },
+    //     { returnOriginal: false, upsert: true }
+    //     );
+    //   }
+    //   else {
+    //     // Attempt to update referralUser's myCourses array
+    //     try {
+    //       await user.updateOne(
+    //         { $addToSet: { myCourses: { course_id: mycourses, certificate: false, amount_paid: amount_paid } } },
+    //         { returnOriginal: false, upsert: true }
+    //       );
+    //       console.log("Course added to myCourses array.");
+    //     } catch (error) {
+    //       // Handle duplicate key error
+    //       console.log("Duplicate key error:", error);
+    //     }
+    //   }
+    // }
+    // else {
+    //   // Handle error when user does not exist
+    //   console.log("User does not exist.");
+    // }
+
+
 
     // if (user.referredByCode) {
     //   let commissionPercentage = 0;
